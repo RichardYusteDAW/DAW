@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>  <!--Standalone indica si el documento xml depende (autónomo)-->
+de un DTD externo
+<!DOCTYPE familia SYSTEM "familia.dtd">
+
+<familia>
+    <padre>Richard</padre>
+    <madre>
+        <hijo>Pepito</hijo>
+        <hija edad="16" altura="alto" peso="63"></hija>
+    </madre>
+    <tio edad="75" altura="180" />
+</familia>
+
+<!ELEMENT familia (padre,madre,tio)>
+	<!ELEMENT padre (#PCDATA)>
+	<!ELEMENT madre (hijo,hija)>
+		<!ELEMENT hijo (#PCDATA)>
+		<!ELEMENT hija (#PCDATA)>
+			<!ATTLIST hija
+				edad CDATA #REQUIRED
+				altura (alto | bajo) #REQUIRED
+				peso CDATA #IMPLIED>
+
+	<!ELEMENT tio EMPTY>
+		<!ATTLIST tio
+			edad CDATA #REQUIRED
+			altura CDATA #IMPLIED>
+
+<!--
+<!ATTLIST elemento atributo tipo-atributo [opciones]>
+
+elemento-nombre: El nombre del elemento al que se aplican los atributos.
+atributo-nombre: El nombre del atributo.
+tipo-atributo: El tipo de valor que puede tener el atributo. 
+
+Los tipos de atributos permitidos son:
+	CDATA:		Cadena de texto sin formato.
+	ID:			Identificador único.
+	IDREF:		Referencia a un identificador.
+	ENTITY:		Entidad.
+	NOTATION:	Notación.
+
+Las opciones adicionales para el atributo, como la obligatoriedad del atributo o un conjunto de valores permitidos son:
+	#REQUIRED					El atributo es obligatorio.
+	#IMPLIED					El atributo es opcional.
+	#FIXED "valor-atributo"		El atributo tiene un valor fijo.
+	#EMPTY						El atributo no puede tener ningún valor.
+-->

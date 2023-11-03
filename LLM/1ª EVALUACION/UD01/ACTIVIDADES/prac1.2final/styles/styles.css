@@ -1,0 +1,30 @@
+h1 {
+    color: red;
+}
+
+image {
+    width: 500px;
+}
+
+div {
+    border: 2px solid rgb(190, 113, 190);
+    margin-top: 3px;
+}
+
+#secundaria {
+    width: 500px;
+    border: 10px solid blue;
+}
+
+.grande {
+    width: 500px;
+}
+
+ul {
+    border: 2px solid;
+    border-color: rgb(1, 255, 1);
+}
+
+ul li {
+    display: inline-block;
+}

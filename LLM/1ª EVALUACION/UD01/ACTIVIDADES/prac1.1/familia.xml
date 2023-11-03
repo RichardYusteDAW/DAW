@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE familia SYSTEM "familia.dtd">
+
+<familia>
+    <padre>Richard</padre>
+    <madre>
+        <hijo>Pepito</hijo>
+        <hija edad="16" altura="alto" peso="63"></hija>
+    </madre>
+    <tio edad="75" altura="180" />
+</familia>

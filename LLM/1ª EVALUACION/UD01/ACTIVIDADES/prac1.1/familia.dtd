@@ -1,0 +1,16 @@
+
+<!ELEMENT familia (padre,madre,tio)>
+<!ELEMENT padre (#PCDATA)>
+
+<!ELEMENT madre (hijo,hija)>
+<!ELEMENT hijo (#PCDATA)>
+<!ELEMENT hija (#PCDATA)>
+<!ATTLIST hija
+    edad CDATA #REQUIRED
+    altura (alto | bajo) #REQUIRED
+    peso CDATA #IMPLIED>
+
+<!ELEMENT tio EMPTY>
+<!ATTLIST tio
+    edad CDATA #REQUIRED
+    altura CDATA #IMPLIED>

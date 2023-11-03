@@ -1,0 +1,47 @@
+body {
+    background-color: rgb(134, 192, 226);
+}
+
+#principal {
+    /*border: 2px solid black;*/
+    width: 1200px;
+    height: 700px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+#novedades {
+    background-color: blue;
+    width: 910px;
+    height: 210px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#ofertas {
+    background-color: green;
+    width: 270px;
+    height: 530px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#contenido {
+    background-color: purple;
+    width: 910px;
+    height: 470px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#texto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
