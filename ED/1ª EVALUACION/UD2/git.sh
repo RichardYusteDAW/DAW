@@ -45,7 +45,6 @@ git diff <ref>					#Muestra los cambios realizados en un commit o etiqueta.
 
 git reset --hard <commit>		#Elmina todos los commits posteriores.
 
-
 #Repositorio remoto:
 	#HTTPS (Pide user y password):
 	git clone https://gitlab.dev.wedoops.io/wedoops/wallacoin.git
