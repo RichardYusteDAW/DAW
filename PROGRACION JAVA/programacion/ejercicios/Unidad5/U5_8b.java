@@ -11,7 +11,7 @@ public class U5_8b {
         int num = in.nextInt();
 
         int resultado;
-        for (int i = 0; i <= 10; i++) {
+        for (int i = 1; i <= 10; i++) {
             resultado = num * i;
             System.out.println(num + " * " + i + " = " + resultado);
 

@@ -11,14 +11,8 @@ public class U5_3b {
         System.out.print("Dime un número: ");
         int num = in.nextInt();
 
-        boolean par = num % 2 == 0 ? true : false;
-
-        if (par) {
-            System.out.print("El número introducido es par");
-        } else {
-            System.out.print("El número introducido es impar");
-
-        }
+        String paridad = (num % 2 == 0) ? "El número introducido es par" : "El número introducido es impar";
+        System.out.println(paridad);
 
         in.close();
     }

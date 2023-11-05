@@ -15,19 +15,20 @@ public class U5_4a {
 
         switch (color) {
             case "rojo":
-                System.out.println("Color de la sangre");
+                color = "Color de la sangre";
                 break;
             case "azul":
-                System.out.println("Color del cielo");
+                color = "Color del cielo";
                 break;
             case "amarillo":
-                System.out.println("Color del sol");
+                color = "Color del sol";
                 break;
 
             default:
-                System.out.println("Lo siento, ese color es muy aburrido");
+                color = "Lo siento, ese color es muy aburrido";
                 break;
         }
+        System.out.println(color);
 
         in.close();
     }
