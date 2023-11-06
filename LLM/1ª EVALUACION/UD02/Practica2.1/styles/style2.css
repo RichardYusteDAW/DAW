@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(134, 192, 226);
+}
+#principal{
+    /*border: 2px solid black;*/
+    width: 700px;
+    height: 600px;
+    background-color: red;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+}
+
+#texto{
+    position:absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+#novedades{
+    background-color: blue;
+    width: 450px;
+    height: 250px;
+    position: absolute;
+}
+
+#ofertas{
+    background-color: green;
+    width: 230px;
+    height: 480px;
+    position: absolute;
+    right: 0px;
+}
+
+#contenido{
+    background-color: purple;
+    width: 450px;
+    height: 330px;
+    position: absolute;
+    bottom: 0px;
+}
