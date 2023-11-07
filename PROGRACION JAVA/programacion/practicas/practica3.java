@@ -11,9 +11,8 @@ public class practica3 {
     static int op, row, column;
 
     static int randomNumber(){
-        Random aleatorio = new Random();
-        int num = aleatorio.nextInt(1, BOARDSIZE);
-        return num;
+        Random random = new Random();
+        return random.nextInt(1, BOARDSIZE);
     }
 
     static int[][] randomBoard(){

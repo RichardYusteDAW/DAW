@@ -226,11 +226,11 @@ for (int i = 1; i<10; i++) {
 	HashSet<Integer> conjunto = new HashSet<Integer>();
 	Set<Integer> conjunto = new HashSet<>();
 	
-	conjunto = Set.of(2, 10, 3, 23, 99);
+	Set<Integer> conjunto = Set.of(2, 10, 3, 23, 99);
 	
 	//Listas (Admite duplicados):
 	List<Integer> lista = new ArrayList<>();
-	lista = List.of(1, 3, 5, 67);
+	List<Integer> lista = List.of(1, 3, 5, 67);
 	
 	List<Integer> subList(index, index)	//Genera una sublista (una vista parcial de la lista) con los elementos comprendidos entre la posición inicial (from, incluida) y la posición final (to, no incluida).
 	
@@ -245,7 +245,7 @@ for (int i = 1; i<10; i++) {
 	
 	//Mapas (clave/valor):
 	Map<String, Integer> diccionario = new HashMap<>();
-	diccionario = Map.of("edad", 18, "año", 2022);
+	Map<String, Integer> diccionario = Map.of("edad", 18, "año", 2022);
 	
 	Set<String> keys = diccionario.keySet(); //Devuelve un conjunto con las claves contenidas en el map.
 	
