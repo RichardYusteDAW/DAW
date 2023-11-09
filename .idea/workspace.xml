@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="753e3533-7a16-4b0d-9db1-cea74579880c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/.idea/pruebas.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ED/Proyectos/pruebas/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ED/1ª EVALUACION/UD2/git.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ED/1ª EVALUACION/UD2/git.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ED/Proyectos/YusteRichard-ED" beforeDir="false" afterPath="$PROJECT_DIR$/ED/Proyectos/YusteRichard-ED" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ED/Proyectos/YusteRichard-ED/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ED/Proyectos/YusteRichard-ED/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LLM/1ª EVALUACION/UD02/Practica2.1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/LLM/1ª EVALUACION/UD02/Practica2.1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SyncToy_2b18f7ad-a001-4259-a920-c942ad18c858.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SyncToy_3148bbff-8c45-4396-92ca-6c256cfed14c.dat" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2XxDi3dSBSo0sgKos7K1m5AcKEt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/DAW/ED/Proyectos/pruebas"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="753e3533-7a16-4b0d-9db1-cea74579880c" name="Changes" comment="" />
+      <created>1699561960865</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699561960865</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -92,3 +92,11 @@ git tag	newTag		#Crea una nueva etiqueta.
 git tag	-a newTag	#Crea una nueva etiqueta con anotación (editor de texto).
 git tag	-m newTag	#Crea una nueva etiqueta con anotación (sin editor de texto).
 git tag	-d newTag	#Elimina la etiqueta.
+
+#Reflog:
+git reflog			#Lista todos los reflogs
+
+	#Para eliminar todos los reflogs:
+	git reflog expire --expire=now --all
+	git gc --prune=now
+
