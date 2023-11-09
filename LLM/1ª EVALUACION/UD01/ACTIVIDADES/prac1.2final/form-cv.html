@@ -3,39 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de envío de CV</title>
+    <title>Rellena tu CV</title>
 </head>
 <body>
-    <form action="envio-form.php" method="post">
+    <form action="form-cv.html" method="get">
         <h2>Rellena tu CV</h2>
         
         <div>
             <label for="nombre">Nombre</label><br>
             <input type="text" name="nombre" id="nombre" maxlength="30" size="30">
         </div><br>
+
         <div>
             <label for="apellidos">Apellidos</label><br>
             <input type="text" name="apellidos" id="apellidos" maxlength="80" size="80">
         </div><br>
+
         <div>
             <label for="pass">Contraseña</label><br>
-            <input type="text" name="pass" id="pass" maxlength="10" size="10">
+            <input type="password" name="pass" id="pass" maxlength="10" size="10">
         </div><br>
+
         <div>
             <label for="dni">DNI</label><br>
             <input type="text" name="pass" id="dni" maxlength="9" size="9">
         </div><br>
+
         <div>
             <label for="sexo">Sexo</label><br>
             <input type="radio" name="sexo" id="sexo" value="hombre" checked>Hombre<br>
             <input type="radio" name="sexo" id="sexo" value="mujer">Mujer
         </div><br>
+
         <div>
             <label for="foto">Incluir mi foto</label>
             <input type="text" name="foto" id="foto" maxlength="30" size="30">
             <button>Elegir...</button>
         </div><br>
 
+        <div>
+            <input type="checkbox" name="subscripcion" id="subscripcion" checked>
+            <label for="foto">Suscribirme al boletín novedades</label>
+        </div><br>
+
+        <button type="submit" value="enviar">Guardar cambios</button>
+        <button type="reset" value="borrar">Borrar los datos introducidors</button>
     </form>
 </body>
 </html>
