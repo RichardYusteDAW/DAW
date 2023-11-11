@@ -132,7 +132,7 @@ public class examen1_IA {
             case 10 -> {
                 System.out.print("Dime una palabra: ");
                 String text = in.next();
-                System.out.println(blue + text + " tiene " + resetColor + letters(text) + blue + " aes" + resetColor);
+                System.out.println(blue + text + " tiene " + resetColor + length(text) + blue + " aes" + resetColor);
 
                 System.out.println("\n");
             }
@@ -164,12 +164,36 @@ public class examen1_IA {
 
                 System.out.println();
             }
-            case 14 -> System.out.println("El número es 14");
-            case 15 -> System.out.println("El número es 15");
-            case 16 -> System.out.println("El número es 16");
-            case 17 -> System.out.println("El número es 17");
+            case 14 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(blue + "El texto: " + text + " tiene " + resetColor + letters(text) + blue
+                        + " caracteres sin espacios" + resetColor);
+
+                System.out.println();
+            }
+            case 15 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(blue + upperCase(text) + resetColor);
+
+                System.out.println();
+            }
+            case 16 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(blue + lowerCase(text) + resetColor);
+
+                System.out.println();
+            }
+            case 17 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(blue + withOutSpace(text) + resetColor);
+
+                System.out.println();
+            }
             case 18 -> System.out.println("El número es 18");
-            case 19 -> System.out.println("El número es 19");
             default -> System.out.println("Invalid option");
         }
 
@@ -263,7 +287,7 @@ public class examen1_IA {
         return true;
     }
 
-    static int letters(String text) {
+    static int length(String text) {
         int num = 0;
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == 'a') {
@@ -288,4 +312,33 @@ public class examen1_IA {
 
         return position;
     }
+
+    static int letters(String text) {
+        int letters = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) != ' ') {
+                letters++;
+            }
+        }
+        return letters;
+    }
+
+    static String upperCase(String text) {
+        return text.toUpperCase();
+    }
+
+    static String lowerCase(String text) {
+        return text.toLowerCase();
+    }
+
+    static String withOutSpace(String text) {
+        String newText = "";
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) != ' ') {
+                newText = newText.concat(String.valueOf(text.charAt(i)));
+            }
+        }
+        return newText;
+    }
+
 }
