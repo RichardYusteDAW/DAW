@@ -1,7 +1,9 @@
 package examen;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class examen1_IA {
@@ -18,10 +20,15 @@ public class examen1_IA {
             System.out.println("0. Salir");
             System.out.print("Dime un opción: ");
             op = in.nextInt();
+            in.nextLine(); // limpia el búfer
 
-            selectMenu(op != 0 ? op : 0);
+            if (op != 0) {
+                selectMenu(op);
+            }
 
         } while (op != 0);
+
+        in.close();
     }
 
     static void showMenu() {
@@ -101,19 +108,62 @@ public class examen1_IA {
 
             case 8 -> {
                 System.out.print("Dime una palabra: ");
-                if (palindrome(in.next())) {
-                    System.out.println(blue + "La palabra es palíndroma" + resetColor);
+                String text = in.next();
+                if (palindrome(text)) {
+                    System.out.println(blue + "La palabra " + resetColor + text + blue + " es palíndroma" + resetColor);
                 } else {
-                    System.out.println(blue + "La palabra NO es palíndroma" + resetColor);
+                    System.out.println(
+                            blue + "La palabra " + resetColor + text + blue + " NO es palíndroma" + resetColor);
                 }
                 System.out.println("\n");
             }
 
-            case 9 -> System.out.println("El número es 9");
-            case 10 -> System.out.println("El número es 10");
-            case 11 -> System.out.println("El número es 11");
-            case 12 -> System.out.println("El número es 12");
-            case 13 -> System.out.println("El número es 13");
+            case 9 -> {
+                System.out.print("Dime un número: ");
+                int num = in.nextInt();
+                if (prime(num)) {
+                    System.out.println(num + blue + " es primo" + resetColor);
+                } else {
+                    System.out.println(num + blue + " NO es primo" + resetColor);
+                }
+                System.out.println("\n");
+            }
+
+            case 10 -> {
+                System.out.print("Dime una palabra: ");
+                String text = in.next();
+                System.out.println(blue + text + " tiene " + resetColor + letters(text) + blue + " aes" + resetColor);
+
+                System.out.println("\n");
+            }
+
+            case 11 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(
+                        blue + text + " tiene " + resetColor + words(text) + blue + " palabras" + resetColor);
+
+                System.out.println("\n");
+            }
+
+            case 12 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(
+                        blue + text + " tiene " + resetColor + numChars(text) + blue + " caracteres contando espacios"
+                                + resetColor);
+
+                System.out.println();
+            }
+
+            case 13 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.println(blue + "La primera letra es: " + resetColor + firstLastChars(text).get("first"));
+                System.out.println(blue + "La última letra es: " + resetColor + firstLastChars(text).get("last"));
+
+                System.out.println();
+            }
             case 14 -> System.out.println("El número es 14");
             case 15 -> System.out.println("El número es 15");
             case 16 -> System.out.println("El número es 16");
@@ -192,11 +242,50 @@ public class examen1_IA {
     }
 
     static boolean palindrome(String text) {
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length() / 2; i++) {
             if (text.charAt(i) != text.charAt(text.length() - 1 - i)) {
                 return false;
             }
         }
         return true;
+        // reconocer es la palabra palíndroma más larga que existe.
+    }
+
+    static boolean prime(int num) {
+        if (num <= 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static int letters(String text) {
+        int num = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == 'a') {
+                num++;
+            }
+        }
+        return num;
+    }
+
+    static int words(String text) {
+        return text.split("\\s+").length;
+    }
+
+    static int numChars(String text) {
+        return text.length();
+    }
+
+    static Map<String, Character> firstLastChars(String text) {
+        Map<String, Character> position = new HashMap<>();
+        position.put("first", text.charAt(0));
+        position.put("last", text.charAt(text.length() - 1));
+
+        return position;
     }
 }
