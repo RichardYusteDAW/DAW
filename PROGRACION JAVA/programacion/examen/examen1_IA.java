@@ -193,8 +193,22 @@ public class examen1_IA {
 
                 System.out.println();
             }
-            case 18 -> System.out.println("El número es 18");
-            default -> System.out.println("Invalid option");
+            case 18 -> {
+                System.out.print("Dime una frase: ");
+                String text = in.nextLine();
+                System.out.print("¿Qué letra quieres cambiar? ");
+                String letter1 = in.nextLine();
+                System.out.print("¿Por qué letra la quieres cambiar? ");
+                String letter2 = in.nextLine();
+
+                System.out.println(blue + replace(text, letter1, letter2) + resetColor);
+
+                System.out.println();
+            }
+            default -> {
+                System.out.println(red + "Invalid option" + resetColor);
+                System.out.println();
+            }
         }
 
     }
@@ -339,6 +353,10 @@ public class examen1_IA {
             }
         }
         return newText;
+    }
+
+    static String replace(String text, String leter1, String letter2) {
+        return text.replace(leter1, letter2);
     }
 
 }
