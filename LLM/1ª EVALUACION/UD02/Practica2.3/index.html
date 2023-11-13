@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Richard Yuste">
+    <meta name="description" content="Esta es la practica 2.3">
+    <title>Practica 2.3</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <form action="./leer-form.php" method="post">
+        <fieldset>
+            <legend>Datos básicos</legend>
+
+            
+            <label for="name">Nombre</label><br>
+            <input type="text" name="name" id="name" size="60" maxlength="50"><br><br>
+            
+            <label for="description">Descripción</label><br>
+            <textarea name="description" id="description" cols="60" rows="10"></textarea><br><br>
+
+            <label for="file">Foto</label>
+            <input type="file" name="photo" id="photo"><br><br>
+
+            <input type="checkbox" name="visits" id="visits"> 
+            <label for="visits">Añadir contador de visitas</label>
+        </fieldset><br>
+
+        <fieldset>
+            <legend>Datos económicos</legend>
+
+            <label for="price">Precio</label> 
+            <input type="text" name="price" id="price" size="20" maxlength="5">
+            <label for="price">€</label>
+
+            <label for="tax">Impuestos</label> 
+            <select name="tax" id="tax">
+                <option value="0.04">4%</option>
+                <option value="0.07">7%</option>
+                <option value="0.16">16%</option>
+                <option value="0.25">25%</option>
+            </select><br><br>
+
+            <label for="none">Promoción</label><br>
+            <input type="radio" name="promo" id="none" value="none" checked>Ninguno <br>
+            <input type="radio" name="promo" id="free_transport" value="free_transport">Transporte gratuito <br>
+            <input type="radio" name="promo" id="discount" value="discount">Descuento 5% <br>
+        </fieldset><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+
+</html>
