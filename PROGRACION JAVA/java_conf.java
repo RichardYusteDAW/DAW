@@ -30,8 +30,11 @@ int a = 1;	//Se puede declarar y asignar valor en una sola sentencia;
 var a = 1; //Java 10 reconoce el tipo;
 
 //6º CASTEAR VARIABLES:
-String a = "1";
-(int) a;
+int a = 1;
+float b = (float)a;
+
+String c = "1";
+int d = Integer.parseInt(c);
 
 //7º PALABRAS RESERVADAS:
 abstract	continue	for			new			switch
