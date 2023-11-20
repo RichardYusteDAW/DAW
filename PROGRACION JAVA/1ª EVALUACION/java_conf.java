@@ -14,7 +14,9 @@
 	COMPILA: javac file.java  --> crea un archivo: file.class
 	EJECUTA: java file
 	EJECUTA COMPILANDO AL VUELO: java file.java --> NO crea un archivo: file.class
-	
+
+//DOCUMENTACION JAVA: https://docs.oracle.com/en/java/javase/17/docs/api/
+
 //5º DECLARACIÓN DE VARIABLES:
 boolean a;
 byte b;
