@@ -5,73 +5,74 @@ import java.util.List;
 
 public class U8_5a {
     public static void main(String[] args) {
-        Coche coche1 = new Coche();
-        Coche coche2 = new Coche();
-        Coche coche3 = new Coche();
+        Car car1 = new Car();
+        Car car2 = new Car();
+        Car car3 = new Car();
 
-        coche1.marca = "Ford";
-        coche1.modelo = "Smax";
-        coche1.color = "Azul";
-        coche1.numeroBastidor = 11111;
+        car1.brand = "Ford";
+        car1.model = "Smax";
+        car1.color = "Azul";
+        car1.chassisNumber = 11111;
 
-        coche2.marca = "Seat";
-        coche2.modelo = "Ibiza";
-        coche2.color = "Rojo";
-        coche2.numeroBastidor = 22222;
+        car2.brand = "Seat";
+        car2.model = "Ibiza";
+        car2.color = "Rojo";
+        car2.chassisNumber = 22222;
 
-        coche3.marca = "Ford";
-        coche3.modelo = "Smax";
-        coche3.color = "Azul";
-        coche3.numeroBastidor = 33333;
+        car3.brand = "Ford";
+        car3.model = "Smax";
+        car3.color = "Azul";
+        car3.chassisNumber = 33333;
 
-        Flota flota = new Flota();
-        flota.addCar(coche1);
-        flota.addCar(coche2);
-        flota.addCar(coche3);
-        flota.showCars();
+        Fleet fleet = new Fleet();
+        fleet.addCar(car1);
+        fleet.addCar(car2);
+        fleet.addCar(car3);
+        fleet.showCars();
 
-        flota.removeCar(33333);
-        flota.showCars();
+        fleet.removeCar(33333);
+        fleet.showCars();
     }
 }
 
-public class Coche {
-    public String marca, modelo, color;
-    public int numeroBastidor, velocidad = 0;
+public class Car {
+    public String brand, model, color;
+    public int chassisNumber, speed = 0;
 
     public void increaseSpeed(int increase) {
-        velocidad += increase;
+        speed += increase;
     }
 
     public void reduceSpeed(int decrement) {
-        velocidad -= decrement;
+        speed -= decrement;
     }
 
     @Override
     public String toString() {
-        return String.format("Mi coche es un %s %s de color %s con número de bastidor %d", marca, modelo, color,
-                numeroBastidor);
+        return String.format("Mi coche es un %s %s de color %s con número de bastidor %d", brand, model, color,
+                chassisNumber);
     }
 }
 
-public class Flota {
-    public List<Coche> coches = new ArrayList<>();
+public class Fleet {
+    public List<Car> cars = new ArrayList<>();
 
-    public void addCar(Coche coche) {
-        coches.add(coche);
+    public void addCar(Car car) {
+        cars.add(car);
     }
 
-    public void removeCar(int numeroBastidor) {
-        for (int i = 0; i < coches.size(); i++) {
-            if (numeroBastidor == coches.get(i).numeroBastidor) {
-                coches.remove(coches.get(i));
+    public void removeCar(int chassisNumber) {
+        for (int i = 0; i < cars.size(); i++) {
+            Car car = cars.get(i);
+            if (chassisNumber == car.chassisNumber) {
+                cars.remove(car);
             }
         }
     }
 
     public void showCars() {
-        for (Coche coche : coches) {
-            System.out.println(coche.toString());
+        for (Car car : cars) {
+            System.out.println(car.toString());
         }
     }
 

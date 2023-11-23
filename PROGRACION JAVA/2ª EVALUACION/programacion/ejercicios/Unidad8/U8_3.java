@@ -1,32 +1,32 @@
 package ejercicios.Unidad8;
 
-
 public class U8_3 {
     public static void main(String[] args) {
-        Coche coche = new Coche();
+        Car car = new Car();
 
-        coche.marca="Ford";
-        coche.modelo="Smax";
-        coche.color="Azul";
-        coche.numeroBastidor=1234567890;
-        coche.velocidad=50;
+        car.brand = "Ford";
+        car.model = "Smax";
+        car.color = "Azul";
+        car.chassisNumber = 1234567890;
+        car.speed = 50;
 
-        coche.increaseSpeed();
-        System.out.println("La velocidad del coche es " + coche.velocidad);
-        coche.reduceSpeed();
-        System.out.println("La velocidad del coche es " + coche.velocidad);
+        car.increaseSpeed();
+        System.out.println("La velocidad del coche es " + car.speed);
+        car.reduceSpeed();
+        System.out.println("La velocidad del coche es " + car.speed);
 
     }
 }
 
-public class Coche {
-    public String marca, modelo, color;
-    public int numeroBastidor, velocidad=0;
+public class Car {
+    public String brand, model, color;
+    public int chassisNumber, speed = 0;
 
-    public void increaseSpeed(){
-        velocidad += 5;
+    public void increaseSpeed() {
+        speed += 5;
     }
-    public void reduceSpeed(){
-        velocidad -= 5;
+
+    public void reduceSpeed() {
+        speed -= 5;
     }
 }
