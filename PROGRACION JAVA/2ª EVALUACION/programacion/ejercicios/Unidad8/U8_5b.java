@@ -46,12 +46,6 @@ public class Car {
     public void reduceSpeed(int decrement) {
         velocidad -= decrement;
     }
-
-    @Override
-    public String toString() {
-        return String.format("Mi car es un %s %s de color %s con número de bastidor %d", brand, model, color,
-                chassisNumber);
-    }
 }
 
 public class Fleet {
@@ -77,12 +71,6 @@ public class Fleet {
                     car.model, car.color, car.chassisNumber));
         }
         return builder.toString();
-    }
-
-    public void showCars() {
-        for (Car car : cars) {
-            System.out.println(car.toString());
-        }
     }
 
 }
