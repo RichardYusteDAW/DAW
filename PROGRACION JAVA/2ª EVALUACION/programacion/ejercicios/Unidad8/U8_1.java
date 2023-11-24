@@ -1,3 +1,13 @@
+/*
+Crea un nuevo proyecto Java. 
+Además de la clase principal (puedes llamarla Main o App), 
+crea una nueva clase llamada Coche con los atributos marca, modelo, color, numeroBastidor y velocidad. 
+Los 3 primeros serán String y los dos últimos de tipo int. La velocidad inicial será de 0.
+
+En la clase principal, crea un nuevo coche, asígnale valores a sus atributos y muestra por pantalla la frase:
+“Mi coche es un {marca} {modelo} de color {color} con número de bastidor {numeroBastidor}”, 
+sustituyendo las variables encerradas entre llaves por los valores que le hayas dado a las propiedades al crear el coche. 
+ */
 package ejercicios.Unidad8;
 
 public class U8_1 {

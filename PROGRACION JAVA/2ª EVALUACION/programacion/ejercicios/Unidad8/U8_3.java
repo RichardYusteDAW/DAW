@@ -1,3 +1,7 @@
+/*
+Crea dos métodos en la clase Coche que permitan aumentar o reducir la velocidad del coche en 5. 
+Utiliza ambos métodos por pantalla y muestra la velocidad para comprobar que funcionan correctamente. 
+*/
 package ejercicios.Unidad8;
 
 public class U8_3 {

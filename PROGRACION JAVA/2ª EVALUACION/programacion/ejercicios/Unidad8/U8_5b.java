@@ -1,3 +1,6 @@
+/*Elimina el método que muestra por pantalla el listado de coches. 
+En su lugar, añade el método toString() a Flota para devolver una cadena con el listado de coches que tiene la flota.
+ */
 package ejercicios.Unidad8;
 
 import java.util.ArrayList;

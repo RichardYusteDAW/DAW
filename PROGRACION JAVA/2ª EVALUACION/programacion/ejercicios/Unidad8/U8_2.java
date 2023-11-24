@@ -1,3 +1,8 @@
+/*
+Crea en la clase Coche un método llamado toString() que devuelva la frase:
+“{marca} {modelo} de color {color} con número de bastidor {numeroBastidor}” 
+(igual que antes, sustituyendo las variables por los valores reales del objeto).
+*/
 package ejercicios.Unidad8;
 
 public class U8_2 {
@@ -10,7 +15,7 @@ public class U8_2 {
         car.chassisNumber = 1234567890;
         car.speed = 50;
 
-        System.out.println(car.toString());
+        System.out.println(car); // No hace falta llamarlo así: System.out.println(car.toString());
 
     }
 }

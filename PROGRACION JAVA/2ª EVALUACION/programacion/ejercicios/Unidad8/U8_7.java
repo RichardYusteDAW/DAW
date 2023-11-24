@@ -1,15 +1,16 @@
 /*
-Modifica el método eliminarCoche() anterior para que devuelva false en caso de no encontrar el coche con ese número de bastidor en la flota. 
-A la hora de eliminar un coche desde la clase principal, muestra por pantalla la frase:
-“No se encuentra el coche en la flota” si no existe un coche con ese número de bastidor.
+Haz que la aplicación pida el número de bastidor a eliminar de la flota de coches. 
+Si se elimina el coche correctamente, muestra por pantalla la frase:
+“Se ha eliminado el coche con número de bastidor {numeroBastidor}”.
+Si no se encuentra el coche, la aplicación deberá mostrar la frase:
+“No existe ningún coche con número de bastidor {numeroBastidor}”.
 */
 package ejercicios.Unidad8;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class U8_5b {
+public class U8_7 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -36,9 +37,7 @@ public class U8_5b {
         fleet.addCar(car3);
         System.out.println(fleet);
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Dime el número de bastidor: ");
-        int chassisNumber = in.nextInt();
+        int chassisNumber = 44444;
         if (fleet.removeCar(chassisNumber)) {
             System.out.println("Se ha eliminado el coche con número de bastidor: " + chassisNumber);
         } else {

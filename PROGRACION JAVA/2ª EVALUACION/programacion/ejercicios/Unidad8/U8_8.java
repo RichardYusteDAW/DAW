@@ -1,15 +1,23 @@
 /*
-Modifica el método eliminarCoche() anterior para que devuelva false en caso de no encontrar el coche con ese número de bastidor en la flota. 
-A la hora de eliminar un coche desde la clase principal, muestra por pantalla la frase:
-“No se encuentra el coche en la flota” si no existe un coche con ese número de bastidor.
+Crea una nueva clase llamada Conductor. 
+Esta clase tendrá como atributos String nombre, el nombre del conductor, y Coche asignado, el coche que ha sido asignado al conductor.
+
+Crea un método donde se le pasará un numero de bastidor y una flota de vehículos. 
+El método comprobará que el coche con ese número de bastidor existe en esa flota y se lo asignará al conductor. 
+Para buscar el coche en la flota, crea un método nuevo en la clase Flota que recibirá un número de bastidor 
+y devolverá el objeto coche si lo encuentra o null en caso contrario.
+
+Crea otro método que muestre el coche asignado al conductor con la frase:
+“Coche asignado a {nombre}: {coche}”.
+En tu clase principal, crea 2 conductores, asígnale uno de los coches a uno de los conductores 
+y muestra por pantalla el coche asignado al conductor.
 */
 package ejercicios.Unidad8;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class U8_5b {
+public class U8_8 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -36,9 +44,7 @@ public class U8_5b {
         fleet.addCar(car3);
         System.out.println(fleet);
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Dime el número de bastidor: ");
-        int chassisNumber = in.nextInt();
+        int chassisNumber = 44444;
         if (fleet.removeCar(chassisNumber)) {
             System.out.println("Se ha eliminado el coche con número de bastidor: " + chassisNumber);
         } else {
@@ -89,4 +95,28 @@ public class Fleet {
         return builder.toString();
     }
 
+    public class Conductor {
+        private String name;
+        private Car car;
+
+        /*
+         * Crea un método donde se le pasará un numero de bastidor y una flota de
+         * vehículos.
+         * El método comprobará que el coche con ese número de bastidor existe en esa
+         * flota y se lo asignará al conductor.
+         * Para buscar el coche en la flota, crea un método nuevo en la clase Flota que
+         * recibirá un número de bastidor
+         * y devolverá el objeto coche si lo encuentra o null en caso contrario.
+         */
+        public boolean checkChassisNumber(int chassisNumber, Fleet fleet) {
+            for (int i = 0; i < fleet.cars.size(); i++) {
+                Car car = fleet.cars.get(i);
+                if (car.chassisNumber == chassisNumber) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    }
 }

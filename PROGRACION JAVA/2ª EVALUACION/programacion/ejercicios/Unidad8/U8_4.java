@@ -1,3 +1,4 @@
+/*Modifica los métodos anteriores para que se le pueda pasar la velocidad como parámetro y no sea fija de 5.*/
 package ejercicios.Unidad8;
 
 public class U8_4 {
