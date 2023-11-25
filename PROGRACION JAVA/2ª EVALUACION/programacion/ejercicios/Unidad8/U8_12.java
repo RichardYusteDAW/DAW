@@ -1,23 +1,13 @@
 /*
-Crea una nueva clase llamada Conductor. 
-Esta clase tendrá como atributos String nombre, el nombre del conductor, y Coche asignado, el coche que ha sido asignado al conductor.
-
-Crea un método donde se le pasará un numero de bastidor y una flota de vehículos. 
-El método comprobará que el coche con ese número de bastidor existe en esa flota y se lo asignará al conductor. 
-Para buscar el coche en la flota, crea un método nuevo en la clase Flota que recibirá un número de bastidor 
-y devolverá el objeto coche si lo encuentra o null en caso contrario.
-
-Crea otro método que muestre el coche asignado al conductor con la frase:
-“Coche asignado a {nombre}: {coche}”.
-En tu clase principal, crea 2 conductores, asígnale uno de los coches a uno de los conductores 
-y muestra por pantalla el coche asignado al conductor.
+Modifica el método que asigna un coche a un conductor para que reciba por parámetro un objeto de la clase Coche y no el número de bastidor. 
+Desde la clase principal, deberás buscar ese coche en la flota de vehículos antes de asignárselo al conductor.
 */
 package ejercicios.Unidad8;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_8 {
+public class U8_11 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -54,14 +44,19 @@ public class U8_8 {
 
         Driver driver1 = new Driver();
         driver1.name = "Juan";
-        driver1.assignedCar(11111, fleet);
+        int car1Poition = fleet.cars.indexOf(car1);
+        driver1.assignedCar(fleet.cars.get(car1Poition));
         driver1.showAssignedCar();
 
         Driver driver2 = new Driver();
         driver2.name = "Pepe";
-        driver2.assignedCar(22222, fleet);
+        int car2Poition = fleet.cars.indexOf(car1);
+        driver1.assignedCar(fleet.cars.get(car2Poition));
         driver2.showAssignedCar();
 
+        Driver driver3 = new Driver();
+        driver3.name = "Paco";
+        driver3.showAssignedCar();
     }
 }
 
@@ -125,13 +120,29 @@ public class Driver {
     public String name;
     public Car assignedCar;
 
-    public void assignedCar(int chassisNumber, Fleet fleet) {
-        if (fleet.searchCar(chassisNumber) != null) {
-            assignedCar = fleet.searchCar(chassisNumber);
+    public void assignedCar(Car car) {
+        if (car != null) {
+            assignedCar = car;
+        } else {
+            assignedCar = null;
         }
     }
 
     public void showAssignedCar() {
-        System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
+        if (assignedCar == null) {
+            System.out.println(String.format("%s no tiene asignado ningún coche", name));
+        } else {
+            System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
+        }
+    }
+
+    public boolean removeCar() {
+        if (assignedCar == null) {
+            System.out.println(String.format("%s no tiene asignado ningún coche", name));
+            return false;
+        } else {
+            assignedCar = null;
+            return true;
+        }
     }
 }
