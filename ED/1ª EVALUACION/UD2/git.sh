@@ -80,6 +80,7 @@ git reset --hard <commit>		#Elmina todos los commits posteriores.
 	git merge --abort			#Aborta la fusión en caso de conflictos.
 	git branch --merged			#Lista todas las ramas x unir.
 	git rebase ramaOld			#Rebasa la rama indicada.
+	git rebase --abort			#Aborta el rebase en caso de conflictos.
 	
 	#Publicar en la rama :
 	git pull origin master		#Descargamos el codigo de la master.
