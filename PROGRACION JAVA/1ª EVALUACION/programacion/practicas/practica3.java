@@ -15,7 +15,7 @@ public class practica3 {
         return random.nextInt(1, BOARDSIZE);
     }
 
-    static int[][] randomBoard(){
+    static void randomBoard(){
         intialBoard = new int[BOARDSIZE][BOARDSIZE];
         int cont = 0;
         int randomRow, randomColumn;
@@ -30,7 +30,7 @@ public class practica3 {
                 cont++;
             }
         }
-        return intialBoard;
+        //return intialBoard;
     }
 
     static void showBoard(int[][] board){
