@@ -8,7 +8,7 @@ En la clase principal, crea un nuevo coche, asígnale valores a sus atributos y 
 “Mi coche es un {marca} {modelo} de color {color} con número de bastidor {numeroBastidor}”, 
 sustituyendo las variables encerradas entre llaves por los valores que le hayas dado a las propiedades al crear el coche. 
  */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 public class U8_1 {
 

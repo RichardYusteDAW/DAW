@@ -2,7 +2,7 @@
 Modifica el método que asigna un coche a un conductor para que reciba por parámetro un objeto de la clase Coche y no el número de bastidor. 
 Desde la clase principal, deberás buscar ese coche en la flota de vehículos antes de asignárselo al conductor.
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;

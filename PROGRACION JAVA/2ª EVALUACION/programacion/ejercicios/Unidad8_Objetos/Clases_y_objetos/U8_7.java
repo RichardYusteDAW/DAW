@@ -1,15 +1,16 @@
 /*
-Haz que el método anterior devuelva false si el conductor no tiene asignado ningún coche, 
-y usa el método para mostrar por pantalla:
-“Este conductor no tiene asignado ningún coche” 
-si se intenta eliminar un coche a un conductor que no tiene asignado ninguno.
+Haz que la aplicación pida el número de bastidor a eliminar de la flota de coches. 
+Si se elimina el coche correctamente, muestra por pantalla la frase:
+“Se ha eliminado el coche con número de bastidor {numeroBastidor}”.
+Si no se encuentra el coche, la aplicación deberá mostrar la frase:
+“No existe ningún coche con número de bastidor {numeroBastidor}”.
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_11 {
+public class U8_7 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -43,20 +44,6 @@ public class U8_11 {
             System.out.println("No existe ningún coche con número de bastidor " + chassisNumber);
         }
         System.out.println(fleet);
-
-        Driver driver1 = new Driver();
-        driver1.name = "Juan";
-        driver1.assignedCar(11111, fleet);
-        driver1.showAssignedCar();
-
-        Driver driver2 = new Driver();
-        driver2.name = "Pepe";
-        driver2.assignedCar(22222, fleet);
-        driver2.showAssignedCar();
-
-        Driver driver3 = new Driver();
-        driver3.name = "Paco";
-        driver3.showAssignedCar();
     }
 }
 
@@ -70,11 +57,6 @@ public class Car {
 
     public void reduceSpeed(int decrement) {
         velocidad -= decrement;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("es un %s %s de color %s con número de bastidor %d", brand, model, color, chassisNumber);
     }
 }
 
@@ -106,43 +88,4 @@ public class Fleet {
         return builder.toString();
     }
 
-    public Car searchCar(int chassisNumber) {
-        for (Car car : cars) {
-            if (car.chassisNumber == chassisNumber) {
-                return car;
-            }
-        }
-        return null;
-    }
-}
-
-public class Driver {
-    public String name;
-    public Car assignedCar;
-
-    public void assignedCar(int chassisNumber, Fleet fleet) {
-        if (fleet.searchCar(chassisNumber) != null) {
-            assignedCar = fleet.searchCar(chassisNumber);
-        } else {
-            assignedCar = null;
-        }
-    }
-
-    public void showAssignedCar() {
-        if (assignedCar == null) {
-            System.out.println(String.format("%s no tiene asignado ningún coche", name));
-        } else {
-            System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
-        }
-    }
-
-    public boolean removeCar() {
-        if (assignedCar == null) {
-            System.out.println(String.format("%s no tiene asignado ningún coche", name));
-            return false;
-        } else {
-            assignedCar = null;
-            return true;
-        }
-    }
 }

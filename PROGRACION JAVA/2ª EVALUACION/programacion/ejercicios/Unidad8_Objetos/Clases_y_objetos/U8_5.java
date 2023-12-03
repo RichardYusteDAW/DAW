@@ -8,7 +8,7 @@ Crea un último método que muestre por pantalla el listado de coches de la flot
 
 Añade 3 coches diferentes, muestra el listado, elimina uno de los coches y vuelve a mostrar el listado de coches que quedan en la flota. 
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;

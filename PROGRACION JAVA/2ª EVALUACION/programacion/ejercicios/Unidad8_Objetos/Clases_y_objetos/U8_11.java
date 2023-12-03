@@ -1,12 +1,15 @@
 /*
-Crea otro método en la clase Conductor para eliminar el coche asignado.
+Haz que el método anterior devuelva false si el conductor no tiene asignado ningún coche, 
+y usa el método para mostrar por pantalla:
+“Este conductor no tiene asignado ningún coche” 
+si se intenta eliminar un coche a un conductor que no tiene asignado ninguno.
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_10 {
+public class U8_11 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -133,7 +136,13 @@ public class Driver {
         }
     }
 
-    public void removeCar() {
-        assignedCar = null;
+    public boolean removeCar() {
+        if (assignedCar == null) {
+            System.out.println(String.format("%s no tiene asignado ningún coche", name));
+            return false;
+        } else {
+            assignedCar = null;
+            return true;
+        }
     }
 }

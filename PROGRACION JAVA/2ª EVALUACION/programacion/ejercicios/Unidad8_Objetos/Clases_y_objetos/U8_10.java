@@ -1,14 +1,12 @@
 /*
-Modifica el método que muestra el coche asignado para que muestre la frase:
-“{nombre} no tiene asignado ningún coche” 
-si ese conductor no tiene asignado ningún coche.
+Crea otro método en la clase Conductor para eliminar el coche asignado.
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_9 {
+public class U8_10 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -133,5 +131,9 @@ public class Driver {
         } else {
             System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
         }
+    }
+
+    public void removeCar() {
+        assignedCar = null;
     }
 }

@@ -3,7 +3,7 @@ Crea en la clase Coche un método llamado toString() que devuelva la frase:
 “{marca} {modelo} de color {color} con número de bastidor {numeroBastidor}” 
 (igual que antes, sustituyendo las variables por los valores reales del objeto).
 */
-package ejercicios.Unidad8;
+package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 public class U8_2 {
     public static void main(String[] args) {
