@@ -1,4 +1,8 @@
-package ejercicios.Unidad8_Objetos.Metodos_estáticos.Ejercicio2;
+/*
+Haz que el resultado sea una propiedad de la clase Calculadora. 
+En cada método, se deberá almacenar el resultado en esa propiedad y devolverlo.
+ */
+package ejercicios.Unidad8_Objetos.Metodos_estaticos.Ejercicio2;
 
 public class Calculadora {
     private static int suma, resta, multiplicacion, division;

@@ -1,4 +1,9 @@
-package ejercicios.Unidad8_Objetos.Metodos_estáticos.Ejercicio1;
+/*
+Crea una clase Calculadora con 4 métodos estáticos: sumar(), restar(), multiplicar() y dividir(). 
+Todos los métodos recibirán 2 números enteros y el resultado también será entero. 
+Prueba la clase con diferentes operaciones. 
+*/
+package ejercicios.Unidad8_Objetos.Metodos_estaticos.Ejercicio1;
 
 public class Calculadora {
     private static int num1 = 10;
