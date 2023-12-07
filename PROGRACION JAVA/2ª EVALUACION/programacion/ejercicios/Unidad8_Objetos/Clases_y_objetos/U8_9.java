@@ -61,14 +61,14 @@ public class U8_9 {
 
 public class Car {
     public String brand, model, color;
-    public int chassisNumber, velocidad = 0;
+    public int chassisNumber, speed = 0;
 
     public void increaseSpeed(int increase) {
-        velocidad += increase;
+        speed += increase;
     }
 
     public void reduceSpeed(int decrement) {
-        velocidad -= decrement;
+        speed -= decrement;
     }
 
     @Override
