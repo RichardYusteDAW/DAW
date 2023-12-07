@@ -4,7 +4,7 @@ Utiliza ambos métodos por pantalla y muestra la velocidad para comprobar que fu
 */
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
-public class U8_3 {
+public class U8_03 {
     public static void main(String[] args) {
         Car car = new Car();
 

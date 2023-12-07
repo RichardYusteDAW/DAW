@@ -1,12 +1,14 @@
-/*Elimina el método que muestra por pantalla el listado de coches. 
-En su lugar, añade el método toString() a Flota para devolver una cadena con el listado de coches que tiene la flota.
- */
+/*
+Modifica el método que muestra el coche asignado para que muestre la frase:
+“{nombre} no tiene asignado ningún coche” 
+si ese conductor no tiene asignado ningún coche.
+*/
 package ejercicios.Unidad8_Objetos.Visibilidad;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_5b {
+public class U8_09 {
     public static void main(String[] args) {
         Car car1 = new Car("Ford", "Smax", "Azul", 11111);
         Car car2 = new Car("Seat", "Ibiza", "Rojo", 22222);
@@ -18,8 +20,24 @@ public class U8_5b {
         fleet.addCar(car3);
         System.out.println(fleet);
 
-        fleet.removeCar(33333);
+        int chassisNumber = 44444;
+        if (fleet.removeCar(chassisNumber)) {
+            System.out.println("Se ha eliminado el coche con número de bastidor: " + chassisNumber);
+        } else {
+            System.out.println("No existe ningún coche con número de bastidor " + chassisNumber);
+        }
         System.out.println(fleet);
+
+        Driver driver1 = new Driver("Juan");
+        driver1.assignedCar(11111, fleet);
+        driver1.showAssignedCar();
+
+        Driver driver2 = new Driver("Pepe");
+        driver2.assignedCar(22222, fleet);
+        driver2.showAssignedCar();
+
+        Driver driver3 = new Driver("Paco");
+        driver3.showAssignedCar();
     }
 }
 
@@ -81,6 +99,11 @@ public class Car {
     public void reduceSpeed(int decrement) {
         speed -= decrement;
     }
+
+    @Override
+    public String toString() {
+        return String.format("es un %s %s de color %s con número de bastidor %d", brand, model, color, chassisNumber);
+    }
 }
 
 public class Fleet {
@@ -90,12 +113,15 @@ public class Fleet {
         cars.add(car);
     }
 
-    public void removeCar(int chassisNumber) {
+    public boolean removeCar(int chassisNumber) {
+        int foundCars = 0;
         for (int i = 0; i < cars.size(); i++) {
             if (chassisNumber == cars.get(i).getChassisNumber()) {
                 cars.remove(cars.get(i));
+                foundCars++;
             }
         }
+        return (foundCars == 0) ? false : true;
     }
 
     @Override
@@ -103,9 +129,42 @@ public class Fleet {
         StringBuilder builder = new StringBuilder();
         for (Car car : cars) {
             builder.append(String.format("El car %s %s es de color %s con número de bastidor %d\n", car.getBrand(),
-                    car.getModel(), car.getModel(), car.getChassisNumber()));
+                    car.getModel(), car.getColor(), car.getChassisNumber()));
         }
         return builder.toString();
     }
 
+    public Car searchCar(int chassisNumber) {
+        for (Car car : cars) {
+            if (car.getChassisNumber() == chassisNumber) {
+                return car;
+            }
+        }
+        return null;
+    }
+}
+
+public class Driver {
+    private String name;
+    private Car assignedCar;
+
+    Driver(String name) {
+        this.name = name;
+    }
+
+    public void assignedCar(int chassisNumber, Fleet fleet) {
+        if (fleet.searchCar(chassisNumber) != null) {
+            assignedCar = fleet.searchCar(chassisNumber);
+        } else {
+            assignedCar = null;
+        }
+    }
+
+    public void showAssignedCar() {
+        if (assignedCar == null) {
+            System.out.println(String.format("%s no tiene asignado ningún coche", name));
+        } else {
+            System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
+        }
+    }
 }

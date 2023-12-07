@@ -1,12 +1,19 @@
-/*Elimina el método que muestra por pantalla el listado de coches. 
-En su lugar, añade el método toString() a Flota para devolver una cadena con el listado de coches que tiene la flota.
- */
+/*
+Crea una nueva clase llamada Flota. 
+Esta clase tendrá una propiedad que será un listado de coches. 
+Crea un método para añadir un coche al listado y otro para eliminarlo. 
+Al primer método se le pasará un objeto de tipo Coche y al segundo un número de bastidor.
+
+Crea un último método que muestre por pantalla el listado de coches de la flota.
+
+Añade 3 coches diferentes, muestra el listado, elimina uno de los coches y vuelve a mostrar el listado de coches que quedan en la flota. 
+*/
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_5b {
+public class U8_05 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -31,10 +38,10 @@ public class U8_5b {
         fleet.addCar(car1);
         fleet.addCar(car2);
         fleet.addCar(car3);
-        System.out.println(fleet);
+        fleet.showCars();
 
         fleet.removeCar(33333);
-        System.out.println(fleet);
+        fleet.showCars();
     }
 }
 
@@ -49,6 +56,12 @@ public class Car {
     public void reduceSpeed(int decrement) {
         speed -= decrement;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Mi coche es un %s %s de color %s con número de bastidor %d", brand, model, color,
+                chassisNumber);
+    }
 }
 
 public class Fleet {
@@ -60,20 +73,17 @@ public class Fleet {
 
     public void removeCar(int chassisNumber) {
         for (int i = 0; i < cars.size(); i++) {
-            if (chassisNumber == cars.get(i).chassisNumber) {
-                cars.remove(cars.get(i));
+            Car car = cars.get(i);
+            if (chassisNumber == car.chassisNumber) {
+                cars.remove(car);
             }
         }
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
+    public void showCars() {
         for (Car car : cars) {
-            builder.append(String.format("El car %s %s es de color %s con número de bastidor %d\n", car.brand,
-                    car.model, car.color, car.chassisNumber));
+            System.out.println(car); // Se podría poner así: System.out.println(car.toString());
         }
-        return builder.toString();
     }
 
 }

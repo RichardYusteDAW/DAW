@@ -13,7 +13,7 @@ package ejercicios.Unidad8_Objetos.Visibilidad;
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_5 {
+public class U8_05 {
     public static void main(String[] args) {
         Car car1 = new Car("Ford", "Smax", "Azul", 11111);
         Car car2 = new Car("Seat", "Ibiza", "Rojo", 22222);

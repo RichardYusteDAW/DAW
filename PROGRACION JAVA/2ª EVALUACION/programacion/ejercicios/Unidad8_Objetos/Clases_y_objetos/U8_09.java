@@ -1,23 +1,14 @@
 /*
-Crea una nueva clase llamada Conductor. 
-Esta clase tendrá como atributos String nombre, el nombre del conductor, y Coche asignado, el coche que ha sido asignado al conductor.
-
-Crea un método donde se le pasará un numero de bastidor y una flota de vehículos. 
-El método comprobará que el coche con ese número de bastidor existe en esa flota y se lo asignará al conductor. 
-Para buscar el coche en la flota, crea un método nuevo en la clase Flota que recibirá un número de bastidor 
-y devolverá el objeto coche si lo encuentra o null en caso contrario.
-
-Crea otro método que muestre el coche asignado al conductor con la frase:
-“Coche asignado a {nombre}: {coche}”.
-En tu clase principal, crea 2 conductores, asígnale uno de los coches a uno de los conductores 
-y muestra por pantalla el coche asignado al conductor.
+Modifica el método que muestra el coche asignado para que muestre la frase:
+“{nombre} no tiene asignado ningún coche” 
+si ese conductor no tiene asignado ningún coche.
 */
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_8 {
+public class U8_09 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();
@@ -62,6 +53,9 @@ public class U8_8 {
         driver2.assignedCar(22222, fleet);
         driver2.showAssignedCar();
 
+        Driver driver3 = new Driver();
+        driver3.name = "Paco";
+        driver3.showAssignedCar();
     }
 }
 
@@ -128,10 +122,16 @@ public class Driver {
     public void assignedCar(int chassisNumber, Fleet fleet) {
         if (fleet.searchCar(chassisNumber) != null) {
             assignedCar = fleet.searchCar(chassisNumber);
+        } else {
+            assignedCar = null;
         }
     }
 
     public void showAssignedCar() {
-        System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
+        if (assignedCar == null) {
+            System.out.println(String.format("%s no tiene asignado ningún coche", name));
+        } else {
+            System.out.println(String.format("Coche asignado a %s %s", name, assignedCar.toString()));
+        }
     }
 }

@@ -10,7 +10,7 @@ package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 import java.util.ArrayList;
 import java.util.List;
 
-public class U8_7 {
+public class U8_07 {
     public static void main(String[] args) {
         Car car1 = new Car();
         Car car2 = new Car();

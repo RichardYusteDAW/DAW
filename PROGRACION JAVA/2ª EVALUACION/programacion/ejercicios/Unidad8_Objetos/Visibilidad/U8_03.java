@@ -1,17 +1,10 @@
 /*
-Crea un nuevo proyecto Java.
-Además de la clase principal (puedes llamarla Main o App),
-crea una nueva clase llamada Coche con los atributos marca, modelo, color, numeroBastidor y velocidad.
-Los 3 primeros serán String y los dos últimos de tipo int. La velocidad inicial será de 0.
-
-En la clase principal, crea un nuevo coche, asígnale valores a sus atributos y muestra por pantalla la frase:
-“Mi coche es un {marca} {modelo} de color {color} con número de bastidor {numeroBastidor}”,
-sustituyendo las variables encerradas entre llaves por los valores que le hayas dado a las propiedades al crear el coche.
- */
+Crea dos métodos en la clase Coche que permitan aumentar o reducir la velocidad del coche en 5. 
+Utiliza ambos métodos por pantalla y muestra la velocidad para comprobar que funcionan correctamente. 
+*/
 package ejercicios.Unidad8_Objetos.Visibilidad;
 
-public class U8_1 {
-
+public class U8_03 {
     public static void main(String[] args) {
         Car car = new Car();
 
@@ -21,8 +14,10 @@ public class U8_1 {
         car.setChassisNumber(1234567890);
         car.setSpeed(50);
 
-        System.out.printf("Mi coche es un %s %s de color %s con número de bastidor %d", car.getBrand(), car.getModel(),
-                car.getColor(), car.getChassisNumber());
+        car.increaseSpeed();
+        System.out.println("La velocidad del coche es " + car.getSpeed());
+        car.reduceSpeed();
+        System.out.println("La velocidad del coche es " + car.getSpeed());
 
     }
 }
@@ -71,4 +66,11 @@ public class Car {
         this.speed = speed;
     }
 
+    public void increaseSpeed() {
+        speed += 5;
+    }
+
+    public void reduceSpeed() {
+        speed -= 5;
+    }
 }

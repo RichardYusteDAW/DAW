@@ -1,15 +1,12 @@
-/*
-Modifica el método eliminarCoche() anterior para que devuelva false en caso de no encontrar el coche con ese número de bastidor en la flota. 
-A la hora de eliminar un coche desde la clase principal, muestra por pantalla la frase:
-“No se encuentra el coche en la flota” si no existe un coche con ese número de bastidor.
-*/
+/*Elimina el método que muestra por pantalla el listado de coches. 
+En su lugar, añade el método toString() a Flota para devolver una cadena con el listado de coches que tiene la flota.
+ */
 package ejercicios.Unidad8_Objetos.Visibilidad;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class U8_6 {
+public class U8_05b {
     public static void main(String[] args) {
         Car car1 = new Car("Ford", "Smax", "Azul", 11111);
         Car car2 = new Car("Seat", "Ibiza", "Rojo", 22222);
@@ -21,17 +18,8 @@ public class U8_6 {
         fleet.addCar(car3);
         System.out.println(fleet);
 
-        Scanner in = new Scanner(System.in);
-        System.out.print("Dime el número de bastidor: ");
-        int chassisNumber = in.nextInt();
-        if (fleet.removeCar(chassisNumber)) {
-            System.out.println("Se ha eliminado el coche con número de bastidor: " + chassisNumber);
-        } else {
-            System.out.println("No existe ningún coche con número de bastidor " + chassisNumber);
-        }
+        fleet.removeCar(33333);
         System.out.println(fleet);
-
-        in.close();
     }
 }
 
@@ -102,15 +90,12 @@ public class Fleet {
         cars.add(car);
     }
 
-    public boolean removeCar(int chassisNumber) {
-        int foundCars = 0;
+    public void removeCar(int chassisNumber) {
         for (int i = 0; i < cars.size(); i++) {
             if (chassisNumber == cars.get(i).getChassisNumber()) {
                 cars.remove(cars.get(i));
-                foundCars++;
             }
         }
-        return (foundCars == 0) ? false : true;
     }
 
     @Override
@@ -118,7 +103,7 @@ public class Fleet {
         StringBuilder builder = new StringBuilder();
         for (Car car : cars) {
             builder.append(String.format("El car %s %s es de color %s con número de bastidor %d\n", car.getBrand(),
-                    car.getModel(), car.getColor(), car.getChassisNumber()));
+                    car.getModel(), car.getModel(), car.getChassisNumber()));
         }
         return builder.toString();
     }

@@ -1,7 +1,7 @@
 /*Modifica los métodos anteriores para que se le pueda pasar la velocidad como parámetro y no sea fija de 5.*/
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
-public class U8_4 {
+public class U8_04 {
     public static void main(String[] args) {
         Car car = new Car();
 

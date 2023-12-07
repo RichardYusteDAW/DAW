@@ -10,7 +10,7 @@ sustituyendo las variables encerradas entre llaves por los valores que le hayas 
  */
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
-public class U8_1 {
+public class U8_01 {
 
     public static void main(String[] args) {
         Car car = new Car();

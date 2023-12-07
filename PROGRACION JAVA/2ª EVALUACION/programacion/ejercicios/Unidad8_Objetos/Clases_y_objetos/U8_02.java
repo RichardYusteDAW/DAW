@@ -5,7 +5,7 @@ Crea en la clase Coche un método llamado toString() que devuelva la frase:
 */
 package ejercicios.Unidad8_Objetos.Clases_y_objetos;
 
-public class U8_2 {
+public class U8_02 {
     public static void main(String[] args) {
         Car car = new Car();
 

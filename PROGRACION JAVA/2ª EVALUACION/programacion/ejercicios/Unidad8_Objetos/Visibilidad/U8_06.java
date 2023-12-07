@@ -3,32 +3,17 @@ Modifica el método eliminarCoche() anterior para que devuelva false en caso de 
 A la hora de eliminar un coche desde la clase principal, muestra por pantalla la frase:
 “No se encuentra el coche en la flota” si no existe un coche con ese número de bastidor.
 */
-package ejercicios.Unidad8_Objetos.Clases_y_objetos;
+package ejercicios.Unidad8_Objetos.Visibilidad;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class U8_6 {
+public class U8_06 {
     public static void main(String[] args) {
-        Car car1 = new Car();
-        Car car2 = new Car();
-        Car car3 = new Car();
-
-        car1.brand = "Ford";
-        car1.model = "Smax";
-        car1.color = "Azul";
-        car1.chassisNumber = 11111;
-
-        car2.brand = "Seat";
-        car2.model = "Ibiza";
-        car2.color = "Rojo";
-        car2.chassisNumber = 22222;
-
-        car3.brand = "Ford";
-        car3.model = "Smax";
-        car3.color = "Azul";
-        car3.chassisNumber = 33333;
+        Car car1 = new Car("Ford", "Smax", "Azul", 11111);
+        Car car2 = new Car("Seat", "Ibiza", "Rojo", 22222);
+        Car car3 = new Car("Ford", "Smax", "Azul", 33333);
 
         Fleet fleet = new Fleet();
         fleet.addCar(car1);
@@ -51,8 +36,55 @@ public class U8_6 {
 }
 
 public class Car {
-    public String brand, model, color;
-    public int chassisNumber, speed = 0;
+    private String brand, model, color;
+    private int chassisNumber, speed = 0;
+
+    Car(String brand, String model, String color, int chassisNumber) {
+        this.brand = brand;
+        this.model = model;
+        this.color = color;
+        this.chassisNumber = chassisNumber;
+    }
+
+    public String getBrand() {
+        return this.brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return this.model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getChassisNumber() {
+        return this.chassisNumber;
+    }
+
+    public void setChassisNumber(int chassisNumber) {
+        this.chassisNumber = chassisNumber;
+    }
+
+    public int getSpeed() {
+        return this.speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
     public void increaseSpeed(int increase) {
         speed += increase;
@@ -64,7 +96,7 @@ public class Car {
 }
 
 public class Fleet {
-    public List<Car> cars = new ArrayList<>();
+    private List<Car> cars = new ArrayList<>();
 
     public void addCar(Car car) {
         cars.add(car);
@@ -73,7 +105,7 @@ public class Fleet {
     public boolean removeCar(int chassisNumber) {
         int foundCars = 0;
         for (int i = 0; i < cars.size(); i++) {
-            if (chassisNumber == cars.get(i).chassisNumber) {
+            if (chassisNumber == cars.get(i).getChassisNumber()) {
                 cars.remove(cars.get(i));
                 foundCars++;
             }
@@ -85,8 +117,8 @@ public class Fleet {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Car car : cars) {
-            builder.append(String.format("El car %s %s es de color %s con número de bastidor %d\n", car.brand,
-                    car.model, car.color, car.chassisNumber));
+            builder.append(String.format("El car %s %s es de color %s con número de bastidor %d\n", car.getBrand(),
+                    car.getModel(), car.getColor(), car.getChassisNumber()));
         }
         return builder.toString();
     }

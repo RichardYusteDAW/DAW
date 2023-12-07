@@ -1,10 +1,7 @@
-/*
-Crea dos métodos en la clase Coche que permitan aumentar o reducir la velocidad del coche en 5. 
-Utiliza ambos métodos por pantalla y muestra la velocidad para comprobar que funcionan correctamente. 
-*/
+/*Modifica los métodos anteriores para que se le pueda pasar la velocidad como parámetro y no sea fija de 5.*/
 package ejercicios.Unidad8_Objetos.Visibilidad;
 
-public class U8_3 {
+public class U8_04 {
     public static void main(String[] args) {
         Car car = new Car();
 
@@ -14,9 +11,9 @@ public class U8_3 {
         car.setChassisNumber(1234567890);
         car.setSpeed(50);
 
-        car.increaseSpeed();
+        car.increaseSpeed(10);
         System.out.println("La velocidad del coche es " + car.getSpeed());
-        car.reduceSpeed();
+        car.reduceSpeed(20);
         System.out.println("La velocidad del coche es " + car.getSpeed());
 
     }
@@ -66,11 +63,11 @@ public class Car {
         this.speed = speed;
     }
 
-    public void increaseSpeed() {
-        speed += 5;
+    public void increaseSpeed(int increase) {
+        speed += increase;
     }
 
-    public void reduceSpeed() {
-        speed -= 5;
+    public void reduceSpeed(int decrement) {
+        speed -= decrement;
     }
 }
