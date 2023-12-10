@@ -107,6 +107,7 @@ nextDouble()	//Igual con valores de tipo double.
 //14º OPERADORES LOGICOS:
 &&	AND lógico.
 ||	OR lógico.
+!	NOT lógico.
 
 //15º METODOS DE LA CLASE STRING:
 .length()						//Devuelve la cantidad de caracteres cadena.
@@ -244,7 +245,7 @@ for (int i = 1; i<10; i++) {
 	.add(index,element)		//Inserta un elemento (element) en la lista en una posición concreta (index), desplazando los existentes. Si le pasamos solo el elemento (element) la inserción la hará al final de la lista.
 	.remove(index)			//Elimina un elemento indicando su posición (index) en la lista.
 	.addAll(index,lista)	//Inserta una colección pasada por parámetro en una posición de la lista, desplazando el resto de elementos.
-	.indexOf(index)			//Devuelve la posición (índice) de un elemento en la lista o -1 si el elemento no está en la lista.
+	.indexOf(element)		//Devuelve la posición (índice) de un elemento en la lista o -1 si el elemento no está en la lista.
 	.lastIndexOf(index)		//Devuelve la última ocurrencia del objeto en la lista (dado que la lista si puede almacenar duplicados) o -1 si el elemento no está en la lista.
 	
 	
