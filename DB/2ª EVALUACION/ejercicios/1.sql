@@ -12,3 +12,9 @@ create table tratamiento(
     foreign key (id_balneario) references balneario(id_balneario)
 );
 
+SELECT * from balneario;
+SELECT * from tratamiento;
+
+insert into balneario(nombre) values ('Balneario de Archena');
+
+insert into tratamiento(id_balneario, nombre, coste) values (1, 'Hielo',10);
