@@ -24,6 +24,7 @@ git config --local user.name "Richard"
 git config --local user.mail richybtc@hotmail.com
 git config --local --list
 
+
 #WORKING DIR >>>>> STAGING AREA >>>>> REPOSITORIO LOCAL:
 .git/			#Directorio que contiene el Repositorio Local.
 .gitignore		#Archivo que especifica qué archivos queremos que Git ignore.
@@ -43,7 +44,12 @@ git diff <file>					#Muestra los cambios realizados en el archivo.
 git diff --staged				#Muestra los cambios realizados en el STAGING.
 git diff <ref>					#Muestra los cambios realizados en un commit o etiqueta.
 
-git reset --hard <commit>		#Elmina todos los commits posteriores.
+git reset --soft <commit>		#Elmina todos los commits posteriores y los cambios se conservan en el STAGING AREA.
+git reset --mixed <commit>		#Elmina todos los commits posteriores y los cambios se conservan en el WORKING DIRECTORY.
+git reset --hard <commit>		#Elmina todos los commits posteriores y NO conserva los cambios.
+--keep							#No permite realizar el reset en caso de conflicto.
+
+git commit --amend				#Arregla el último commit. (-m para crear un mensaje nuevo)
 
 git revert <commit>				#Revierte los cambios de un commit creando uno nuevo.
 git revert --continue			#Continua con el revert tras resolver los conflictos.
@@ -62,36 +68,33 @@ git revert -n HEAD~3..HEAD		#Revertirá un rango de commit (desde el HEAD 3 haci
 			ssh-add /c/Users/Student/.ssh/id_rsa -f ruta/nombre
 	
 	#Subir y descargar código:
-	git push origin master		#Subir. (con la opción -f --force fuerzas la subida).
-	git pull origin master		#Descargar.
-	git fetch origin master		#Obtiene los cambios del repo remoto pero no actualiza.
+	git push origin main		#Subir. (con la opción -f --force fuerzas la subida).
+	git pull origin main		#Descargar.
+	git fetch origin main		#Obtiene los cambios del repo remoto pero no actualiza.
+
 	
-	#Ramas:
-	git branch ramaNew			#Creamos una rama nueva.
-	git branch -a				#Lista todas las ramas.
-	git branch -m ramaNew2		#Renombra la rama, pero no copia los commits.
-	git branch -M ramaNew2		#Mueve/renombra la rama, junto con su configuración y reflog.
-	
-	git checkout ramaNew		#Nos cambiamos de rama.
-	git switch ramaNew			#Nos cambiamos de rama.
-	git checkout -b ramaNew		#Crea una rama nueva y nos cambiamos a ella.
-	
-	git push -u origin ramaNew	#Publica la rama nueva (--set-upstream).
-	git branch -d ramaNew		#Elimina la rama en local.
-	git push origin -d ramaNew	#Elimina la rama en remoto.
-	git branch -f main			#Fuerza a crear la rama main en el commit en el que estás.
-	
-	git merge ramaNew			#Une el codigo de la nueva rama a la master.
-	git merge --abort			#Aborta la fusión en caso de conflictos.
-	git branch --merged			#Lista todas las ramas x unir.
-	git rebase ramaOld			#Rebasa la rama indicada.
-	git rebase --abort			#Aborta el rebase en caso de conflictos.
-	
-	#Publicar en la rama :
-	git pull origin master		#Descargamos el codigo de la master.
-	git push origin master		#Publica en remoto los nuevos cambios.
-	
-	
+#Ramas:
+git branch ramaNew			#Creamos una rama nueva.
+git branch -a				#Lista todas las ramas.
+git branch -m ramaNew2		#Renombra la rama, pero si existe una rama con ese nombre avisará.
+git branch -M ramaNew2		#Renombra la rama, pero si existe una rama con ese nombre la sobrescribirá (git branch -m -f).
+
+git checkout ramaNew		#Nos cambiamos de rama.
+git switch ramaNew			#Nos cambiamos de rama.
+git checkout -b ramaNew		#Crea una rama nueva y nos cambiamos a ella.
+
+git push -u origin ramaNew	#Publica la rama nueva (--set-upstream).
+git branch -d ramaNew		#Elimina la rama en local.
+git push origin -d ramaNew	#Elimina la rama en remoto.
+
+git merge ramaNew			#Une el codigo de la nueva rama a la main.
+git merge --abort			#Aborta la fusión en caso de conflictos.
+git branch --merged			#Lista todas las ramas x unir.
+git rebase ramaOld			#Rebasa la rama indicada.
+git rebase --abort			#Aborta el rebase en caso de conflictos.
+--continue					#Para continuar con el commit o con rebase en caso de conflictos.
+
+
 #Etiquetas:
 git tag							#Muestra todas las etiquetas.
 git tag -l "Inici*"				#Muestra todas las etiquetas que empiecen por Inici.
@@ -108,6 +111,7 @@ git push origin --delete tag	#Elimina la etiqueta del remoto.
 git push origin tag				#Publica una etiqueta en el remoto.
 git push --tags					#Publica todas las etiquetas en el remoto.
 
+
 #Stash:
 git stash list					#Muestra todos los stash (stash@{0},stash@{1},stash@{2})
 git stash						#Guarda el working directory en el stash.
@@ -115,6 +119,7 @@ git stash show	[index]			#Muestra los cambios guardados. Con -p muestra todos lo
 git stash apply	[index]			#Recupera los cambios.
 git stash pop [index]			#Recupera los cambios y los elimina del stash.
 git stash drop [index]			#Elimina el stash.
+
 
 #Reflog:
 git reflog			#Lista todos los reflogs
