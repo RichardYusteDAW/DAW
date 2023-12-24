@@ -17,15 +17,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static String blue = "\u001B[34m";
-    private static String red = "\u001B[31m";
-    private static String resetColor = "\u001B[0m";
-
     private static Scanner sc = new Scanner(System.in);
     private static int op;
     private static String menu = "1. Mostrar todos los productos\n" +
             "2. Mostrar ropa\n" +
             "3. Mostrar libros\n" +
+            "4. Mostrar ordenadores\n" +
             "0. Salir\n" +
             "Selecciona una opción: ";
 
@@ -34,8 +31,10 @@ public class Main {
 
         Books book1 = new Books(1, 10, "Cervantes", "El Quijote");
         Clothes clothes1 = new Clothes(2, 20, "Pantalón", "M", "Azul");
+        Computer computer1 = new Computer(3, 30, new Memory(8), new CPU("Intel", 3), new HD("SSD", 500));
         products.add(book1);
         products.add(clothes1);
+        products.add(computer1);
 
         do {
             System.out.print(menu);
@@ -49,6 +48,9 @@ public class Main {
                     break;
                 case 3:
                     showProducts(products, "books");
+                    break;
+                case 4:
+                    showProducts(products, "computers");
                     break;
                 case 0:
                     System.out.println("Adiós");
@@ -65,7 +67,8 @@ public class Main {
     private static void showProducts(List<Product> products, String type) {
         for (Product product : products) {
             if ("all".equals(type) || ("books".equals(type) && product instanceof Books)
-                    || ("clothes".equals(type) && product instanceof Clothes)) {
+                    || ("clothes".equals(type) && product instanceof Clothes)
+                    || ("computers".equals(type) && product instanceof Computer)) {
                 System.out.println(product);
             }
         }

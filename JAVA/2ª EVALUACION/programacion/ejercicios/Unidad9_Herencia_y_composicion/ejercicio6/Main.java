@@ -9,10 +9,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static String blue = "\u001B[34m";
-    private static String red = "\u001B[31m";
-    private static String resetColor = "\u001B[0m";
-
     private static Scanner sc = new Scanner(System.in);
     private static int op;
     private static String menu = "1. Mostrar todos los productos\n" +
