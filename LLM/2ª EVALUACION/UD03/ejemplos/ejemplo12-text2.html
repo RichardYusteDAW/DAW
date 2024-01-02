@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atributos Text 2</title>
+    <style>
+        p { 
+            text-align: justify; 
+        } 
+        p.medidaAbsoluta { 
+            text-indent: 20px; 
+        } 
+        p.medidaPorcentual { 
+            text-indent: 10%; 
+        }
+        
+        
+        div.testEllipsis { 
+            white-space: nowrap; 
+            width: 12em; 
+            overflow: hidden; 
+            border: 1px solid #000000; 
+            text-overflow:ellipsis; 
+        }
+        div.testClip { 
+            white-space: nowrap; 
+            width: 12em; 
+            overflow: hidden; 
+            border: 1px solid #000000; 
+            text-overflow:clip; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <p class='medidaAbsoluta'>Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca.</p>
+    
+    <p class='medidaPorcentual'>Así que, no debes congojar- te por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas. Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro.</p>
+   
+    <div class='testEllipsis'>Ejemplo de texto cortado con text-overflow:ellipsis</div> 
+    <br> 
+    <div class='testClip'>Ejemplo de texto cortado con text- overflow:clip</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>first child</title>
+    <style>
+        /* p:first-child {
+            background-color: #3ba1a6;
+        } */
+
+
+        p:last-child {
+            background-color: #f2a473;
+        }
+    </style>
+</head>
+
+<body>
+    <p>A este párrafo SI le afecta puesto que es hijo del nodo padre body</p>
+    <h1>Bienvenido a mi web</h1>
+    <p>A este párrafo NO le afecta puesto que h1 no tiene item considerados como hijos.</p>
+    <div>
+        <a href=”#”>Vínculo</a>
+        <p>A este párrafo NO le afecta puesto que el primer nodo hijo dentro del div es un vínculo con ‘a’</p>
+    </div>
+    <div>
+        <p>A este párrafo SI le afecta</p>
+        <p>A este párrafo NO le afecta</p>
+    </div>
+</body>
+
+</html>

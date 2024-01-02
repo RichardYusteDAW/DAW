@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nth-of-type</title>
+    <style>
+        /* p:nth-of-type(3) {
+            font-size: 2em;
+        } */
+
+
+        /* p:nth-last-of-type(3) {
+            font-size: 3em;
+        } */
+
+
+        /* p:first-of-type {
+            background: #00a5a7;
+        } */
+
+
+        /* p:last-of-type {
+            background: #f5ce90;
+        } */
+
+
+        p:only-of-type {
+            background: #00a5a7;
+        }
+    </style>
+</head>
+
+<!-- <body>
+    <p>El primer párrafo.</p>
+    <p>El segundo párrafo.</p>
+    <p>El tercer párrafo.</p>
+    <p>El cuarto párrafo.</p>
+</bod> -->
+
+<!-- FIRST Y LAST OF TYPE -->
+
+<!-- <body> 
+    <h1>Web de ejemplos</h1> 
+    <p>Primer párrafo dentro de body. SI le afecta</p> 
+    <p>Segundo párrafo dentro de body. No le afecta</p> 
+    <p>Tercer párrafo dentro de body. No le afecta.</p> 
+    <p>Cuarto párrafo dentro de body. No le afecta.</p> 
+    <div> 
+        <p>Primer párrafo dentro de div. SI le afecta</p> 
+        <p>Segundo párrafo dentro de div. NO le afecta</p> 
+    </div> 
+</bod> -->
+
+<!-- ONLY OF TYPE -->
+
+<body>
+    <div>
+        <p>Unico item de tipo p dentro del div.</p>
+        <a href=’www.google.es ’>Enlace a google. No afecta a lo anterior ya que no es un párrafo</a>
+    </div>
+    <div>
+        <p>Hay dos párrafos, luego no afecta.</p>
+        <p>Segundo párrafo.</p>
+    </div>
+    <p>Unico párrafo dentro del body. Si afecta</p>
+</body>
+
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selector padre-hijo</title>
+    <style>
+        div>span {
+            background-color: #9812ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Título de ejemplo</h1>
+        <span> A este SI afectaría</span>
+    </div>
+    <span> A este NO afectaría</span>
+    <div>
+        <p><span>A este NO afectaría</span></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<style>
+    #cabecera{
+        width: 100%;
+        height: 500px;
+    }
+    #video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -10;
+        visibility: visible;
+    }
+    h2{
+        color:white;
+        text-shadow: 4px 4px 4px #333;
+        text-align: center;
+        margin-top: 200px;
+    }
+    </style>  
+</head>
+<body>
+<div id="cabecera">
+    <video id="video" loop autoplay>
+       <source src="media/szene42.mp4" type="video/mp4">
+    </video>
+<h2>Texto que aparece en la imagen</h2>
+</div>
+<h4>Texto de la web</h4>
+</body>
+</html>

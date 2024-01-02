@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>seudo-elementos css</title>
+    <style>
+        p#uno::first-line {
+            font-size: 2em;
+        }
+
+        p#dos::first-letter {
+            font-size: 2em;
+        }
+
+        p#tres::before {
+            content: 'Importante:';
+        }
+
+        p#cuatro::after {
+            content: '-Gabriel García Márquez-';
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="uno"> Una mañana, tras un sueño intranquilo, Gregorio Samsa se despertó convertido en un monstruoso insecto.
+        Estaba echa- do de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro,
+        surcado por cur- vadas callosidades, sobre el que casi no se aguantaba la colcha, que estaba a punto de
+        escurrirse hasta el suelo. Numerosas patas, penosamente delgadas en comparación con el grosor normal de sus
+        piernas, se agitaban sin concier- to. - ¿Qué me ha ocurrido? No estaba soñando.</p>
+
+    <p id="dos"> Una mañana, tras un sueño intranquilo, Gregorio Samsa se despertó convertido en un monstruoso insecto.
+        Estaba echado de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro,
+        surcado por curvadas callosidades, sobre el que casi no se aguanta- ba la colcha, que estaba a punto de
+        escurrirse hasta el suelo. Numerosas patas, penosamente delgadas en compa- ración con el grosor normal de sus
+        piernas, se agitaban sin concierto. - ¿Qué me ha ocurrido? No estaba soñando.</p>
+
+    <p id="tres"> El seudo-elemento ::before no está disponible en Internet Explorer 7 </p>
+
+    <p id="cuatro"> «En cualquier lugar que estuvieran, recordaran siempre que el pasado era mentira, que la memoria no
+        tenía caminos de regreso, que toda primavera antigua era irrecuperable, y que el amor más desatinado y tenaz era
+        de todos modos una verdad efímera».</p>
+
+</body>
+
+</html>

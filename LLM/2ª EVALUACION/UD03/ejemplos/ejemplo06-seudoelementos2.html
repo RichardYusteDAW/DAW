@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>seudo-elementos css</title>
+    <style>
+        input:focus {
+            background-color: #2fa700;
+        }
+
+        input:active {
+            background-color: orange;
+        }
+
+        :target {
+            background-color: #00a5a7;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        Nombre: <input type="text" name="firstname"><br>
+        Apellidos: <input type="text" name="lastname">
+    </form>
+
+    <a href="#seccion1">Ir a sección 1</a>
+    <a href="#seccion2">Ir a sección 2</a>
+    <a href="#seccion3">Ir a sección 3</a>
+
+    <div id="seccion1">Sección 1</div>
+    <div id="seccion2">Sección 1</div>
+    <div id="seccion3">Sección 1</div>
+
+</body>
+
+</html>
