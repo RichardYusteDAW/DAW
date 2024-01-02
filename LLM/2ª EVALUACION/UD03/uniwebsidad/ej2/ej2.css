@@ -1,0 +1,56 @@
+/*Bordes de la tabla */
+table,
+tr,
+th,
+td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+/*Elementos de color turquesa */
+h1 {
+    color: teal;
+}
+
+/*Elementos de color azul */
+h2,
+em,
+caption {
+    color: blue;
+}
+
+/*Elementos de color rojo */
+strong,
+a,
+th {
+    color: red;
+}
+
+/*Elementos de color naranja */
+span.destacado,
+th.especial,
+td strong {
+    color: orange;
+}
+
+/*Elementos de color morado */
+span.especial {
+    color: purple;
+}
+
+/*Elementos de color oliva */
+div#adicional p {
+    color: olive;
+}
+
+/*Elementos de color fucsia */
+span#especial {
+    color: fuchsia;
+}
+
+/*Elementos de color verde */
+div#adicional a,
+td {
+    color: green;
+}
