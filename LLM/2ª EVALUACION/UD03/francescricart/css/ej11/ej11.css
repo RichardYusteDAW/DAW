@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@font-face {
+    src: url('fonts/Akronim/Akronim-Regular.ttf');
+    font-family: Akronim;
+}
+
+p#primero {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p#segundo {
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+p#tercero {
+    font-family: FreeMono, monospace;
+}
+
+p#cuarto {
+    font-family: Roboto;
+}
+
+p#quinto {
+    font-family: Akronim;
+    font-size: 24px;
+}
+
+p#sexto {
+    font-family: Montserrat;
+}

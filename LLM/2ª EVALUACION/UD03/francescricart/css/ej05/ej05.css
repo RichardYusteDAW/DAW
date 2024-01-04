@@ -1,0 +1,41 @@
+p.u {
+    text-decoration: underline;
+}
+
+p.i {
+    font-style: italic;
+}
+
+p.b {
+    font-weight: bold;
+}
+
+p.s {
+    text-decoration: line-through;
+}
+
+p.blockquote {
+    margin-left: 2em;
+}
+
+p.center {
+    text-align: center;
+}
+
+p.cite {
+    font-style: oblique;
+}
+
+p span.sup {
+    font-size: .8em;
+    vertical-align: super;
+}
+
+p span.sub {
+    font-size: .8em;
+    vertical-align: sub;
+}
+
+p.code {
+    font-family: 'Courier New', Courier, monospace;
+}

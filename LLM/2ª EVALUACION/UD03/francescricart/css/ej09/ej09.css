@@ -1,0 +1,55 @@
+div#contenedor {
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+div[class *="color-"] {
+    width: 100%;
+    height: 10%;
+    box-sizing: border-box;
+    border: 1px solid #000000;
+}
+
+div.color-1 {
+    background-color: rgba(255, 0, 100, 1);
+    border-radius: 10px 10px 0 0;
+}
+
+div.color-2 {
+    background-color: rgba(255, 0, 100, 0.9);
+}
+
+div.color-3 {
+    background-color: rgba(255, 0, 100, 0.8);
+}
+
+div.color-4 {
+    background-color: rgba(255, 0, 100, 0.7);
+}
+
+div.color-5 {
+    background-color: rgba(255, 0, 100, 0.6);
+}
+
+div.color-6 {
+    background-color: rgba(255, 0, 100, 0.5);
+}
+
+div.color-7 {
+    background-color: rgba(255, 0, 100, 0.4);
+}
+
+div.color-8 {
+    background-color: rgba(255, 0, 100, 0.3);
+}
+
+div.color-9 {
+    background-color: rgba(255, 0, 100, 0.2);
+}
+
+div.color-10 {
+    background-color: rgba(255, 0, 100, 0.1);
+    border-radius: 0 0 10px 10px;
+}

@@ -1,0 +1,13 @@
+p {
+    border: 1px solid red;
+}
+
+p.primero {
+    font-size: 16px;
+    margin-left: 1em;
+}
+
+p.segundo {
+    font-size: 32px;
+    margin-left: 0.5em;
+}

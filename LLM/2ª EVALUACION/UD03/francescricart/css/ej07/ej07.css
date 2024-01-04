@@ -1,0 +1,19 @@
+.rojo {
+    color: red !important;
+}
+
+p.rojo {
+    color: yellow;
+}
+
+#verde {
+    color: green;
+}
+
+#naranja {
+    color: orange;
+}
+
+.rosa {
+    color: pink;
+}
