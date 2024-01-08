@@ -24,8 +24,8 @@
 		
 		ON DELETE y ON UPDATE		--Nos permiten indicar el efecto que provoca el borrado o la actualización de los datos que están referenciados por claves ajenas.
 			RESTRICT				--Impide que se puedan actualizar o eliminar las filas que tienen valores referenciados por claves ajenas. Es la opción por defecto en MySQL.
-			CASCADE: 				--Permite actualizar o eliminar las filas que tienen valores referenciados por claves ajenas.
-			SET NULL: 				--Asigna el valor NULL a las filas que tienen valores referenciados por claves ajenas.
+			CASCADE 				--Permite actualizar o eliminar las filas que tienen valores referenciados por claves ajenas.
+			SET NULL 				--Asigna el valor NULL a las filas que tienen valores referenciados por claves ajenas.
 			NO ACTION				--Es una palabra clave del estándar SQL. En MySQL es equivalente a RESTRICT.
 	
 	--Eliminar tablas y bases de datos:
@@ -33,31 +33,48 @@
 	
 	--Modificar la estructura de las tablas existentes:
 	ALTER DATABASE nombre_base_datos CHARACTER SET utf8;
-	ALTER TABLE nombre_tabla ADD nombre_columna tipo_de_dato;
-	ALTER TABLE nombre_tabla ADD INDEX nombre_indice (columna_indexada);
-	ALTER TABLE nombre_tabla DROP COLUMN nombre_columna;
-	ALTER TABLE nombre_tabla MODIFY COLUMN nombre_columna tipo_de_dato;
+	
 	ALTER TABLE nombre_tabla RENAME TO nuevo_nombre;
+	
 	ALTER TABLE nombre_tabla RENAME COLUMN nombre_actual TO nuevo_nombre;
+	ALTER TABLE nombre_tabla ADD nombre_columna tipo_de_dato; --ADD COLUMN es lo mismo.
+	ALTER TABLE nombre_tabla MODIFY COLUMN nombre_columna tipo_de_dato;
+	ALTER TABLE nombre_tabla DROP COLUMN nombre_columna;
+	
 	ALTER TABLE nombre_tabla ADD PRIMARY KEY (pk);
 	ALTER TABLE nombre_tabla DROP PRIMARY KEY;
 	ALTER TABLE nombre_tabla ADD FOREIGN KEY (fk) REFERENCES otra_tabla(fk);
 	ALTER TABLE nombre_tabla DROP FOREIGN KEY fk;
 	
+	ALTER TABLE nombre_tabla ADD INDEX nombre_indice (columna_indexada);
+	ALTER TABLE nombre_tabla DROP INDEX nombre_indice;
 	
 	--Eliminar contenido de una tabla sin eliminar la tabla:
 	TRUNCATE TABLE nombre_de_la_tabla;
 
-/*DML (Data Manipulation Language)*/
+	--Otros:
 	USE	nombre_base_datos				--Seleccionar la base de datos.
 	SHOW {DATABASES | SCHEMAS}			--Muestra todas las bases de datos en el servidor.
 	SHOW TABLES							--Muestra todas las tablas en la base de datos actual.
 	SHOW TABLES FROM nombre_base_datos	--Muestra todas las tablas en una base de datos específica.
-	SHOW COLUMNS FROM nombre_tabla		--Muestra información sobre las columnas de una tabla específica
+	SHOW COLUMNS FROM nombre_tabla		--Muestra información sobre las columnas de una tabla específica.
+	
+	
+/*DML (Data Manipulation Language)*/
 	SELECT		--Consultar datos de la base de datos y recuperar filas de una tabla.
+	SELECT [DISTINCT] columna FROM tabla WHERE condicion GROUP BY columna [ASC | DESC] [WITH ROLLUP] HAVING condicion_groupBy ORDER BY columna [ASC | DESC] LIMIT n_filas
+	--Funciones de agregación:
+	COUNT()	SUM()	AVG()	MAX()	MIN()
+	
 	INSERT		--Insertar datos en una tabla.
+	INSERT INTO nombre_tabla (columna1, columna2, columna3, ...) VALUES (valor1, valor2, valor3, ...);
+	INSERT INTO nombre_tabla VALUES (valor1, valor2, valor3, ...);
+	
 	UPDATE		--Actualizar datos existentes dentro de una tabla.
-	DELETE		--Eliminar datos de una tabla.
+	UPDATE nombre_tabla SET columna1 = valor1, columna2 = valor2, ... WHERE condicion;
+
+	DELETE		--Eliminar filas de una tabla.
+	DELETE FROM nombre_tabla WHERE condicion;
 
 
 /*DCL (Data Control Language)*/
