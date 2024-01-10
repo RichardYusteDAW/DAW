@@ -945,7 +945,7 @@ UNLOCK TABLES;
 SELECT nombre, edad FROM ciclista WHERE edad > 20;
 
 -- EJERCICIO 2. Nombre de los ciclistas que pertenezcan a ‘Kelme’:
-SELECT nombre FROM ciclista WHERE nomeq = "Kelme";
+SELECT nombre, nomeq FROM ciclista WHERE nomeq = "Kelme";
 
 -- EJERCICIO 3. Obtener el nombre de cada puerto indicando el número (netapa) y los kilómetros de la etapa en la que se encuentra el puerto:
 SELECT nompuerto, p.netapa, km
@@ -955,13 +955,7 @@ WHERE p.netapa = e.netapa;
 -- EJERCICIO 4. Nombre de aquellos ciclistas que tengan una edad entre 25 y 30 años y que pertenezcan a los equipos Kelme y Banesto:
 SELECT nombre
 FROM ciclista
-WHERE (
-        edad BETWEEN 25 AND 30
-    )
-    AND (
-        nomeq = "Kelme"
-        OR nomeq = "Banesto"
-    );
+WHERE (edad BETWEEN 25 AND 30) AND (nomeq = "Kelme" OR nomeq = "Banesto");
 
 -- EJERCICIO 5. Obtener el nombre y el director de los equipos a los que pertenezca algún ciclista mayor de 33 años:
 SELECT nombre, director FROM equipo, ciclista WHERE edad > 33;
