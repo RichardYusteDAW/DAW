@@ -229,7 +229,7 @@ for (int i = 1; i<10; i++) {
 	.clear()			//Vacía la colección.
 	
 	//Conjuntos (No admite duplicados):
-	HashSet<Integer> conjunto = new HashSet<Integer>();
+	HashSet<Integer> conjunto = new HashSet<>();
 	Set<Integer> conjunto = new HashSet<>();
 	
 	Set<Integer> conjunto = Set.of(2, 10, 3, 23, 99);
@@ -263,3 +263,105 @@ for (int i = 1; i<10; i++) {
 	.size()					//Devuelve el número de pares clave-valor almacenado en el map.
 	.isEmpty()				//Devuelve true si el map está vacío.
 	.clear()				//Vacía el map.		
+
+
+//21º CLASES:
+	//Las clases en JAVA solo pueden ser public o package:
+	public class Clase {
+		// ...
+	}
+	
+	//Las PROPIEDADES y los MÉTODOS de las clases pueden ser public, private, package o protected:
+	public class Clase {
+		public	  int propiedad; //Es accesible desde cualquier clase.
+		private   int propiedad; //Es accesible solo desde dentro de la clase.
+		package   int propiedad; //Solo es accesible a nivel de paquete.
+		protected int propiedad; //Solo es accesible desde las clases hijas. También lo es desde la propia clase.
+		
+		public void metodo() {
+			// ...
+		}
+		
+		private void metodo() {
+			// ...
+		}
+		
+		package void metodo() {
+			// ...
+		}
+		
+		protected void metodo() {
+			// ...
+		}
+	}
+	
+	//El CONSTRUCTOR es un método que posee la clase que se iniciará al crear una nueva instancia de dicha clase:
+	public class Clase {
+		public Clase(){
+			System.out.println("Acabas de instanciar la clase");
+		}
+	}
+	
+	//Getters y Setters:
+	public class Persona {
+		private String nombre;
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre; //this se utiliza para referirse al nombre de la PROPIEDAD cuando el PARÁMETRO se llama igual.
+		}
+	}
+
+//22º OBJETOS:
+	//Creación:
+	Clase objeto = new Clase();
+	
+	//Llamar y setear propiedades (tienen que ser públicas las propiedades):
+	objeto.nombre = "Pepe";
+	System.out.println(objeto.nombre);
+	
+	//Llamar y setear a través de getters y setters (cuando las propiedades no son públicas):
+	objeto.setNombre("Pepe");
+	objeto.getNombre();
+	
+	//static: Se pueden llamar a métodos sin la necesidad de instanciar la clase:
+	public class Calculadora {
+		private static int a = 1;
+		private static int b = 2;
+		
+		public static int suma() { //Un método static solo podrá acceder a las propiedades si son estáticas
+			return a + b;
+		}
+	}
+	System.out.println(Calculadora.suma());
+	
+//23º HERENCIA (es un ...):
+	public class Coche extends Vehiculo{ //extends se utiliza para que el hijo herede las propiedades y los métodos del padre.
+		public Coche(String marca, String modelo, int velocidad, float[] presionRuedas) {
+			
+			super(marca, modelo, velocidad, presionRuedas); //super() llama al constructor del padre.
+			super.acelerar(); //super. se utiliza para llamar a una propiedad o un método del padre.
+			
+			acelerar(){ //Este método sobreescribiría el método del padre.
+				velocidad ++;
+			}
+		} 
+	}
+
+//24º POLIMORFISMO:
+	Vehiculo coche = new Coche(); //Puedes asignar una instancia de una subclase a una referencia de su superclase
+	
+//25º COMPOSICIÓN (tiene un ...):
+	class Motor{
+		//...
+	}
+	class Coche{ //La clase Coche está compuesta por otra clase (Motor).
+		private Motor motor;
+		
+		Coche(){
+			motor = new Motor();
+		}
+	}

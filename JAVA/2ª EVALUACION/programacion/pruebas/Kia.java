@@ -1,3 +1,5 @@
+package pruebas;
+
 public class Kia {
 
     KiaModel model;
