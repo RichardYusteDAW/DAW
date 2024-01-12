@@ -1,12 +1,17 @@
 package com.example.back.domain;
 
-import java.util.ArrayList;
+import com.example.back.persistance.CustomerDao;
 import java.util.List;
 
 public class CustomerService {
-    List<Customer> customers = new ArrayList<>();
+
+    private CustomerDao dao = new CustomerDao();
 
     public List<Customer> findAll() {
-        return customers;
+        return dao.findAll();
+    }
+
+    public Customer findById(int id) {
+        return dao.findById(id);
     }
 }

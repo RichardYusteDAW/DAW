@@ -2,6 +2,8 @@ package com.example.front;
 
 import java.util.Scanner;
 
+import com.example.back.controller.CustomerController;
+
 public class App {
     public static void main(String[] args) {
         String blue = "\u001B[34m";
@@ -17,7 +19,13 @@ public class App {
 
             switch (op) {
                 case 1 -> request();
-                case 0 -> System.out.println(blue + "Saliendo...\n" + resetColor);
+                case 2 -> {
+                    System.out.print("Introduce el ID del cliente: ");
+                    int id = sc.nextInt();
+                    System.out.println(CustomerController.findById(id));
+                }
+
+                case 0 -> System.out.println(blue + "Saliendo..." + resetColor);
                 default -> System.out.println(red + "404 .- Recurso no encontrado\n" + resetColor);
             }
         } while (op != 0);
