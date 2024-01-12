@@ -109,3 +109,10 @@
 	String.format("%,d", 1000000)	//1,000,000
 	String.format("%#d", 10)		//00010
 	String.format("'%s'", "Hola")	//'Hola'
+
+
+//COLORES:
+static String blue = "\u001B[34m";
+static String green = "\u001B[32m";
+static String red = "\u001B[31m";
+static String resetColor = "\u001B[0m";
