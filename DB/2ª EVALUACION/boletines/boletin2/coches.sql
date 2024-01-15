@@ -192,3 +192,16 @@ SELECT codcoche FROM distribucion, concesionario WHERE distribucion.cifc = conce
 
 -- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
 SELECT codcoche FROM venta, cliente WHERE venta.cifcl = cliente.cifcl AND ciudad = 'Madrid';
+
+
+
+-- EJERCICIO 1. Obtener los datos de todos los clientes de Madrid:
+-- EJERCICIO 2. Obtener los nombres de todas las marcas de coches ordenadas alfabéticamente:
+-- EJERCICIO 3. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida sea mayor que 18:
+-- EJERCICIO 4. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida esté comprendida entre 10 y 18, ambos inclusive:
+-- EJERCICIO 5. Obtener el identificador de todos los concesionarios cuya cantidad distribuida está comprendida entre 10 y 18, ambos incluidos:
+-- EJERCICIO 6. Obtener el identificador de los concesionarios que han adquirido más de 10 coches de algún tipo, o menos de 5 (como se indica, de un tipo, no en total):
+-- EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
+-- EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
+-- EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
+-- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
