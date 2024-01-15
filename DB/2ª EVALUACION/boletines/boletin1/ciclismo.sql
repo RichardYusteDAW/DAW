@@ -468,18 +468,20 @@ FROM ciclista c, equipo e, puerto p
 WHERE (c.edad > 32) AND (c.nomeq = e.nomeq) AND (c.dorsal = P.dorsal);
 
 -- EJERCICIO 8. Obtener el nombre y el equipo de los ciclistas que han ganado alguna etapa llevando el maillot amarillo, mostrando tambien el numero de etapa:
-SELECT c.nombre, e.nomeq, l.netapa
-FROM ciclista c, equipo e, llevar l, maillot m
-WHERE (m.color = "Amarillo") AND (m.codigo = l.codigo) AND (c.dorsal = l.dorsal) AND (c.nomeq = e.nomeq);
+SELECT DISTINCT c.nombre, c.nomeq, e.netapa, color
+FROM ciclista c, llevar l, maillot m, etapa e
+WHERE (c.dorsal = e.dorsal) AND (c.dorsal = l.dorsal) AND (l.codigo = m.codigo) AND (m.color = "Amarillo");
 
 -- EJERCICIO 9. Obtener las poblaciones de salida y de llegada de las etapas donde se encuentran puertos con altura superior a 1300 metros:
 SELECT salida, llegada
 FROM etapa e, puerto p
-WHERE (p.altura > 1300) AND (p.netapa = e.netapa);
+WHERE (e.netapa = p.netapa) AND (p.altura > 1300);
 
 -- EJERCICIO 10. Obtener la edad media de los ciclistas que han ganado alguna etapa:
-SELECT AVG(edad)
-FROM ciclista c, etapa E
+--SELECT AVG(edad)
+
+SELECT AVG (edad)
+FROM ciclista c, etapa e
 WHERE (c.dorsal = e.dorsal);
 
 -- EJERCICIO 11. Obtener la edad del ciclista más joven, la del más veterano y la edad media de los ciclistas que han participado en la vuelta:
