@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+}
+
+header {
+    padding: 2em 0;
+    background-color: #bfbfbf;
+}
+
+h1 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: .5em;
+    word-spacing: 1em;
+    color: #172052;
+    text-shadow: .1em .1em .2em;
+}
+
+section h2 {
+    font-family: 'Dela Gothic One', sans-serif;
+    font-size: 1em;
+    ;
+    letter-spacing: .5em;
+    color: #58160d;
+    border-bottom: 2px solid #58160d;
+}
+
+h1,
+section h2 {
+    text-transform: uppercase;
+}
+
+section li {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+.imagen_datos img {
+    width: 12em;
+}
+
+.imagen_datos,
+.datos_cv ul {
+    display: inline-block;
+}

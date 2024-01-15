@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS COCHE (
     codcoche SMALLINT    NOT NULL,
     nombre   CHAR( 15 )  NOT NULL,
     modelo   CHAR( 10 ),
-    PRIMARY KEY ( codcoche ) 
+    PRIMARY KEY ( codcoche )
 );
 
 
@@ -161,34 +161,34 @@ CREATE UNIQUE INDEX icifm ON MARCA (
     cifm 
 );
 
---EJERCICIO 1. Obtener los datos de todos los clientes de Madrid:
+-- EJERCICIO 1. Obtener los datos de todos los clientes de Madrid:
 SELECT * FROM CLIENTE WHERE ciudad = 'Madrid';
 
---EJERCICIO 2. Obtener los nombres de todas las marcas de coches ordenadas alfabéticamente:
+-- EJERCICIO 2. Obtener los nombres de todas las marcas de coches ordenadas alfabéticamente:
 SELECT nombre FROM MARCA ORDER BY nombre;
 
---EJERCICIO 3. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida sea mayor que 18:
+-- EJERCICIO 3. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida sea mayor que 18:
 SELECT cifc, cantidad FROM distribucion WHERE cantidad > 18;
 
---EJERCICIO 4. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida esté comprendida entre 10 y 18, ambos inclusive:
+-- EJERCICIO 4. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida esté comprendida entre 10 y 18, ambos inclusive:
 SELECT cifc, cantidad FROM distribucion WHERE cantidad BETWEEN 10 AND 18;
 SELECT cifc, cantidad FROM distribucion WHERE cantidad >= 10 AND cantidad <= 18;
 
---EJERCICIO 5. Obtener el identificador de todos los concesionarios cuya cantidad distribuida está comprendida entre 10 y 18, ambos incluidos:
+-- EJERCICIO 5. Obtener el identificador de todos los concesionarios cuya cantidad distribuida está comprendida entre 10 y 18, ambos incluidos:
 SELECT cifc, SUM (cantidad) AS cantidad_total FROM distribucion GROUP BY cifc HAVING cantidad_total BETWEEN 10 AND 18;
 
---EJERCICIO 6. Obtener el identificador de los concesionarios que han adquirido más de 10 coches de algún tipo, o menos de 5 (como se indica, de un tipo, no en total):
+-- EJERCICIO 6. Obtener el identificador de los concesionarios que han adquirido más de 10 coches de algún tipo, o menos de 5 (como se indica, de un tipo, no en total):
 SELECT cifc, cantidad FROM distribucion WHERE cantidad > 10 OR cantidad < 5;
 
---EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
+-- EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
 SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad = cliente.ciudad;
 
---EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
+-- EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
 SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad <> cliente.ciudad;
 SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad != cliente.ciudad;
 
---EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
+-- EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
 SELECT codcoche FROM distribucion, concesionario WHERE distribucion.cifc = concesionario.cifc AND concesionario.ciudad = 'Barcelona';
 
---EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
+-- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
 SELECT codcoche FROM venta, cliente WHERE venta.cifcl = cliente.cifcl AND ciudad = 'Madrid';
