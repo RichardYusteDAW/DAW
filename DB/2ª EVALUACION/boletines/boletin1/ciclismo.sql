@@ -448,58 +448,14 @@ FROM puerto p, etapa e
 WHERE p.netapa = e.netapa;
 
 -- EJERCICIO 4. Nombre de aquellos ciclistas que tengan una edad entre 25 y 30 años y que pertenezcan a los equipos Kelme y Banesto:
-SELECT nombre
-FROM ciclista
-WHERE (edad BETWEEN 25 AND 30) AND (nomeq = "Kelme" OR nomeq = "Banesto");
-
--- EJERCICIO 5. Obtener el nombre y el director de los equipos a los que pertenezca algún ciclista mayor de 33 años:
-SELECT DISTINCT e.nomeq, director
-FROM equipo e, ciclista c 
-WHERE (edad > 33) AND (e.nomeq = c.nomeq);
-
--- EJERCICIO 6. Obtener el nombre y el equipo de los ciclistas menores de 30 años que hayan ganado alguna etapa:
-SELECT c.nombre, e.nomeq
-FROM ciclista c, equipo e, llevar l
-WHERE (c.edad < 30) AND (c.nomeq = e.nomeq) AND (c.dorsal = l.dorsal);
-
--- EJERCICIO 7. Obtener el nombre y el equipo de los ciclistas mayores de 32 años que hayan ganado algún puerto:
-SELECT c.nombre, e.nomeq
-FROM ciclista c, equipo e, puerto p
-WHERE (c.edad > 32) AND (c.nomeq = e.nomeq) AND (c.dorsal = P.dorsal);
-
--- EJERCICIO 8. Obtener el nombre y el equipo de los ciclistas que han ganado alguna etapa llevando el maillot amarillo, mostrando tambien el numero de etapa:
-SELECT DISTINCT c.nombre, c.nomeq, e.netapa, color
-FROM ciclista c, llevar l, maillot m, etapa e
-WHERE (c.dorsal = e.dorsal) AND (c.dorsal = l.dorsal) AND (l.codigo = m.codigo) AND (m.color = "Amarillo");
-
--- EJERCICIO 9. Obtener las poblaciones de salida y de llegada de las etapas donde se encuentran puertos con altura superior a 1300 metros:
-SELECT salida, llegada
-FROM etapa e, puerto p
-WHERE (e.netapa = p.netapa) AND (p.altura > 1300);
-
--- EJERCICIO 10. Obtener la edad media de los ciclistas que han ganado alguna etapa:
---SELECT AVG(edad)
-
-SELECT AVG (edad)
-FROM ciclista c, etapa e
-WHERE (c.dorsal = e.dorsal);
-
--- EJERCICIO 11. Obtener la edad del ciclista más joven, la del más veterano y la edad media de los ciclistas que han participado en la vuelta:
-SELECT MIN(edad), MAX(edad), AVG(edad) FROM ciclista;
-
-
--- EJERCICIO 1. Obtener el nombre del ciclista que tiene más de 20 años:
--- EJERCICIO 2. Nombre de los ciclistas que pertenezcan a ‘Kelme’:
--- EJERCICIO 3. Obtener el nombre de cada puerto indicando el número (netapa) y los kilómetros de la etapa en la que se encuentra el puerto:
--- EJERCICIO 4. Nombre de aquellos ciclistas que tengan una edad entre 25 y 30 años y que pertenezcan a los equipos Kelme y Banesto:
 SELECT nombre, edad, nomeq
 FROM ciclista
 WHERE (edad BETWEEN 25 AND 30) AND (nomeq='Kelme' OR nomeq='Banesto');
 
 -- EJERCICIO 5. Obtener el nombre y el director de los equipos a los que pertenezca algún ciclista mayor de 33 años:
-SELECT equipo.nomeq, director
-FROM equipo , ciclista 
-WHERE (equipo.nomeq = ciclista.nomeq) AND (edad>33);
+SELECT e.nomeq, director
+FROM equipo e , ciclista c
+WHERE (e.nomeq = c.nomeq) AND (edad>33);
 
 -- EJERCICIO 6. Obtener el nombre y el equipo de los ciclistas menores de 30 años que hayan ganado alguna etapa:
 SELECT nombre, nomeq
@@ -511,14 +467,13 @@ SELECT DISTINCT nombre, nomeq
 FROM ciclista c, puerto p
 WHERE (c.dorsal = p.dorsal) AND (edad>32);
 
-
 -- EJERCICIO 8. Obtener el nombre y el equipo de los ciclistas que han ganado alguna etapa llevando el maillot amarillo, mostrando tambien el numero de etapa:
 SELECT c.nombre, c.nomeq, e.netapa
 FROM ciclista c, etapa e, llevar ll, maillot m
 WHERE (c.dorsal = e.dorsal) AND (c.dorsal = ll.dorsal) AND (ll.codigo = m.codigo) AND (e.netapa=ll.netapa) AND (color='Amarillo');
 
 -- EJERCICIO 9. Obtener las poblaciones de salida y de llegada de las etapas donde se encuentran puertos con altura superior a 1300 metros:
-SELECT salida, llegada, altura
+SELECT DISTINCT salida, llegada
 FROM etapa e, puerto p
 WHERE (e.netapa=p.netapa) AND (altura > 1300);
 
@@ -535,5 +490,5 @@ WHERE dorsal IN (
 )
 
 -- EJERCICIO 11. Obtener la edad del ciclista más joven, la del más veterano y la edad media de los ciclistas que han participado en la vuelta:
-SELECT AVG(edad), MIN(edad), MAX(edad)
+SELECT MIN(edad), MAX(edad), AVG(edad)
 FROM ciclista;

@@ -157,15 +157,15 @@ INSERT INTO CLIENTE (cifcl, nombre, apellidos, ciudad, fechanacimiento) VALUES (
 INSERT INTO CLIENTE (cifcl, nombre, apellidos, ciudad, fechanacimiento) VALUES (6, 'Ana', 'López', 'Barcelona', null);
 
 -- Index: icifm
-CREATE UNIQUE INDEX icifm ON MARCA ( 
-    cifm 
-);
+CREATE UNIQUE INDEX icifm ON MARCA ( cifm );
+
+
 
 -- EJERCICIO 1. Obtener los datos de todos los clientes de Madrid:
-SELECT * FROM CLIENTE WHERE ciudad = 'Madrid';
+SELECT * FROM cliente WHERE ciudad = 'Madrid';
 
 -- EJERCICIO 2. Obtener los nombres de todas las marcas de coches ordenadas alfabéticamente:
-SELECT nombre FROM MARCA ORDER BY nombre;
+SELECT nombre FROM marca ORDER BY nombre ASC;
 
 -- EJERCICIO 3. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida sea mayor que 18:
 SELECT cifc, cantidad FROM distribucion WHERE cantidad > 18;
@@ -181,27 +181,17 @@ SELECT cifc, SUM (cantidad) AS cantidad_total FROM distribucion GROUP BY cifc HA
 SELECT cifc, cantidad FROM distribucion WHERE cantidad > 10 OR cantidad < 5;
 
 -- EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
-SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad = cliente.ciudad;
+SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad = m.ciudad;
 
 -- EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
-SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad <> cliente.ciudad;
-SELECT cifm, cifcl FROM marca, cliente WHERE marca.ciudad != cliente.ciudad;
+SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad <> m.ciudad;
+SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad != m.ciudad;
 
 -- EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
-SELECT codcoche FROM distribucion, concesionario WHERE distribucion.cifc = concesionario.cifc AND concesionario.ciudad = 'Barcelona';
+SELECT codcoche FROM concesionario c, distribucion d WHERE (d.cifc = c.cifc) AND (c.ciudad = 'Barcelona');
 
 -- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
-SELECT codcoche FROM venta, cliente WHERE venta.cifcl = cliente.cifcl AND ciudad = 'Madrid';
+SELECT codcoche FROM cliente c, venta v WHERE (c.cifcl = v.cifcl) AND (ciudad = 'Madrid');
 
 
-
--- EJERCICIO 1. Obtener los datos de todos los clientes de Madrid:
--- EJERCICIO 2. Obtener los nombres de todas las marcas de coches ordenadas alfabéticamente:
--- EJERCICIO 3. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida sea mayor que 18:
--- EJERCICIO 4. Obtener el identificador de todos los concesionarios cuya cantidad de coches distribuida esté comprendida entre 10 y 18, ambos inclusive:
--- EJERCICIO 5. Obtener el identificador de todos los concesionarios cuya cantidad distribuida está comprendida entre 10 y 18, ambos incluidos:
--- EJERCICIO 6. Obtener el identificador de los concesionarios que han adquirido más de 10 coches de algún tipo, o menos de 5 (como se indica, de un tipo, no en total):
--- EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
--- EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
--- EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
--- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
+SELECT default_collation_name FROM information_schema.schemata WHERE schema_name = 'coches';
