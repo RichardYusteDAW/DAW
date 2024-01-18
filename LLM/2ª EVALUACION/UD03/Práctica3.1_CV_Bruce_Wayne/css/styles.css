@@ -44,7 +44,15 @@ section li {
     width: 12em;
 }
 
-.imagen_datos,
-.datos_cv ul {
+.imagen_datos {
+    margin-left: 20%;
+}
+
+.datos_cv div {
     display: inline-block;
+    border: 2px solid red;
+}
+
+.datos_cv {
+    vertical-align: middle;
 }

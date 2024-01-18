@@ -63,8 +63,24 @@
 /*DML (Data Manipulation Language)*/
 	SELECT		--Consultar datos de la base de datos y recuperar filas de una tabla.
 	SELECT [DISTINCT] columna FROM tabla WHERE condicion GROUP BY columna [ASC | DESC] [WITH ROLLUP] HAVING condicion_groupBy ORDER BY columna [ASC | DESC] LIMIT n_filas
+	IN (lista o condicion where)
+	LIKE columna "exp_reg" --> %: cualquier cantidad de caracteres; _: un solo carácter
+		
+	
 	--Funciones de agregación:
-	COUNT()	SUM()	AVG()	MAX()	MIN()
+	COUNT()  SUM()  AVG()  MAX()  MIN()
+	--Funciones de String:
+	LENGTH(str)		SUBSTRING(str, pos, len)	LOWER(str)	UPPER(str)	REPLACE(str, from_str, to_str)
+	--Funciones Numéricas:
+	ABS(x)	ROUND(x, d)	CEILING(x)	FLOOR(x)	RAND()
+	--Funciones de Fecha y Hora:
+	NOW()	CURDATE()	CURTIME()	DATE_ADD(date, INTERVAL expr unit)	DATEDIFF(expr1, expr2)
+	--Funciones de Control de Flujo:
+	IF(expr1, expr2, expr3)	CASE
+	--Funciones de Información de la Base de Datos:
+	DATABASE()	USER()
+	--Funciones de Conversión:
+	CAST(expr AS type)	CONVERT(expr, type)
 	
 	INSERT		--Insertar datos en una tabla.
 	INSERT INTO nombre_tabla (columna1, columna2, columna3, ...) VALUES (valor1, valor2, valor3, ...);
