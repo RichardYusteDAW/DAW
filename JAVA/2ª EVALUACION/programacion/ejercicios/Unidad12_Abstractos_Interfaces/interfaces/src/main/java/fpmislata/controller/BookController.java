@@ -4,11 +4,12 @@ import java.util.List;
 
 import fpmislata.domain.entinty.Book;
 import fpmislata.domain.service.BookService;
+import fpmislata.domain.service.impl.BookServiceImpl;
 
 public class BookController {
-    private BookService service = new BooksServiceImpl();
+    private BookService service = new BookServiceImpl();
 
     public List<Book> getAll() {
-        return this.service.getAll();
+        return service.getAll();
     }
 }
