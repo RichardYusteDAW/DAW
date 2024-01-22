@@ -1,20 +1,24 @@
 ## Ejercicio 1
 - Crea una estructura de paquetes similar a la del tema anterior en el back:
 ```
-/controller                                    //Capa de presentación de nuestra aplicación (controladores)
-      BookController                           //Controlador de libros 
-/business                                      //Capa de negocio de nuestra aplicación (entidades y servicios) 
-      /entity                                  //Entidades de nuestra aplicación
-           Book                                //Modelo de negocio //Book//
-      /service                                 //Servicios de nuestra aplicación
-           <<BooksService>>                    //Interfaz del caso de uso "Listar todos los libros"
-           /impl                               //Implementaciones de nuestros servicios
-                BooksServiceImpl               //Implementación de la interface //BooksService//
-/persistence                                   //Capa de persistencia de nuestra aplicación (repositorios) 
-      <<BookRepository>>                       //Interfaz de acceso a datos de los libros
-      /impl                                    //Implementaciones de nuestros repositorios
-           StaticBookRepositoryImpl            //Implementación estática de la //interface// //BookRepository//
-App                                            //Clase principal de nuestra aplicación
+/PROYECT
+└─ /CONTROLLER ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Capa de PRESENTACIÓN de nuestra aplicación (controladores).
+|     └─ BookController.java ─ ─ ─ ─ ─ ─ ─ ─ ─  //Controlador de libros.
+|
+└─ /DOMAIN   ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Capa de DOMINIO o NEGOCIO de nuestra aplicación (entidades y servicios).
+|     └─ /entity ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Entidades de nuestra aplicación.
+|     |     └─ Book.java ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Modelo de negocio.
+|     └─ /service  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Servicios de nuestra aplicación.
+|            └─ <<BooksService>> ─ ─ ─ ─ ─ ─ ─  //Interfaz del caso de uso "Listar todos los libros".
+|            └─ /impl  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Implementaciones de nuestros servicios.
+|                  └─ BooksServiceImpl.java  ─  //Implementación de la interface BooksService.
+|                  
+└─ /PERSISTENCE  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Capa de PERSISTENCIA de nuestra aplicación (repositorios).
+|      └─ <<BookRepository>>   ─ ─ ─ ─ ─ ─ ─ ─  //Interfaz de acceso a datos de los libros.
+|      └─ /impl  ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─  //Implementaciones de nuestros repositorios.
+|            └─ StaticBookRepositoryImpl.java   //Implementación estática de la interface BookRepository.
+|
+└─ App.java ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─   //Clase principal de nuestra aplicación.
 ```
 
 ## Ejercicio 2

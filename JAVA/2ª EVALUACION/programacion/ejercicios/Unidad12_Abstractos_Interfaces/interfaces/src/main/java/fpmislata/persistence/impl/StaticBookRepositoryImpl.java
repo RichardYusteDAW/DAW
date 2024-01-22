@@ -12,6 +12,6 @@ public class StaticBookRepositoryImpl implements BookRepository {
             new Book(3, "1Q84", "Haruki Murakami"));
 
     public List<Book> all() {
-        return this.books;
+        return books;
     }
 }

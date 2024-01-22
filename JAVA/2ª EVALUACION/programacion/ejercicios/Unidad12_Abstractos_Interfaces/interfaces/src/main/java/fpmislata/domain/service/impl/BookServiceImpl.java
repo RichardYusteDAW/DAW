@@ -9,11 +9,11 @@ import fpmislata.persistence.impl.EnumBookRepositoryImpl;
 //import fpmislata.persistence.impl.StaticBookRepositoryImpl;
 
 public class BookServiceImpl implements BookService {
-    // private BookRepository repository = new StaticBookRepositoryImpl();
-    private BookRepository repository = new EnumBookRepositoryImpl();
+    // private BookRepository bookRepository = new StaticBookRepositoryImpl();
+    private BookRepository bookRepository = new EnumBookRepositoryImpl();
 
     @Override
     public List<Book> getAll() {
-        return this.repository.all();
+        return this.bookRepository.all();
     }
 }

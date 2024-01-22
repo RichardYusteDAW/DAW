@@ -1,13 +1,13 @@
 package fpmislata.domain.entinty;
 
 public enum BookEnum {
-    BOOK1(1, "El nombre de la rosa", "Umberto Eco"),
-    BOOK2(2, "La insoportable levedad del ser", "Milan Kundera"),
-    BOOK3(3, "1Q84", "Haruki Murakami");
+    LIBRO1(1, "Libro 1", "Autor 1"),
+    LIBRO2(2, "Libro 2", "Autor 2"),
+    LIBRO3(3, "Libro 3", "Autor 3");
 
-    private int id;
-    private String title;
-    private String author;
+    private final int id;
+    private final String title;
+    private final String author;
 
     private BookEnum(int id, String title, String author) {
         this.id = id;

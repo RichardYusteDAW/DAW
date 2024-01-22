@@ -25,10 +25,6 @@ public class Book {
 
     @Override
     public String toString() {
-        return "{" +
-                " id='" + getId() + "'" +
-                ", title='" + getTitle() + "'" +
-                ", author='" + getAuthor() + "'" +
-                "}";
+        return String.format("Book{id=%d, title='%s', author='%s'}", this.id, this.title, this.author);
     }
 }

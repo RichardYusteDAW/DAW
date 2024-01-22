@@ -7,9 +7,9 @@ import fpmislata.domain.service.BookService;
 import fpmislata.domain.service.impl.BookServiceImpl;
 
 public class BookController {
-    private BookService service = new BookServiceImpl();
+    private BookService bookService = new BookServiceImpl();
 
     public List<Book> getAll() {
-        return service.getAll();
+        return bookService.getAll();
     }
 }
