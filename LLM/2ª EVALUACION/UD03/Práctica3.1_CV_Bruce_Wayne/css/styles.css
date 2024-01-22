@@ -4,6 +4,13 @@ body {
     padding: 0;
     margin: 0;
     font-size: 1rem;
+    background-image: url(../img/background-city.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, .3);
 }
 
 header {
@@ -40,19 +47,27 @@ section li {
     font-size: 0.8em;
 }
 
-.imagen_datos img {
-    width: 12em;
+.datos_cv div {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .imagen_datos {
     margin-left: 20%;
 }
 
-.datos_cv div {
-    display: inline-block;
-    border: 2px solid red;
+.imagen_datos img {
+    width: 15em;
 }
 
-.datos_cv {
-    vertical-align: middle;
+.texto_datos li {
+    list-style: circle;
+}
+
+.formacion li {
+    list-style-image: url(../img/figma.svg);
+}
+
+.experiencia li {
+    list-style: square;
 }
