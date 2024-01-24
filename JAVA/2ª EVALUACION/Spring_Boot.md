@@ -32,7 +32,7 @@ public class MainController {
 }
 ```
 
-### 4. Añadimos rutas (/):
+### 4. Añadimos rutas (/ && /about):
 ```
 package com.fpmislata.practica.controller;
 
@@ -54,3 +54,31 @@ public class MainController {
 
 }
 ```
+
+### 5. Rutas con parámetros variables (/productos/{id}):
+```
+package com.fpmislata.practica.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable; //es una anotación que se utiliza para vincular variables de plantilla en la URL de una petición a parámetros de método en un controlador.
+
+@Controller
+public class ProductController {
+
+    @GetMapping("/productos/{id}")
+    public void getById(@PathVariable("id") int id) {
+        System.out.println("Ruta: /productos/" + id );
+    }
+}
+```
+
+### 6. Thymeleaf:
+- Creamos `/resources/templates/index.html`
+- Retornamos "index" en el MainController y cambiamos el método a String: `return "index"`
+- Los estilos están en: **/resources/static/css**
+- Las imágenes están en: **/resources/static/img**
+
+### 7. Deshabilitar la página de error WhiteLabel de Spring Boot:
+- `server.error.whitelabel.enabled=false`
+- Creamos nuestra propia página de error: `/resources/templates/error.html`

@@ -5,15 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping; //es una anotación q
 
 @Controller
 public class MainController {
+    String azul = "\033[34m";
+    String finalizaColor = "\033[0m";
 
     @GetMapping("/")
-    public void index() {
-        System.out.println("Método index de MainController ejecutándose");
+    public String index() {
+        System.out.println(azul + "Método index de MainController ejecutándose" + finalizaColor);
+        return "index";
     }
 
     @GetMapping("/about")
     public void about() {
-        System.out.println("Método about de MainController ejecutándose");
+        System.out.println(azul + "Método about de MainController ejecutándose" + finalizaColor);
     }
 
 }
