@@ -31,7 +31,6 @@ h1 {
 section h2 {
     font-family: 'Dela Gothic One', sans-serif;
     font-size: 1em;
-    ;
     letter-spacing: .5em;
     color: #58160d;
     border-bottom: 2px solid #58160d;
@@ -61,7 +60,7 @@ section li {
 }
 
 .texto_datos li {
-    list-style: circle;
+    list-style-type: circle;
 }
 
 .formacion li {
@@ -69,5 +68,5 @@ section li {
 }
 
 .experiencia li {
-    list-style: square;
+    list-style-type: square;
 }
