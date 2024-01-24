@@ -194,15 +194,15 @@ SELECT tnombre FROM articulos a, envios e WHERE (a.idt = e.idt) AND (idp = 'P1')
 SELECT tnombre FROM articulos WHERE idt IN (SELECT idt FROM envios WHERE idp = 'P1') ORDER BY tnombre;
 
 #EJERCICIO 7. Realiza un script que inserte en la base de datos 2 proveedores, 2 componentes y dos artículos. Ejecuta el script:
-INSERT INTO proveedores VALUES ('P6', 'JOSE', 10, 'VALENCIA');
-INSERT INTO proveedores VALUES ('P7', 'LUIS', 20, 'BARCELONA');
-
-INSERT INTO componentes VALUES ('C7', 'C4B', 'ROJO', 14, 'SEVILLA');
-INSERT INTO componentes VALUES ('C8', 'Z45', 'VERDE', 11, 'BARCELONA');
-
-INSERT INTO articulos VALUES ('T8', 'IMPRESORA', 'MADRID');
-INSERT INTO articulos VALUES ('T9', 'SCANNER', 'MALAGA');
-
+INSERT INTO proveedores VALUES 
+('P6', 'JOSE', 10, 'VALENCIA'),
+('P7', 'LUIS', 20, 'BARCELONA');
+INSERT INTO componentes VALUES 
+('C7', 'C4B', 'ROJO', 14, 'SEVILLA'),
+('C8', 'Z45', 'VERDE', 11, 'BARCELONA');
+INSERT INTO articulos VALUES 
+('T8', 'IMPRESORA', 'MADRID'),
+('T9', 'SCANNER', 'MALAGA');
 
 #EJERCICIO 8. Eliminar el primer componente de los que has creado:
 DELETE FROM componentes WHERE idc = 'C7';
