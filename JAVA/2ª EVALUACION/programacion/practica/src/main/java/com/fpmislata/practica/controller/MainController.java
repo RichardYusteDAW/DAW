@@ -10,13 +10,13 @@ public class MainController {
 
     @GetMapping("/")
     public String index() {
-        System.out.println(azul + "Método index de MainController ejecutándose" + finalizaColor);
+        System.out.println(azul + "Método INDEX de MainController ejecutándose" + finalizaColor);
         return "index";
     }
 
     @GetMapping("/about")
     public void about() {
-        System.out.println(azul + "Método about de MainController ejecutándose" + finalizaColor);
+        System.out.println(azul + "Método ABOUT de MainController ejecutándose" + finalizaColor);
     }
 
 }

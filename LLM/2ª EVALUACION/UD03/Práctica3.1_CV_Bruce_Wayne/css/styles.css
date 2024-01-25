@@ -7,10 +7,13 @@ body {
     background-image: url(../img/background-city.jpg);
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
     background-color: rgba(255, 255, 255, .3);
+    height: 100vh;
+    padding: 0.5em 2em;
 }
 
 header {
@@ -21,16 +24,20 @@ header {
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2.2em;
     letter-spacing: .5em;
     word-spacing: 1em;
     color: #172052;
     text-shadow: .1em .1em .2em;
 }
 
+section {
+    margin: 3em 0;
+}
+
 section h2 {
     font-family: 'Dela Gothic One', sans-serif;
-    font-size: 1em;
+    font-size: 1.5em;
     letter-spacing: .5em;
     color: #58160d;
     border-bottom: 2px solid #58160d;
@@ -43,7 +50,7 @@ section h2 {
 
 section li {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 .datos_cv div {
@@ -57,6 +64,9 @@ section li {
 
 .imagen_datos img {
     width: 15em;
+    /*box-shadow: [horizontal] [vertical] [difuminado] [expansión] [color] [inset];*/
+    box-shadow: .5em .5em .5em 0 #58160d;
+
 }
 
 .texto_datos li {
@@ -69,4 +79,13 @@ section li {
 
 .experiencia li {
     list-style-type: square;
+}
+
+footer {
+    background-color: #ccc;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8em;
+    padding: 2em 0;
+    font-weight: bold;
 }
