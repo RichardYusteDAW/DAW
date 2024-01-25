@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+</head>
+
+<body>
+    <h1>Detalles del Producto</h1>
+    <div>
+        <p>ID: <span th:text="${product.id}"></span></p>
+        <p>Nombre: <span th:text="${product.name}"></span></p>
+        <p>Marca: <span th:text="${product.brand}"></span></p>
+        <p>Precio: <span th:text="${product.price}"></span></p>
+    </div>
+    <a href="/products">Volver a productos</a>
+</body>
+
+</html>

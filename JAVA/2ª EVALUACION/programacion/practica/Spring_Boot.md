@@ -1,4 +1,4 @@
-# Spring
+# SPRING
 
 ## Spring Boot Extension Pack (Colección de Visual Studio Code compuesta de 3 extensiones):
 - **Spring Boot Tools:** proporciona `herramientas` para desarrollar y solucionar problemas de aplicaciones Spring Boot.
@@ -32,7 +32,7 @@ public class MainController {
 }
 ```
 
-### 4. Añadimos rutas (/ && /about):
+### 4. Añadimos rutas (/, /about):
 ```
 package com.fpmislata.practica.controller;
 
@@ -82,3 +82,98 @@ public class ProductController {
 ### 7. Deshabilitar la página de error WhiteLabel de Spring Boot:
 - `server.error.whitelabel.enabled=false`
 - Creamos nuestra propia página de error: `/resources/templates/error.html`
+
+### 8. Creamos una clase Product:
+```
+package com.fpmislata.dawprogeval2prac1.business.entity;
+ 
+import java.math.BigDecimal;
+ 
+public class Product {
+ 
+    private int id;
+    private String name;
+    private String brand;
+    private BigDecimal price;
+ 
+    public Product(int id, String name, String brand, BigDecimal price) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.price = price;
+    }
+ 
+    public int getId() {
+        return id;
+    }
+ 
+    public String getName() {
+        return name;
+    }
+ 
+    public String getBrand() {
+        return brand;
+    }
+ 
+    public BigDecimal getPrice() {
+        return price;
+    }
+}
+```
+
+### 9. Modificamos ProductController:
+```
+package com.fpmislata.dawprogeval2prac1.controller;
+ 
+import java.math.BigDecimal;                                    //Clase de Java que permite trabajar con números decimales de alta precisión.
+import java.util.List;
+ 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;                            //Interfaz de Spring utilizada para añadir atributos al modelo que se pasará a la vista.
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;  //Anotación de Spring que se utiliza para mapear solicitudes web a métodos específicos en los controladores.
+ 
+import com.fpmislata.dawprogeval2prac1.business.entity.Product;
+ 
+@RequestMapping("/products")
+@Controller
+public class ProductController {
+ 
+    List<Product> products = List.of(
+        new Product(1, "Producto A", "Marca A", new BigDecimal(23.99)),
+        new Product(2, "Producto B", "Marca A", new BigDecimal(14.99)),
+        new Product(3, "Producto C", "Marca B", new BigDecimal(68.99))
+    );
+ 
+    @GetMapping
+    public String getAll(Model model){
+        model.addAttribute("products", this.products);
+        return "products";
+    }
+ 
+}
+```
+
+### 10. Creamos products.html:
+```
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <a th:each="product : ${products}" th:href="@{${'/products/' + product.id}}">
+            <li th:text="|${product.brand} - ${product.name}|">Texto por defecto</li>
+        </a>
+    </ul>
+</body>
+
+</html>
+```

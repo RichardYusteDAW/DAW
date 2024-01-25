@@ -64,13 +64,13 @@
 	SELECT		--Consultar datos de la base de datos y recuperar filas de una tabla.
 	SELECT [DISTINCT] columna FROM tabla WHERE condicion GROUP BY columna [ASC | DESC] [WITH ROLLUP] HAVING condicion_groupBy ORDER BY columna [ASC | DESC] LIMIT n_filas
 	IN (lista o condicion where)
-	LIKE columna "exp_reg" --> %: cualquier cantidad de caracteres; _: un solo carácter
+	LIKE columna "exp_reg" --> % cualquier cantidad de caracteres; _ un solo carácter
 		
 	
 	--Funciones de agregación:
 	COUNT()  SUM()  AVG()  MAX()  MIN()
 	--Funciones de String:
-	LENGTH(str)		SUBSTRING(str, pos, len)	LOWER(str)	UPPER(str)	REPLACE(str, from_str, to_str)
+	LENGTH(str)		SUBSTRING(str, pos, len)	LOWER(str)	UPPER(str)	REPLACE(str, from_str, to_str) CONCAT (str1, str2, ...)	
 	--Funciones Numéricas:
 	ABS(x)	ROUND(x, d)	CEILING(x)	FLOOR(x)	RAND()
 	--Funciones de Fecha y Hora:

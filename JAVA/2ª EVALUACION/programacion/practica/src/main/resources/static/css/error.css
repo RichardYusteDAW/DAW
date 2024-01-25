@@ -2,14 +2,14 @@ body {
     background-color: #c7d0cd;
 }
 
-h1,
-p {
+#error_404,
+#page_not_found {
     font-family: monospace;
     color: red;
     text-align: center;
 }
 
-p {
+#page_not_found {
     font-size: 3em;
     font-weight: bold;
 }
