@@ -1,0 +1,35 @@
+span {
+    border: 1px solid red;
+    display: inline-block;
+    height: 40px;
+}
+
+p {
+    border: 1px dashed blue;
+    width: 20em;
+}
+
+.caja {
+    border: 1px dotted green;
+    background-color: rgb(197, 212, 173);
+    color: rgb(1, 51, 1);
+    width: 10vw;
+    height: 10vh;
+    display: inline-block;
+    text-align: center;
+    box-shadow: .2em .2em .2em rgb(1, 37, 1);
+}
+
+#caja2 {
+    visibility: hidden;
+}
+
+#caja3 {
+    display: none;
+}
+
+input {
+    height: 40px;
+    width: 120px;
+    font-weight: bold;
+}

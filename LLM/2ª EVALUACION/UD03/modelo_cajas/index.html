@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Modelo de cajas</title>
+</head>
+
+<body>
+    <h1>ETIQUETAS SPAN NATURALES</h1>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+
+    <h1>ETIQUETAS P NATURALES</h1>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet</p>
+    <p>Lorem ipsum dolor sit amet</p>
+
+    <h1>DIVS DISPLAY:NONE vs VISIBILITY:HIDDEN</h1>
+    <div class="caja">Caja 1</div>
+    <div class="caja" id="caja2">Caja 2</div>
+    <div class="caja" id="caja3">Caja 3</div>
+    <div class="caja">Caja 4</div>
+
+    </br></br>
+
+    <input id="button" type="button" value="Pincha aquí">
+
+    <script>
+        document.getElementById("button").addEventListener("click", () => {
+            document.documentElement.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
