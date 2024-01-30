@@ -4,6 +4,7 @@
 - Se utiliza para establecer el texto de un elemento HTML. Puede ser utilizado para mostrar el valor de una variable:
 ```
     <p th:text="${mensaje}"></p>                                //Mostrará el valor de la variable `mensaje` dentro de un párrafo.
+    <p th:text="|${sms1} - ${sms2} - ${sms3}|"></p>             //Concatenamos cadenas de String.
 ```
 
 ### th:each
@@ -24,6 +25,9 @@
 - Se utilizan para establecer dinámicamente el atributo **href** de un enlace o el atributo **src** de una imagen:
 ```
     <a th:href="@{/ruta}">Enlace</a>                            //Para enlaces.
+    <a th:href="@{/ruta/{id}(id=${user.id})}">Enlace</a>        //Para enlaces con parámetros.
+    <a th:href="@{${'/ruta/' + user.id}}">Enlace</a>            //Para enlaces con parámetros.
+
     <img th:src="@{/ruta/imagen.png}" />                        //Para imágenes.
 ```
 
