@@ -10,8 +10,8 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.fpmislata</groupId>
-	<artifactId>practica</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>practica1a</artifactId>
+	<version>0.1</version>
 	<name>practica</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
