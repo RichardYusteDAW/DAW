@@ -1,0 +1,43 @@
+body {
+    background-color: #c7d0cd;
+}
+
+#error_404,
+#page_not_found {
+    font-family: monospace;
+    color: red;
+    text-align: center;
+}
+
+#page_not_found {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+img {
+    border: 2px solid red;
+    border-radius: 10%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+}
+
+div {
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6666;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #cc0000;
+}
