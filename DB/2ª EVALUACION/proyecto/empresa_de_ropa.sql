@@ -1,3 +1,5 @@
+--Eliminar base de datos si existe:
+drop database `tienda_ropa` if exists;
 --Creación base de datos con ut8 y case insensitive:
 create database if not exists `tienda_ropa` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`;
 use `tienda_ropa`;
@@ -149,53 +151,17 @@ create table contrata(
 );
 
 -- Inserción de datos:
-INSERT INTO cliente VALUES
-    (1, '11111111A', 'Juan', 'Perez', 'Garcia'),
-    (2, '22222222B', 'Maria', 'Garcia', 'Perez'),
-    (3, '33333333C', 'Pedro', 'Marinez', 'Gomez'),
-    (4, '44444444D', 'Luis', 'Gomez', 'Martinez'),
-    (5, '55555555E', 'Ana', 'Martinez', 'Gomez'),
-    (6, '66666666F', 'Sara', 'Gomez', 'Martinez'),
-    (7, '77777777G', 'Pablo', 'Gomez', 'Martinez'),
-    (8, '88888888H', 'Sergio', 'Gomez', 'Martinez'),
-    (9, '99999999I', 'Raul', 'Gomez', 'Martinez'),
-    (10, '00000000J', 'Rosa', 'Gomez', 'Martinez');
-;
-INSERT INTO direccion_cliente VALUES
-    (1, 'Calle 1', 1, 11111),
-    (2, 'Calle 2', 2, 22222),
-    (3, 'Calle 3', 3, 33333),
-    (4, 'Calle 4', 4, 44444),
-    (5, 'Calle 5', 5, 55555),
-    (6, 'Calle 6', 6, 66666),
-    (7, 'Calle 7', 7, 77777),
-    (8, 'Calle 8', 8, 88888),
-    (9, 'Calle 9', 9, 99999),
-    (10, 'Calle 10', 10, 00000);
-;
-INSERT INTO telefono_cliente VALUES
-    (1, '111111111'),
-    (2, '222222222'),
-    (3, '333333333'),
-    (4, '444444444'),
-    (5, '555555555'),
-    (6, '666666666'),
-    (7, '777777777'),
-    (8, '888888888'),
-    (9, '999999999'),
-    (10, '000000000')
-;
-INSERT INTO trabajador VALUES
-    (1, 111111111, 'Trabajador 1', 'Perez', 'Garcia'),
-    (2, 222222222, 'Trabajador 2', 'Garcia', 'Perez'),
-    (3, 333333333, 'Trabajador 3', 'Marinez', 'Gomez'),
-    (4, 444444444, 'Trabajador 4', 'Gomez', 'Martinez'),
-    (5, 555555555, 'Trabajador 5', 'Martinez', 'Gomez'),
-    (6, 666666666, 'Trabajador 6', 'Gomez', 'Martinez'),
-    (7, 777777777, 'Trabajador 7', 'Gomez', 'Martinez'),
-    (8, 888888888, 'Trabajador 8', 'Gomez', 'Martinez'),
-    (9, 999999999, 'Trabajador 9', 'Gomez', 'Martinez'),
-    (10, 000000000, 'Trabajador 10', 'Gomez', 'Martinez')
+INSERT INTO trabajador (ss, nombre, ap1, ap2) VALUES 
+    (111111111, 'Trabajador 1', 'Perez', 'Garcia'),
+    (222222222, 'Trabajador 2', 'Garcia', 'Perez'),
+    (333333333, 'Trabajador 3', 'Marinez', 'Gomez'),
+    (444444444, 'Trabajador 4', 'Gomez', 'Martinez'),
+    (555555555, 'Trabajador 5', 'Martinez', 'Gomez'),
+    (666666666, 'Trabajador 6', 'Perez', 'Ortega'),
+    (777777777, 'Trabajador 7', 'Boro', 'Jimenez'),
+    (888888888, 'Trabajador 8', 'Sanchez', 'Diaz'),
+    (999999999, 'Trabajador 9', 'Gomez', 'Martinez'),
+    (000000000, 'Trabajador 10', 'Gomez', 'Martinez')
 ;
 INSERT INTO direccion_trabajador VALUES
     (1, 'Calle 1', 1, 11111),
@@ -224,34 +190,14 @@ INSERT INTO telefono_trabajador VALUES
 INSERT INTO comercial VALUES
     (1),
     (2),
-    (3),
-    (4),
-    (5),
-    (6),
-    (7),
-    (8),
-    (9),
-    (10);
+    (3);
 ;
 INSERT INTO dependiente VALUES
-    (1),
-    (2),
-    (3),
     (4),
     (5),
-    (6),
-    (7),
-    (8),
-    (9),
-    (10);
+    (6);
 ;
 INSERT INTO gerente VALUES
-    (1),
-    (2),
-    (3),
-    (4),
-    (5),
-    (6),
     (7),
     (8),
     (9),
@@ -259,6 +205,42 @@ INSERT INTO gerente VALUES
 ;
 INSERT INTO contrata VALUES
     
+;
+INSERT INTO cliente (dni, nombre, ap1, ap2) VALUES
+    ('11111111A', 'Juan', 'Perez', 'Garcia'),
+    ('22222222B', 'Maria', 'Garcia', 'Perez'),
+    ('33333333C', 'Pedro', 'Marinez', 'Gomez'),
+    ('44444444D', 'Luis', 'Gomez', 'Martinez'),
+    ('55555555E', 'Ana', 'Martinez', 'Gomez'),
+    ('66666666F', 'Sara', 'Gomez', 'Martinez'),
+    ('77777777G', 'Pablo', 'Gomez', 'Martinez'),
+    ('88888888H', 'Sergio', 'Gomez', 'Martinez'),
+    ('99999999I', 'Raul', 'Gomez', 'Martinez'),
+    ('00000000J', 'Rosa', 'Gomez', 'Martinez');
+;
+INSERT INTO direccion_cliente VALUES
+    (1, 'Calle 1', 1, 11111),
+    (2, 'Calle 2', 2, 22222),
+    (3, 'Calle 3', 3, 33333),
+    (4, 'Calle 4', 4, 44444),
+    (5, 'Calle 5', 5, 55555),
+    (6, 'Calle 6', 6, 66666),
+    (7, 'Calle 7', 7, 77777),
+    (8, 'Calle 8', 8, 88888),
+    (9, 'Calle 9', 9, 99999),
+    (10, 'Calle 10', 10, 00000);
+;
+INSERT INTO telefono_cliente VALUES
+    (1, '111111111'),
+    (2, '222222222'),
+    (3, '333333333'),
+    (4, '444444444'),
+    (5, '555555555'),
+    (6, '666666666'),
+    (7, '777777777'),
+    (8, '888888888'),
+    (9, '999999999'),
+    (10, '000000000')
 ;
 INSERT INTO proveedor VALUES
     ('A11111111', 'Proveedor 1', 'prov1@gmail.com'),
@@ -296,63 +278,63 @@ INSERT INTO telefono_proveedor VALUES
     ('I99999999', '999999999'),
     ('J00000000', '000000000')
 ;
-INSERT INTO producto VALUES
-    (111, 'camiseta', 'm', 'azul',15.50, 'camiseta mediana hombre azul'),
-    (222, 'camiseta', 's', 'roja', 15.50, 'camiseta pequeña hombre roja'),
-    (333, 'camiseta', 'l', 'verde', 15.50, 'camiseta grande hombre verde'),
-    (444, 'camiseta', 'xl', 'amarilla', 15.50, 'camiseta extra grande hombre amarilla'),
-    (555, 'camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande hombre negra'),
-    (666, 'camiseta', 'm', 'azul', 15.50, 'camiseta mediana mujer azul'),
-    (777, 'camiseta', 's', 'roja', 15.50, 'camiseta pequeña mujer roja'),
-    (888, 'camiseta', 'l', 'verde', 15.50, 'camiseta grande mujer verde'),
-    (999, 'camiseta', 'xl', 'amarilla', 15.50, 'camiseta extra grande mujer amarilla'),
-    (1010, 'camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande mujer negra');
+INSERT INTO producto (nombre, talla, color, precio, descripcion) VALUES
+    ('camiseta', 'm', 'azul',15.50, 'camiseta mediana hombre azul'),
+    ('camiseta', 's', 'roja', 15.50, 'camiseta pequeña hombre roja'),
+    ('camiseta', 'l', 'verde', 15.50, 'camiseta grande hombre verde'),
+    ('camiseta', 'xl', 'amarilla', 15.50, 'camiseta extra grande hombre amarilla'),
+    ('camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande hombre negra'),
+    ('camiseta', 'm', 'azul', 15.50, 'camiseta mediana mujer azul'),
+    ('camiseta', 's', 'roja', 15.50, 'camiseta pequeña mujer roja'),
+    ('camiseta', 'l', 'verde', 15.50, 'camiseta grande mujer verde'),
+    ('camiseta', 'xl', 'amarilla', 15.50, 'camiseta extra grande mujer amarilla'),
+    ('camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande mujer negra');
 ;
 INSERT INTO compra VALUES
     (1, 1, 'A11111111'),
     (2, 2, 'B22222222'),
     (3, 3, 'C33333333'),
-    (4, 4, 'D44444444'),
-    (5, 5, 'E55555555'),
-    (6, 6, 'F66666666'),
-    (7, 7, 'G77777777'),
-    (8, 8, 'H88888888'),
-    (9, 9, 'I99999999'),
-    (10, 10, 'J00000000')
+    (4, 1, 'D44444444'),
+    (5, 2, 'E55555555'),
+    (6, 3, 'F66666666'),
+    (7, 1, 'G77777777'),
+    (8, 2, 'H88888888'),
+    (9, 3, 'I99999999'),
+    (10, 1, 'J00000000')
 ;
 INSERT INTO vende VALUES
-    (111, 1, 1),
-    (222, 2, 2),
-    (333, 3, 3),
-    (444, 4, 4),
-    (555, 5, 5),
-    (666, 6, 6),
-    (777, 7, 7),
-    (888, 8, 8),
-    (999, 9, 9),
-    (1010, 10, 10)
+    (1, 1, 4),
+    (2, 2, 5),
+    (3, 3, 6),
+    (4, 4, 4),
+    (5, 5, 5),
+    (6, 6, 6),
+    (7, 7, 4),
+    (8, 8, 5),
+    (9, 9, 6),
+    (10, 10, 4)
 ;
-INSERT INTO factura VALUES
-    (1, 2, 100, '2019-01-01', 0.1),
-    (2, 1, 50, '2019-01-02', 0.2),
-    (3, 3, 150, '2019-01-03', 0.3),
-    (4, 4, 200, '2019-01-04', 0.4),
-    (5, 5, 250, '2019-01-05', 0.5),
-    (6, 6, 300, '2019-01-06', 0.6),
-    (7, 7, 350, '2019-01-07', 0.7),
-    (8, 8, 400, '2019-01-08', 0.8),
-    (9, 9, 450, '2019-01-09', 0.9),
-    (10, 10, 500, '2019-01-10', 0.10);
+INSERT INTO factura (cantidad, total, fecha, dto) VALUES
+    (2, 100, '2019-01-01', 0.1),
+    (1, 50, '2019-01-02', 0.2),
+    (3, 150, '2019-01-03', 0.3),
+    (4, 200, '2019-01-04', 0.4),
+    (5, 250, '2019-01-05', 0.5),
+    (6, 300, '2019-01-06', 0.6),
+    (7, 350, '2019-01-07', 0.7),
+    (8, 400, '2019-01-08', 0.8),
+    (9, 450, '2019-01-09', 0.9),
+    (10, 500, '2019-01-10', 0.10);
 ;
 INSERT INTO recibe VALUES
-    (111, 1, 1),
-    (222, 2, 2),
-    (333, 3, 3),
-    (444, 4, 4),
-    (555, 5, 5),
-    (666, 6, 6),
-    (777, 7, 7),
-    (888, 8, 8),
-    (999, 9, 9),
-    (1010, 10, 10)
+    (1, 1, 1),
+    (2, 2, 2),
+    (3, 3, 3),
+    (4, 4, 4),
+    (5, 5, 5),
+    (6, 6, 6),
+    (7, 7, 7),
+    (8, 8, 8),
+    (9, 9, 9),
+    (10, 10, 10)
 ;
