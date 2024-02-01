@@ -1,0 +1,15 @@
+header {
+    color: red;
+}
+
+#all {
+    color: blue;
+}
+
+#query {
+    color: green;
+}
+
+aside {
+    color: rgb(195, 0, 255);
+}
