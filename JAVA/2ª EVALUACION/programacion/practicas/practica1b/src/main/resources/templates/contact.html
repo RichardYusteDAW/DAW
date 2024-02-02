@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Contacto - Librería Libros del Saber</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/">Novedades</a>
+        <a href="/books">Libros</a>
+        <a href="/contact">Contacto</a>
+        <a href="/about">Acerca de</a>
+    </nav>
+
+    <header>
+        <h1>Contacto</h1>
+        <p>¿Tienes preguntas, comentarios o sugerencias? ¡Nos encantaría escuchar de ti!</p>
+    </header>
+
+    <section>
+        <form action="/contacto/enviar" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Librería Libros del Saber. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales para obtener las últimas actualizaciones y ofertas.</p>
+    </footer>
+
+</body>
+
+</html>

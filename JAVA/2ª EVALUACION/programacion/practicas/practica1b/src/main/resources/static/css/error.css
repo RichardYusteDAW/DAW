@@ -6,6 +6,7 @@ body {
 #page_not_found {
     font-family: monospace;
     color: red;
+    margin-top: 40px;
     text-align: center;
 }
 

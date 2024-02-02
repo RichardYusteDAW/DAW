@@ -5,19 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del Producto</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Detalles del Libro</title>
 </head>
 
 <body>
-    <h1>Detalles del Libro</h1>
-    <div>
-        <p>Title: <span th:text="${book.title}"></span></p>
-        <p>Author: <span th:text="${book.author}"></span></p>
-        <p>ISBN: <span th:text="${book.ISBN}"></span></p>
-        <p>Editorial: <span th:text="${book.editorial}"></span></p>
-        <p>Year: <span th:text="${book.year}"></span></p>
-    </div>
-    <a href="/books">Volver a productos</a>
+    <nav>
+        <a href="/">Novedades</a>
+        <a href="/books">Libros</a>
+        <a href="/contact">Contacto</a>
+        <a href="/about">Acerca de</a>
+    </nav>
+
+    <header>
+        <h1 th:text="${book.title}">Detalles del Libro</h1>
+    </header>
+
+    <section class="book-details">
+        <img th:src="@{'/img/books/' + ${book.title} + '.webp'}" th:alt="${book.title}" class="book-image-detail" />
+        <div>
+            <p><strong>Título: </strong><span th:text=" ${book.title}">Título del Libro</span></p>
+            <p><strong>Autor: </strong><span th:text="${book.author}">Autor del Libro</span></p>
+            <p><strong>ISBN: </strong><span th:text="${book.ISBN}">ISBN del Libro</span></p>
+            <p><strong>Editorial: </strong><span th:text="${book.editorial}">Editorial del Libro</span></p>
+            <p><strong>Año: </strong><span th:text="${book.year}">Año de Publicación</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Librería Libros del Saber. Todos los derechos reservados.</p>
+        <p>Síguenos en nuestras redes sociales para obtener las últimas actualizaciones y ofertas.</p>
+    </footer>
 </body>
 
 </html>
