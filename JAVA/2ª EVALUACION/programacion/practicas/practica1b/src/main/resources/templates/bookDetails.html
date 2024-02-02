@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+</head>
+
+<body>
+    <h1>Detalles del Libro</h1>
+    <div>
+        <p>Title: <span th:text="${book.title}"></span></p>
+        <p>Author: <span th:text="${book.author}"></span></p>
+        <p>ISBN: <span th:text="${book.ISBN}"></span></p>
+        <p>Editorial: <span th:text="${book.editorial}"></span></p>
+        <p>Year: <span th:text="${book.year}"></span></p>
+    </div>
+    <a href="/books">Volver a productos</a>
+</body>
+
+</html>

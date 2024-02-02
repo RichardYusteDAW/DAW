@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Books</title>
 </head>
 
 <body>
     <ul>
-        <a th:each="product : ${products}" th:href="@{/products/{id}(id=${product.id})}">
-            <!--<a th:each="product : ${products}" th:href="@{${'/products/' + product.id}}">-->
-            <li th:text="|${product.brand} - ${product.name}|">Texto por defecto</li>
+        <a th:each="book : ${books}" th:href="@{/books/{id}(id=${book.id})}">
+            <!--<a th:each="book : ${books}" th:href="@{${'/books/' + book.id}}">-->
+            <li th:text="|${book.title} - ${book.author}|">Texto por defecto</li>
         </a>
     </ul>
     <a href="/">Volver al Inicio</a>
