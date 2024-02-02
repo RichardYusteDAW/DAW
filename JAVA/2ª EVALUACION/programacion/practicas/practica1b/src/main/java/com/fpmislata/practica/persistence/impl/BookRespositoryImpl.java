@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Book;
+import com.fpmislata.practica.persistence.BookRepository;
 
-public class BookRespository {
+public class BookRespositoryImpl implements BookRepository {
 
     List<Book> books = new ArrayList<Book>();
 
-    public BookRespository() {
+    public BookRespositoryImpl() {
         books.add(new Book(1, "El señor de los anillos", "J.R.R. Tolkien", "978-84-450-7426-2", "Minotauro", 1954));
         books.add(new Book(2, "El hobbit", "J.R.R. Tolkien", "978-84-450-7426-2", "Minotauro", 1937));
         books.add(new Book(3, "El Silmarillion", "J.R.R. Tolkien", "978-84-450-7426-2", "Minotauro", 1977));
@@ -26,13 +27,12 @@ public class BookRespository {
         return books;
     }
 
-    public Book find(int id) {
-        Book book = null;
-        for (Book b : books) {
-            if (b.getId() == id) {
-                book = b;
+    public Book findById(int id) {
+        for (Book book : books) {
+            if (book.getId() == id) {
+                return book;
             }
         }
-        return book;
+        return null;
     }
 }
