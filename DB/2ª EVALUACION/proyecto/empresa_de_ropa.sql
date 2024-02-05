@@ -1,11 +1,11 @@
---Eliminar base de datos si existe:
-drop database `tienda_ropa` if exists;
---Creación base de datos con ut8 y case insensitive:
-create database if not exists `tienda_ropa` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`;
-use `tienda_ropa`;
+-- Eliminar base de datos si existe:
+DROP DATABASE IF EXISTS `tienda_ropa`;
+-- Creación base de datos con ut8 y case insensitive:
+CREATE DATABASE IF NOt EXISTS `tienda_ropa` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_general_ci`;
+USE `tienda_ropa`;
 
 
--- Creación de tablas:
+-- CREACIÓN DE TABLAS:
 create table factura(
 	num_factura int primary key auto_increment,
     cantidad int not null,
@@ -22,14 +22,14 @@ create table cliente(
     ap2 varchar(25) not null
 );
 
-create table telefonos_cliente(
+create table telefono_cliente(
 	id_cliente int not null,
     telefono char(12) not null,
     primary key (id_cliente, telefono),
     foreign key (id_cliente) references cliente (id_cliente) 
 );
 
-create table dieccion_cliente(
+create table direccion_cliente(
 	id_cliente int not null,
     calle varchar(50) not null,
     num int(3) not null,
@@ -37,7 +37,6 @@ create table dieccion_cliente(
     primary key (id_cliente, calle),
     foreign key (id_cliente) references cliente (id_cliente) 
 );
-
 
 create table producto(
 	cod_producto int primary key auto_increment,
@@ -70,7 +69,6 @@ create table direccion_proveedor(
     foreign key (cif) references proveedor (cif)
 );
 
-
 create table trabajador(
 	id_trabajador int primary key auto_increment,
     ss int not null,
@@ -95,19 +93,23 @@ create table direccion_trabajador(
     foreign key (id_trabajador) references trabajador (id_trabajador)
 );
 
-create table comercial(
-	id_comercial int primary key not null,
-    foreign key (id_comercial) references trabajador (id_trabajador)
-);
-
 create table gerente(
 	id_gerente int primary key not null,
     foreign key (id_gerente) references trabajador (id_trabajador)
 );
 
+create table comercial(
+	id_comercial int primary key not null,
+    id_gerente int not null,
+    foreign key (id_comercial) references trabajador (id_trabajador),
+    Foreign Key (id_gerente) references gerente(id_gerente)
+);
+
 create table dependiente(
 	id_dependiente int primary key not null,
-    foreign key (id_dependiente) references trabajador (id_trabajador)
+    id_gerente int not null,
+    foreign key (id_dependiente) references trabajador (id_trabajador),
+    Foreign Key (id_gerente) references gerente(id_gerente)
 );
 
 create table recibe(
@@ -139,8 +141,8 @@ create table compra(
     foreign key (id_comercial) references comercial (id_comercial),
     foreign key (cif) references proveedor (cif)
 );
-
-create table contrata(
+-- Esta tabla la hemos eliminado porque no era óptimo para el funcionamiento de la base de datos.
+/*create table contrata(
 	id_dependiente int not null,
 	id_comercial int not null,
 	id_gerente int not null,
@@ -148,9 +150,11 @@ create table contrata(
     foreign key (id_dependiente) references dependiente (id_dependiente),
     foreign key (id_comercial) references comercial (id_comercial),
     foreign key (id_gerente) references gerente (id_gerente)
-);
+);*/
 
--- Inserción de datos:
+
+
+-- INSERCIÓN DE DATOS:
 INSERT INTO trabajador (ss, nombre, ap1, ap2) VALUES 
     (111111111, 'Trabajador 1', 'Perez', 'Garcia'),
     (222222222, 'Trabajador 2', 'Garcia', 'Perez'),
@@ -173,7 +177,7 @@ INSERT INTO direccion_trabajador VALUES
     (7, 'Calle 7', 7, 77777),
     (8, 'Calle 8', 8, 88888),
     (9, 'Calle 9', 9, 99999),
-    (10, 'Calle 10', 10, 00000);
+    (10, 'Calle 10', 10, 00000)
 ;
 INSERT INTO telefono_trabajador VALUES
     (1, '111111111'),
@@ -187,24 +191,21 @@ INSERT INTO telefono_trabajador VALUES
     (9, '999999999'),
     (10, '000000000')
 ;
-INSERT INTO comercial VALUES
+INSERT INTO gerente VALUES
     (1),
     (2),
-    (3);
+    (3)  
+;
+INSERT INTO comercial VALUES
+    (4,1),
+    (5,1),
+    (6,2)
 ;
 INSERT INTO dependiente VALUES
-    (4),
-    (5),
-    (6);
-;
-INSERT INTO gerente VALUES
-    (7),
-    (8),
-    (9),
-    (10);
-;
-INSERT INTO contrata VALUES
-    
+    (7,1),
+    (8,2),
+    (9,3),
+    (10,3)
 ;
 INSERT INTO cliente (dni, nombre, ap1, ap2) VALUES
     ('11111111A', 'Juan', 'Perez', 'Garcia'),
@@ -216,7 +217,7 @@ INSERT INTO cliente (dni, nombre, ap1, ap2) VALUES
     ('77777777G', 'Pablo', 'Gomez', 'Martinez'),
     ('88888888H', 'Sergio', 'Gomez', 'Martinez'),
     ('99999999I', 'Raul', 'Gomez', 'Martinez'),
-    ('00000000J', 'Rosa', 'Gomez', 'Martinez');
+    ('00000000J', 'Rosa', 'Gomez', 'Martinez')
 ;
 INSERT INTO direccion_cliente VALUES
     (1, 'Calle 1', 1, 11111),
@@ -228,7 +229,7 @@ INSERT INTO direccion_cliente VALUES
     (7, 'Calle 7', 7, 77777),
     (8, 'Calle 8', 8, 88888),
     (9, 'Calle 9', 9, 99999),
-    (10, 'Calle 10', 10, 00000);
+    (10, 'Calle 10', 10, 00000)
 ;
 INSERT INTO telefono_cliente VALUES
     (1, '111111111'),
@@ -264,7 +265,7 @@ INSERT INTO direccion_proveedor VALUES
     ('G77777777', 'Calle 7', 7, 77777),
     ('H88888888', 'Calle 8', 8, 88888),
     ('I99999999', 'Calle 9', 9, 99999),
-    ('J00000000', 'Calle 10', 10, 00000);
+    ('J00000000', 'Calle 10', 10, 00000)
 ;
 INSERT INTO telefono_proveedor VALUES
     ('A11111111', '111111111'),
@@ -288,31 +289,31 @@ INSERT INTO producto (nombre, talla, color, precio, descripcion) VALUES
     ('camiseta', 's', 'roja', 15.50, 'camiseta pequeña mujer roja'),
     ('camiseta', 'l', 'verde', 15.50, 'camiseta grande mujer verde'),
     ('camiseta', 'xl', 'amarilla', 15.50, 'camiseta extra grande mujer amarilla'),
-    ('camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande mujer negra');
+    ('camiseta', 'xxl', 'negra', 15.50, 'camiseta extra extra grande mujer negra')
 ;
 INSERT INTO compra VALUES
-    (1, 1, 'A11111111'),
-    (2, 2, 'B22222222'),
-    (3, 3, 'C33333333'),
-    (4, 1, 'D44444444'),
-    (5, 2, 'E55555555'),
-    (6, 3, 'F66666666'),
-    (7, 1, 'G77777777'),
-    (8, 2, 'H88888888'),
-    (9, 3, 'I99999999'),
-    (10, 1, 'J00000000')
+    (1, 4, 'A11111111'),
+    (2, 5, 'B22222222'),
+    (3, 6, 'C33333333'),
+    (4, 4, 'D44444444'),
+    (5, 5, 'E55555555'),
+    (6, 6, 'F66666666'),
+    (7, 4, 'G77777777'),
+    (8, 5, 'H88888888'),
+    (9, 6, 'I99999999'),
+    (10, 4, 'J00000000')
 ;
 INSERT INTO vende VALUES
-    (1, 1, 4),
-    (2, 2, 5),
-    (3, 3, 6),
-    (4, 4, 4),
-    (5, 5, 5),
-    (6, 6, 6),
-    (7, 7, 4),
-    (8, 8, 5),
-    (9, 9, 6),
-    (10, 10, 4)
+    (1, 1, 7),
+    (2, 2, 8),
+    (3, 3, 9),
+    (4, 4, 10),
+    (5, 5, 7),
+    (6, 6, 8),
+    (7, 7, 9),
+    (8, 8, 10),
+    (9, 9, 7),
+    (10, 10, 8)
 ;
 INSERT INTO factura (cantidad, total, fecha, dto) VALUES
     (2, 100, '2019-01-01', 0.1),
@@ -324,7 +325,7 @@ INSERT INTO factura (cantidad, total, fecha, dto) VALUES
     (7, 350, '2019-01-07', 0.7),
     (8, 400, '2019-01-08', 0.8),
     (9, 450, '2019-01-09', 0.9),
-    (10, 500, '2019-01-10', 0.10);
+    (10, 500, '2019-01-10', 0.10)
 ;
 INSERT INTO recibe VALUES
     (1, 1, 1),
@@ -338,3 +339,30 @@ INSERT INTO recibe VALUES
     (9, 9, 9),
     (10, 10, 10)
 ;
+
+-- CONSULTAS:
+-- 1. Muestra el nombre de los clientes que empiecen por S que han comprado camisetas de talla m.
+SELECT c.nombre, talla
+FROM cliente c, producto p, vende v
+WHERE (c.id_cliente = v.id_cliente) AND (p.cod_producto = v.cod_producto) AND (c.nombre LIKE "S%") AND (talla = 'm');
+
+-- 2. Muestra el apellido de los cliente que contengan una "e" y que hayan realizado una compra igual o superior a 45€.
+SELECT c.ap1 
+from cliente c, recibe r, factura f 
+where (c.id_cliente = r.id_cliente) and (f.num_factura = r.num_factura) and (f.total >= 45) and (c.ap1 like "%e%");
+
+-- 3. Muestra el nombre de los gerentes que hayan contratado a un comercial y a un dependiente.
+select  distinct t.nombre
+from trabajador t, gerente g, comercial c, dependiente d
+where (t.id_trabajador = g.id_gerente) and (g.id_gerente = c.id_gerente) and (g.id_gerente = d.id_gerente);
+
+-- 4. Muestra el nombre de un comercial que le compra a un proveedor productos de la talla "S" y que el apellido del comercial contenga una "a".
+
+select t.nombre
+from trabajador t, comercial c, proveedor p, producto pr, compra co
+where (t.id_trabajador = c.id_comercial) and (c.id_comercial = co.id_comercial) and (p.cif = co.cif) and (pr.cod_producto = co.cod_producto) and (pr.talla = "s") and (t.ap1 like "%a%");
+
+--5. Muestra el numero de la seguridad social de los dependientes que le vendan a un cliente por lo menos un producto de color "verde" o "azul".
+select distinct t.ss
+from trabajador t, dependiente d, vende v, producto p, cliente c
+where (t.id_trabajador = d.id_dependiente) and (d.id_dependiente = v.id_dependiente) and (v.id_cliente = c.id_cliente) and (v.cod_producto = p.cod_producto)  and ((p.color = "verde") or (p.color = "azul"));
