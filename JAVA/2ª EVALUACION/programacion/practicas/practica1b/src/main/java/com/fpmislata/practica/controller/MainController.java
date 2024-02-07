@@ -10,11 +10,6 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/search")
-    public String search() {
-        return "search";
-    }
-
     @GetMapping("/contact")
     public String contact() {
         return "contact";
