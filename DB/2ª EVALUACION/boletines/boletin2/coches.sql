@@ -182,6 +182,7 @@ SELECT cifc, cantidad FROM distribucion WHERE cantidad > 10 OR cantidad < 5;
 
 -- EJERCICIO 7. Obtener todas las parejas de identificadores de marcas y clientes que sean de la misma ciudad:
 SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad = m.ciudad;
+SELECT cifcl, cifm FROM cliente c INNER JOIN marca m ON c.ciudad = m.ciudad;
 
 -- EJERCICIO 8. Obtener todas las parejas de identificadores de clientes y marcas que no sean de la misma ciudad:
 SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad <> m.ciudad;
@@ -189,9 +190,10 @@ SELECT cifcl, cifm FROM cliente c, marca m WHERE c.ciudad != m.ciudad;
 
 -- EJERCICIO 9. Obtener los códigos de los coches distribuidos por algún concesionario de Barcelona:
 SELECT codcoche FROM concesionario c, distribucion d WHERE (d.cifc = c.cifc) AND (c.ciudad = 'Barcelona');
+SELECT codcoche FROM concesionario c INNER JOIN distribucion d ON (d.cifc = c.cifc) WHERE c.ciudad = 'Barcelona';
 
 -- EJERCICIO 10. Obtener el código de los coches vendidos a clientes de Madrid:
 SELECT codcoche FROM cliente c, venta v WHERE (c.cifcl = v.cifcl) AND (ciudad = 'Madrid');
-
+SELECT codcoche FROM cliente c INNER JOIN venta v ON (c.cifcl = v.cifcl) WHERE c.ciudad = 'Madrid';
 
 SELECT default_collation_name FROM information_schema.schemata WHERE schema_name = 'coches';

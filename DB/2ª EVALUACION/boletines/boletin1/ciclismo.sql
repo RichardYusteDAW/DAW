@@ -446,6 +446,7 @@ SELECT nombre, nomeq FROM ciclista WHERE nomeq = "Kelme";
 SELECT nompuerto, p.netapa, km
 FROM puerto p, etapa e
 WHERE p.netapa = e.netapa;
+SELECT nompuerto, netapa, km FROM puerto NATURAL JOIN etapa;
 
 -- EJERCICIO 4. Nombre de aquellos ciclistas que tengan una edad entre 25 y 30 años y que pertenezcan a los equipos Kelme y Banesto:
 SELECT nombre, edad, nomeq
@@ -456,6 +457,7 @@ WHERE (edad BETWEEN 25 AND 30) AND (nomeq='Kelme' OR nomeq='Banesto');
 SELECT e.nomeq, director
 FROM equipo e , ciclista c
 WHERE (e.nomeq = c.nomeq) AND (edad>33);
+SELECT nomeq, director FROM equipo  e INNER JOIN ciclista c ON (e.nomeq = c.nomeq) WHERE (edad > 33);
 
 -- EJERCICIO 6. Obtener el nombre y el equipo de los ciclistas menores de 30 años que hayan ganado alguna etapa:
 SELECT nombre, nomeq

@@ -192,6 +192,7 @@ SELECT idp FROM envios WHERE idt = 'T1' AND idc = 'C1';
 #EJERCICIO 6. Obtener los valores de TNOMBRE en orden alfabético para los artículos abastecidos por el proveedor P1:
 SELECT tnombre FROM articulos a, envios e WHERE (a.idt = e.idt) AND (idp = 'P1') ORDER BY tnombre;
 SELECT tnombre FROM articulos WHERE idt IN (SELECT idt FROM envios WHERE idp = 'P1') ORDER BY tnombre;
+SELECT tnombre FROM articulos a INNER JOIN envios e ON (a.idt = e.idt) WHERE idp = 'P1' ORDER BY tnombre;
 
 #EJERCICIO 7. Realiza un script que inserte en la base de datos 2 proveedores, 2 componentes y dos artículos. Ejecuta el script:
 INSERT INTO proveedores VALUES 
