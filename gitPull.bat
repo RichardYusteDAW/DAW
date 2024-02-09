@@ -7,8 +7,8 @@ for /f "tokens=*" %%i in ('hostname') do set "hostname=%%i"
 REM Establecer el path dependiendo del nombre del equipo
 if "%hostname%"=="Win11" (
     set "daw=F:\DAW"
-) else if "%hostname%"=="11725231" (
-    set "daw=C:\Users\Equipo2\Desktop\DAW"
+) else if "%hostname%"=="2A1PC02" (
+    set "daw=C:\Users\11725231\Desktop\DAW"
 )
 
 REM Hacer git pull en la carpeta DAW

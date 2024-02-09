@@ -23,21 +23,11 @@
     </header>
 
     <section>
-        <form action="/contact/send" method="post">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="asunto">Asunto:</label>
-            <input type="text" id="asunto" name="asunto" required>
-
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
+        <h1>Hola!!!</h1>
+        <p><strong>Nombre: </strong><span th:text=" ${nombre}"></span></p>
+        <p><strong>Email: </strong><span th:text="${email}"></span></p>
+        <p><strong>Asunto: </strong><span th:text="${asunto}"></span></p>
+        <p><strong>Mensaje: </strong><span th:text="${mensaje}"></span></p>
     </section>
 
     <footer>
