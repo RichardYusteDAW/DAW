@@ -18,7 +18,7 @@ public class MainController {
         return "contact";
     }
 
-    @PostMapping("/contact/send")
+    @PostMapping("/contact")
     public String procesarFormularioContacto(Model model,
             @RequestParam("nombre") String nombre,
             @RequestParam("email") String email,
