@@ -9,6 +9,8 @@ if "%hostname%"=="Win11" (
     set "daw=F:\DAW"
 ) else if "%hostname%"=="2A1PC02" (
     set "daw=C:\Users\11725231\Desktop\DAW"
+) else if "%hostname%"=="Win10" (
+    set "daw=I:\DAW"
 )
 
 REM Hacer git pull en la carpeta DAW
