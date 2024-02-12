@@ -41,18 +41,32 @@ footer {
     section,
     aside {
         display: block;
+        width: 100vw;
     }
-}
 
-/* Para tablets */
-@media screen and (min-width: 768px) and (max-width:1024px) {
     #dos {
         display: none;
     }
 }
 
+/* Para tablets */
+@media screen and (min-width: 768px) and (max-width:1024px) {
+
+    section,
+    aside {
+        display: block;
+        width: 33vw;
+    }
+}
+
 /* Para escritorio */
 @media screen and (min-width:1024px) {
+
+    section,
+    aside {
+        display: inline-block;
+        width: 49vw;
+    }
 
     h2,
     h3 {
