@@ -936,7 +936,7 @@ FROM cliente
 ORDER BY limite_credito DESC
 LIMIT 1
 
-SELECT nombre
+SELECT nombre_cliente
 FROM cliente
 WHERE limite_credito = (
   SELECT MAX(limite_credito) FROM cliente
@@ -958,25 +958,64 @@ WHERE cantidad_en_stock = (
 SELECT nombre, apellido1, apellido2, email
 FROM empleado
 WHERE codigo_jefe = (
-  SELECT codigo_jefe FROM empleado WHERE nombre = "Alberto" AND apellido1 = "Soria"
+  SELECT codigo_empleado FROM empleado WHERE nombre = "Alberto" AND apellido1 = "Soria"
 );
 
 -- EJERCICIO 4. Devuelve el nombre, apellido1 y puesto de los empleados que no representen a ningún cliente.
-
+SELECT nombre, apellido1, puesto
+FROM empleado
+WHERE codigo_empleado NOT IN (
+  SELECT codigo_empleado_rep_ventas FROM cliente
+);
 
 -- EJERCICIO 5. Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.
+SELECT nombre_cliente
+FROM cliente
+WHERE codigo_cliente IN (
+  SELECT codigo_cliente FROM pago
+);
 
-
--- EJERCICIO 6. Devuelve las oficinas donde no trabajan ninguno de los empleados que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.
-
+/* 
+-- EJERCICIO 6. Devuelve las oficinas donde no trabajan ninguno de los empleados 
+que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.
+*/
+SELECT codigo_oficina
+FROM oficina
+WHERE codigo_oficina NOT IN
+  (SELECT codigo_oficina
+  FROM empleado
+  WHERE codigo_empleado IN
+    (SELECT c.codigo_empleado_rep_ventas
+    FROM cliente c
+    JOIN pedido p ON c.codigo_cliente = p.codigo_cliente
+    JOIN detalle_pedido dp ON p.codigo_pedido = dp.codigo_pedido
+    JOIN producto pr ON dp.codigo_producto = pr.codigo_producto
+    WHERE pr.gama = 'Frutales')
+  )
 
 -- EJERCICIO 7. Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.
-
+SELECT nombre_cliente
+FROM cliente
+WHERE codigo_cliente IN (SELECT codigo_cliente FROM pedido) 
+AND codigo_cliente NOT IN (SELECT codigo_cliente FROM pago );
 
 -- EJERCICIO 8. Devuelve un listado de los productos que han aparecido en un pedido alguna vez.
+SELECT nombre
+FROM producto
+WHERE codigo_producto IN (SELECT codigo_producto FROM detalle_pedido);
 
-
--- EJERCICIO 9. Devuelve el listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.
-
+/*
+-- EJERCICIO 9. Devuelve el listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado. 
+Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.
+*/
+SELECT nombre_cliente, COUNT(p.codigo_pedido) AS pedidos_realizados
+FROM cliente c
+LEFT JOIN pedido p ON c.codigo_cliente = p.codigo_cliente
+GROUP BY c.codigo_cliente;
 
 -- EJERCICIO 10. Devuelve el nombre de los clientes que hayan hecho pedidos en 2008 ordenados alfabéticamente.
+SELECT nombre_cliente
+FROM cliente c
+JOIN pedido p ON c.codigo_cliente = p.codigo_cliente
+WHERE YEAR(fecha_pedido) = 2008
+ORDER BY nombre_cliente;
