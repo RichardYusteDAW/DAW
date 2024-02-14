@@ -927,3 +927,56 @@ INSERT INTO pago VALUES (28,'PayPal','ak-std-000022','2009-01-13',8489);
 INSERT INTO pago VALUES (30,'PayPal','ak-std-000024','2009-01-16',7863);
 INSERT INTO pago VALUES (35,'PayPal','ak-std-000025','2007-10-06',3321);
 INSERT INTO pago VALUES (38,'PayPal','ak-std-000026','2006-05-26',1171);
+
+
+/*CONSULTAS:*/
+-- EJERCICIO 1. Devuelve el nombre del cliente con mayor límite de crédito. Indica dos maneras de resolverlo.
+SELECT nombre_cliente
+FROM cliente
+ORDER BY limite_credito DESC
+LIMIT 1
+
+SELECT nombre
+FROM cliente
+WHERE limite_credito = (
+  SELECT MAX(limite_credito) FROM cliente
+);
+
+-- EJERCICIO 2. Devuelve el producto que menos unidades tiene en stock. Indica dos maneras de resolverlo.
+SELECT nombre
+FROM producto
+ORDER BY cantidad_en_stock ASC
+LIMIT 1
+
+SELECT nombre
+FROM producto
+WHERE cantidad_en_stock = (
+  SELECT MIN(cantidad_en_stock) FROM producto
+);
+
+-- EJERCICIO 3. Devuelve el nombre, los apellidos y el email de los empleados que están a cargo de Alberto Soria.
+SELECT nombre, apellido1, apellido2, email
+FROM empleado
+WHERE codigo_jefe = (
+  SELECT codigo_jefe FROM empleado WHERE nombre = "Alberto" AND apellido1 = "Soria"
+);
+
+-- EJERCICIO 4. Devuelve el nombre, apellido1 y puesto de los empleados que no representen a ningún cliente.
+
+
+-- EJERCICIO 5. Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.
+
+
+-- EJERCICIO 6. Devuelve las oficinas donde no trabajan ninguno de los empleados que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.
+
+
+-- EJERCICIO 7. Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.
+
+
+-- EJERCICIO 8. Devuelve un listado de los productos que han aparecido en un pedido alguna vez.
+
+
+-- EJERCICIO 9. Devuelve el listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.
+
+
+-- EJERCICIO 10. Devuelve el nombre de los clientes que hayan hecho pedidos en 2008 ordenados alfabéticamente.

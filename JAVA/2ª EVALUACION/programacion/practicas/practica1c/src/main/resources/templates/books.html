@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="template :: head"></th:block>
+    <title>Libros Disponibles - Librería Libros del Saber</title>
+</head>
+
+<body>
+    <nav th:replace="template :: nav" />
+
+    <header>
+        <h1>Libros Disponibles</h1>
+    </header>
+
+    <section class="featured-books">
+        <div th:each="book : ${books}" class="book">
+            <a th:href="@{/books/{id}(id=${book.id})}">
+                <img th:src="@{'/img/books/' + ${book.title} + '.webp'}" th:alt="${book.title}" class="book-image" />
+            </a>
+            <h3 th:text="${book.title} + ' - ' + ${book.author}">Texto por defecto</h3>
+        </div>
+    </section>
+
+    <footer th:replace="template :: footer" />
+</body>
+
+</html>

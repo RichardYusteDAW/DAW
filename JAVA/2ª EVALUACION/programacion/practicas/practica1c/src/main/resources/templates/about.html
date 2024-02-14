@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="template :: head"></th:block>
+    <title>Acerca de LibrosYa</title>
+</head>
+
+<body>
+    <nav th:replace="template :: nav" />
+
+    <header>
+        <h1>Bienvenidos a Libros del Saber</h1>
+        <p>Tu librería favorita para descubrir, explorar y comprar libros en línea.</p>
+    </header>
+
+    <section class="featured-books">
+        <article>
+            <h2>Acerca de LibrosYa</h2>
+            <p>Somos una compañía apasionada por la literatura y el conocimiento.
+                Fundada en 2022, LibrosYa se ha dedicado a conectar a lectores con
+                una extensa variedad de títulos y géneros literarios.
+                Nuestra misión es fomentar la cultura de la lectura y hacer que cada
+                libro que busques esté al alcance de un clic.</p>
+        </article>
+        <img id="about" src="../img/about.png" alt="Acerca de LibrosYa" class="about-image">
+
+        <aside>
+            <h2>Nuestros Valores</h2>
+            <ul>
+                <li>Pasión por los libros</li>
+                <li>Compromiso con la educación y la cultura</li>
+                <li>Excelencia en servicio al cliente</li>
+                <li>Innovación constante</li>
+            </ul>
+        </aside>
+    </section>
+
+    <footer th:replace="template :: footer" />
+</body>
+
+</html>

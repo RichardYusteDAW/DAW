@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="template :: head"></th:block>
+    <title>Detalles del Libro</title>
+</head>
+
+<body>
+    <nav th:replace="template :: nav" />
+
+    <header>
+        <h1 th:text="${book.title}">Detalles del Libro</h1>
+    </header>
+
+    <section class="book-details">
+        <img th:src="@{'/img/books/' + ${book.title} + '.webp'}" th:alt="${book.title}" class="book-image-detail" />
+        <div>
+            <p><strong>Título: </strong><span th:text=" ${book.title}">Título del Libro</span></p>
+            <p><strong>Autor: </strong><span th:text="${book.author}">Autor del Libro</span></p>
+            <p><strong>ISBN: </strong><span th:text="${book.ISBN}">ISBN del Libro</span></p>
+            <p><strong>Editorial: </strong><span th:text="${book.editorial}">Editorial del Libro</span></p>
+            <p><strong>Año: </strong><span th:text="${book.year}">Año de Publicación</span></p>
+        </div>
+    </section>
+
+    <footer th:replace="template :: footer" />
+</body>
+
+</html>

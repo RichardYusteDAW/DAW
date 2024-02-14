@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="template :: head"></th:block>
+    <title>Librería Libros del Saber</title>
+</head>
+
+<body>
+    <nav th:replace="template :: nav" />
+
+    <header>
+        <h1>Bienvenidos a Libros del Saber</h1>
+        <p>Tu librería favorita para descubrir, explorar y comprar libros en línea.</p>
+    </header>
+
+    <section class="featured-books-release">
+        <h2>Libros Destacados</h2>
+        <div class="book">
+            <img src="../img/books/El Arte de la Guerra.webp" alt="El Arte de la Guerra">
+            <h3>El Arte de la Guerra</h3>
+            <p>Un tratado clásico sobre estrategia y táctica. Todo un must-read para los entusiastas del liderazgo.</p>
+        </div>
+        <div class="book">
+            <img src="../img/books/Cien Años de Soledad.webp" alt="Cien Años de Soledad">
+            <h3>Cien Años de Soledad</h3>
+            <p>Explora la rica historia de Macondo y la familia Buendía en esta obra maestra de Gabriel García Márquez.
+            </p>
+        </div>
+        <div class="book">
+            <img src="../img/books/La Historia del Tiempo.webp" alt="La Historia del Tiempo">
+            <h3>La Historia del Tiempo</h3>
+            <p>Stephen Hawking nos lleva en un viaje a través del cosmos, explicando los misterios del universo.</p>
+        </div>
+    </section>
+
+    <footer th:replace="template :: footer" />
+</body>
+
+</html>

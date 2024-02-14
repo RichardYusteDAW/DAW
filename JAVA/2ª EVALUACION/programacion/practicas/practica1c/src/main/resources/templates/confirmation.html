@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <th:block th:include="template :: head"></th:block>
+    <title>Contacto - Librería Libros del Saber</title>
+</head>
+
+<body>
+    <nav th:replace="template :: nav" />
+
+    <header>
+        <h1>Contacto</h1>
+        <p>¿Tienes preguntas, comentarios o sugerencias? ¡Nos encantaría escuchar de ti!</p>
+    </header>
+
+    <section>
+        <h1>Hola!!!</h1>
+        <p><strong>Nombre: </strong><span th:text=" ${nombre}"></span></p>
+        <p><strong>Email: </strong><span th:text="${email}"></span></p>
+        <p><strong>Asunto: </strong><span th:text="${asunto}"></span></p>
+        <p><strong>Mensaje: </strong><span th:text="${mensaje}"></span></p>
+    </section>
+
+    <footer th:replace="template :: footer" />
+</body>
+
+</html>
