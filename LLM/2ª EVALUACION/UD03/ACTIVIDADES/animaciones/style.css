@@ -1,0 +1,63 @@
+@keyframes aparece {
+    from {
+        background-color: rgba(50, 50, 255, 0);
+        color: rgba(248, 5, 5, 1);
+        width: 0em;
+        height: 0em;
+    }
+
+    to {
+        background-color: rgba(50, 50, 255, 1);
+        color: rgba(248, 5, 5, 0);
+        width: 10em;
+        height: 10em;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        background-color: #f00;
+        width: 0vw;
+        height: 0vw;
+    }
+
+    50% {
+        background-color: #ff0;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    100% {
+        background-color: #f0f;
+        width: 20vw;
+        height: 20vw;
+    }
+}
+
+@keyframes girar {
+    0% {
+        background-color: #f00;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        background-color: blue;
+        transform: rotate(360deg);
+    }
+}
+
+div.fromTo {
+    animation-name: aparece;
+    animation-duration: 3s;
+    animation-direction: reverse;
+    /*animation-iteration-count: infinite;*/
+}
+
+div.percentage {
+    animation-name: rainbow;
+    animation-duration: 6s;
+}
+
+div.transform {
+    animation: girar 4s infinite;
+}
