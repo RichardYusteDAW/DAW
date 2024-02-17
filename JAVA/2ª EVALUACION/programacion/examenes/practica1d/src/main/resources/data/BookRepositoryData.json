@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "El señor de los anillos",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Minotauro",
+        "year": 1954
+    },
+    {
+        "id": 2,
+        "title": "El hobbit",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Minotauro",
+        "year": 1937
+    },
+    {
+        "id": 3,
+        "title": "El Silmarillion",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Minotauro",
+        "year": 1977
+    },
+    {
+        "id": 4,
+        "title": "El nombre del viento",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Plaza & Janés",
+        "year": 2007
+    },
+    {
+        "id": 5,
+        "title": "Elantris",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2005
+    },
+    {
+        "id": 6,
+        "title": "El imperio final",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2006
+    },
+    {
+        "id": 7,
+        "title": "El pozo de la ascensión",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2007
+    },
+    {
+        "id": 8,
+        "title": "El héroe de las eras",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2008
+    },
+    {
+        "id": 9,
+        "title": "El aliento de los dioses",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2009
+    },
+    {
+        "id": 10,
+        "title": "El camino de los reyes",
+        "author": null,
+        "isbn": "978-84-450-7426-2",
+        "publisher": "Nova",
+        "year": 2010
+    }
+]

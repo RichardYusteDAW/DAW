@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "J.R.R.",
+        "surname": "Tolkien",
+        "nationality": "British"
+    },
+    {
+        "id": 2,
+        "name": "Patrick",
+        "surname": "Rothfuss",
+        "nationality": "American"
+    },
+    {
+        "id": 3,
+        "name": "Brandon",
+        "surname": "Sanderson",
+        "nationality": "American"
+    }
+]
