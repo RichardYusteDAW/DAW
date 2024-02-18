@@ -9,10 +9,13 @@
 
 <body>
     <nav th:fragment="nav">
-        <a href="/">Novedades</a>
-        <a href="/books">Libros</a>
-        <a href="/contact">Contacto</a>
-        <a href="/about">Acerca de</a>
+        <a href="/" class="nav">Novedades</a>
+        <a href="/books" class="nav">Libros</a>
+        <a href="/contact" class="nav">Contacto</a>
+        <a href="/about" class="nav">Acerca de</a>
+        <a href="/books/add" id="addBook">
+            <img src="/icons/addBook.png" alt="Añadir libro">
+        </a>
     </nav>
 
     <header>

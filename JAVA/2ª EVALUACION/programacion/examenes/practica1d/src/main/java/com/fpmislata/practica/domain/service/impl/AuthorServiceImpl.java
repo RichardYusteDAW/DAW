@@ -15,10 +15,10 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     public List<Author> findAll() {
-        return null;
+        return authorRepository.findAll();
     };
 
     public Author findById(int id) {
-        return null;
+        return authorRepository.findById(id);
     };
 }

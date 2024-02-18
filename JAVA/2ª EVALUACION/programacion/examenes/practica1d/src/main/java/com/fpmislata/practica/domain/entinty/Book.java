@@ -5,15 +5,15 @@ public class Book {
     private String title;
     private Author author;
     private String ISBN;
-    private String editorial;
+    private String publisher;
     private int year;
 
-    public Book(int id, String title, Author author, String ISBN, String editorial, int year) {
+    public Book(int id, String title, Author author, String ISBN, String publisher, int year) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
-        this.editorial = editorial;
+        this.publisher = publisher;
         this.year = year;
     }
 
@@ -49,12 +49,12 @@ public class Book {
         this.ISBN = ISBN;
     }
 
-    public String getEditorial() {
-        return this.editorial;
+    public String getPublisher() {
+        return this.publisher;
     }
 
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
     public int getYear() {
@@ -63,6 +63,12 @@ public class Book {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "\u001B[32m" + "Book [id=" + id + ", title=" + title + ", author=" + author + ", ISBN=" + ISBN
+                + ", publisher=" + publisher + ", year=" + year + "]" + "\u001B[0m";
     }
 
 }

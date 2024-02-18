@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Author;
-import com.fpmislata.practica.domain.entinty.Book;
 import com.fpmislata.practica.persistence.AuthorRepository;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,13 +19,13 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         try {
             Gson gson = new Gson();
             Reader reader = new FileReader("src/main/resources/data/AuthorRepositoryData.json");
-            Type bookListType = new TypeToken<ArrayList<Book>>() {
+            Type bookListType = new TypeToken<ArrayList<Author>>() {
             }.getType();
             authors = gson.fromJson(reader, bookListType);
-            System.out.println(authors.toString());
+
             reader.close();
         } catch (Exception e) {
-            System.err.println("\u001B[31mError al leer el fichero de datos de libros.\u001B[0m");
+            System.err.println("\u001B[31mError al leer el fichero de datos de autores.\u001B[0m");
             e.printStackTrace();
         }
     }

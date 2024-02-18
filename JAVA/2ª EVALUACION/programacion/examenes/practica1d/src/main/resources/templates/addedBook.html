@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<th:block th:include="template :: head"></th:block> // Ya no se utiliza de esta manera -->
+    <th:block th:insert="~{template :: head}"></th:block>
+    <title>Libro añadido</title>
+</head>
+
+<body>
+    <nav th:replace="~{template :: nav}" />
+
+    <header>
+        <h1>Libro añadido</h1>
+    </header>
+
+    <section>
+        <h1>Hola!!!</h1>
+        <p><strong>Nombre: </strong><span th:text=" ${title}"></span></p>
+        <p><strong>AuthorID: </strong><span th:text="${author}"></span></p>
+        <p><strong>ISBN: </strong><span th:text="${ISBN}"></span></p>
+        <p><strong>Editorial: </strong><span th:text="${publisher}"></span></p>
+        <p><strong>Año: </strong><span th:text="${year}"></span></p>
+    </section>
+
+    <footer th:replace="~{template :: footer}" />
+</body>
+
+</html>

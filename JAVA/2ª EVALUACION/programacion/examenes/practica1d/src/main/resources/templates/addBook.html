@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--<th:block th:include="template :: head"></th:block> // Ya no se utiliza de esta manera -->
+    <th:block th:insert="~{template :: head}"></th:block>
+    <title>Añadir libro</title>
+</head>
+
+<body>
+    <nav th:replace="~{template :: nav}" />
+
+    <header>
+        <h1>¿Deseas añadir un nuevo libro?</h1>
+    </header>
+
+    <section>
+        <form action="/books/add" method="post">
+            <label for="title">Título del libro:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="author" class="author">Autores:</label>
+            <select name="author" class="author">
+                <option th:each="author : ${authors}" th:value="${author.id}"
+                    th:text="| ${author.name} ${author.surname}">
+            </select>
+
+            <label for="ISBN">ISBN:</label>
+            <input type="text" id="ISBN" name="ISBN" required>
+
+            <label for="publisher">Editorial:</label>
+            <input type="text" id="publisher" name="publisher" required>
+
+            <label for="year">Año del libro:</label>
+            <input type="text" id="year" name="year" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer th:replace="~{template :: footer}" />
+</body>
+
+</html>

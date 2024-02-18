@@ -4,13 +4,13 @@ public class Author {
     int id;
     String name;
     String surname;
-    String nationality;
+    int[] bookIds;
 
-    public Author(int id, String name, String surname, String nationality) {
+    public Author(int id, String name, String surname, int[] bookIds) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.nationality = nationality;
+        this.bookIds = bookIds;
     }
 
     public int getId() {
@@ -37,12 +37,17 @@ public class Author {
         this.surname = surname;
     }
 
-    public String getNationality() {
-        return this.nationality;
+    public int[] getBookIds() {
+        return this.bookIds;
     }
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
+    public void setBookIds(int[] bookIds) {
+        this.bookIds = bookIds;
+    }
+
+    @Override
+    public String toString() {
+        return "\u001B[32m" + "Author [id=" + id + ", name=" + name + ", surname=" + surname + "]" + "\u001B[0m";
     }
 
 }

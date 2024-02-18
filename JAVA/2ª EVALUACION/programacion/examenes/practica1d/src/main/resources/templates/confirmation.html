@@ -2,12 +2,13 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <th:block th:include="template :: head"></th:block>
+    <!--<th:block th:include="template :: head"></th:block> // Ya no se utiliza de esta manera -->
+    <th:block th:insert="~{template :: head}"></th:block>
     <title>Contacto - Librería Libros del Saber</title>
 </head>
 
 <body>
-    <nav th:replace="template :: nav" />
+    <nav th:replace="~{template :: nav}" />
 
     <header>
         <h1>Contacto</h1>
@@ -22,7 +23,7 @@
         <p><strong>Mensaje: </strong><span th:text="${mensaje}"></span></p>
     </section>
 
-    <footer th:replace="template :: footer" />
+    <footer th:replace="~{template :: footer}" />
 </body>
 
 </html>

@@ -17,19 +17,33 @@ nav {
 }
 
 /* Estilos para los enlaces del menú de navegación */
-nav a {
+.nav {
     float: left;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 23px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
 /* Estilos para cambiar el fondo de los enlaces al pasar el ratón */
-nav a:hover {
+.nav:hover,
+#addBook img:hover {
     background-color: #ddd;
     color: black;
+}
+
+/* Estilos para posiicionar la imagen de añadir libro  a la derecha del menú de navegación */
+#addBook {
+    float: right;
+}
+
+nav img {
+    float: right;
+    margin: 5px;
+    width: 40%;
+    height: 40%;
+    padding: 0;
 }
 
 /* Estilos para el contenido principal */
@@ -113,6 +127,12 @@ form textarea {
 form textarea {
     height: 150px;
     resize: vertical;
+}
+
+form .author {
+    width: 50%;
+    display: inline;
+    margin: 15px 0;
 }
 
 form button {
