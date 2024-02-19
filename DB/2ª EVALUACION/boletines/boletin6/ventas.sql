@@ -65,3 +65,37 @@ INSERT INTO pedido VALUES(13, 545.75, '2019-01-25', 6, 1);
 INSERT INTO pedido VALUES(14, 145.82, '2017-02-02', 6, 1);
 INSERT INTO pedido VALUES(15, 370.85, '2019-03-11', 1, 5);
 INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
+
+
+-- EJERCICIO 1. Devuelve un listado con todos los pedidos que ha realizado Adela Salas Díaz.
+SELECT p.* FROM cliente c
+JOIN pedido p ON c.id = p.id_cliente
+WHERE nombre = "Adela" AND apellido1 = "Salas" AND apellido2 = "Díaz";
+
+-- EJERCICIO 2. Devuelve el número de pedidos en los que ha participado el comercial Daniel Sáez Vega.
+SELECT COUNT(*) FROM comercial c
+JOIN pedido p ON c.id = p.id_comercial
+WHERE nombre = "Daniel" AND apellido1 = "Sáez" AND apellido2 = "Vega";
+
+-- EJERCICIO 3. Devuelve un listado de los clientes que no han realizado ningún pedido.
+SELECT c.* FROM cliente c
+LEFT JOIN pedido p ON c.id = p.id_cliente
+WHERE p.id IS NULL;
+
+SELECT * FROM cliente
+WHERE id NOT IN (SELECT id_cliente FROM pedido);
+
+/*
+-- EJERCICIO 4. Devuelve un listado con los datos de los clientes y los pedidos, 
+de todos los clientes que han realizado un pedido durante el año 2017 
+con un valor mayor o igual al valor medio de los pedidos realizados durante ese mismo año.
+*/
+SELECT * FROM cliente c
+JOIN pedido p ON c.id = p.id_cliente
+WHERE YEAR(fecha) = 2017 AND total >= (SELECT AVG(total) FROM pedido WHERE YEAR(fecha) = 2017);
+
+-- EJERCICIO 5. Devuelve la fecha y la cantidad del pedido de menor valor realizado por el cliente Pepe Ruiz Santana.
+SELECT fecha, total 
+FROM pedido p
+JOIN cliente c ON p.id_cliente = c.id
+WHERE nombre = "Pepe" AND apellido1 = "Ruiz" AND apellido2 = "Santana"
