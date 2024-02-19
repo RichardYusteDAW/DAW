@@ -22,7 +22,6 @@ JOIN puerto p ON c.dorsal = p.dorsal
 GROUP BY p.dorsal HAVING COUNT(p.nompuerto) > 1
 
 -- EJERCICIO 5. Obtener el valor del atributo netapa de aquellas etapas tales que todos los puertos que están en ellas tienen más de 700 metros de altura.
-SELECT e.netapa
-FROM etapa e
-JOIN puerto p ON e.netapa = p.netapa
-GROUP BY e.netapa HAVING MIN(altura)>700
+SELECT netapa
+FROM puerto
+GROUP BY netapa HAVING MIN(altura)>700
