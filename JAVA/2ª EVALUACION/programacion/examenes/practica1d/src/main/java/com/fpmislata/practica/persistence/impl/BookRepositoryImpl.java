@@ -1,8 +1,10 @@
 package com.fpmislata.practica.persistence.impl;
 
-import java.io.FileReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,8 @@ public class BookRepositoryImpl implements BookRepository {
     public BookRepositoryImpl() {
         try {
             Gson gson = new Gson();
-            Reader reader = new FileReader("src/main/resources/data/BookRepositoryData.json");
+            Reader reader = new InputStreamReader(
+                    new FileInputStream("src/main/resources/data/BookRepositoryData.json"), StandardCharsets.UTF_8);
             Type bookListType = new TypeToken<ArrayList<Book>>() {
             }.getType();
             books = gson.fromJson(reader, bookListType);
