@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fpmislata.practica.common.BookIoCContainer;
-import com.fpmislata.practica.domain.entinty.Author;
 import com.fpmislata.practica.domain.service.AuthorService;
 import com.fpmislata.practica.domain.service.BookService;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +31,7 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public String findById(@PathVariable("id") int id, Model model) {
+    public String findById(Model model, @PathVariable("id") int id) {
         model.addAttribute("book", bookService.findById(id));
         return "bookDetails";
     }

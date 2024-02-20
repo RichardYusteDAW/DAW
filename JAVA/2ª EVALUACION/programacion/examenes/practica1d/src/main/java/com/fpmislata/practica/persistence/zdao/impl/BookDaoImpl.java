@@ -1,4 +1,4 @@
-package com.fpmislata.practica.persistence.impl;
+package com.fpmislata.practica.persistence.zdao.impl;
 
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
@@ -9,15 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Book;
-import com.fpmislata.practica.persistence.BookRepository;
+import com.fpmislata.practica.persistence.zdao.BookDao;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class BookRepositoryImpl implements BookRepository {
-
+public class BookDaoImpl implements BookDao {
     List<Book> books = new ArrayList<Book>();
 
-    public BookRepositoryImpl() {
+    public BookDaoImpl() {
         try {
             Gson gson = new Gson();
             Reader reader = new InputStreamReader(

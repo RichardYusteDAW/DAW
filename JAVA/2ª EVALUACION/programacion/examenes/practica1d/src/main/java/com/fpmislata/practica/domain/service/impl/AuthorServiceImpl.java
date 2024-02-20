@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Author;
 import com.fpmislata.practica.domain.service.AuthorService;
-import com.fpmislata.practica.persistence.AuthorRepository;
+import com.fpmislata.practica.persistence.repository.AuthorRepository;
 
 public class AuthorServiceImpl implements AuthorService {
 

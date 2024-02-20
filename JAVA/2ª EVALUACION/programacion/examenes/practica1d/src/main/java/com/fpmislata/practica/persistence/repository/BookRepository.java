@@ -1,4 +1,4 @@
-package com.fpmislata.practica.persistence;
+package com.fpmislata.practica.persistence.repository;
 
 import java.util.List;
 

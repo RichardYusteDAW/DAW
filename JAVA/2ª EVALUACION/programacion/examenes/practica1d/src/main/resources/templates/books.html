@@ -19,7 +19,7 @@
             <a th:href="@{/books/{id}(id=${book.id})}">
                 <img th:src="@{'/img/books/' + ${book.title} + '.webp'}" th:alt="${book.title}" class="book-image" />
             </a>
-            <h3 th:text="${book.title} + ' - ' + ${book.author}">Texto por defecto</h3>
+            <h3 th:text="${book.title} + ' - ' + ${book.author.surname}">Texto por defecto</h3>
         </div>
     </section>
 

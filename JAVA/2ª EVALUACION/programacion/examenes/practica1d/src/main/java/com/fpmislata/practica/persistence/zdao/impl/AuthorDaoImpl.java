@@ -1,4 +1,4 @@
-package com.fpmislata.practica.persistence.impl;
+package com.fpmislata.practica.persistence.zdao.impl;
 
 import java.io.FileReader;
 import java.io.Reader;
@@ -7,15 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Author;
-import com.fpmislata.practica.persistence.AuthorRepository;
+import com.fpmislata.practica.persistence.zdao.AuthorDao;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class AuthorRepositoryImpl implements AuthorRepository {
-
+public class AuthorDaoImpl implements AuthorDao {
     List<Author> authors = new ArrayList<Author>();
 
-    public AuthorRepositoryImpl() {
+    public AuthorDaoImpl() {
         try {
             Gson gson = new Gson();
             Reader reader = new FileReader("src/main/resources/data/AuthorRepositoryData.json");

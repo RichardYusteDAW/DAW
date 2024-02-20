@@ -4,11 +4,13 @@ import java.util.List;
 
 import com.fpmislata.practica.domain.entinty.Book;
 import com.fpmislata.practica.domain.service.BookService;
-import com.fpmislata.practica.persistence.BookRepository;
+import com.fpmislata.practica.persistence.repository.AuthorRepository;
+import com.fpmislata.practica.persistence.repository.BookRepository;
 
 public class BookServiceImpl implements BookService {
 
     BookRepository bookRespository;
+    AuthorRepository authorRepository;
 
     public BookServiceImpl(BookRepository bookRespository) {
         this.bookRespository = bookRespository;

@@ -1,14 +1,14 @@
 package com.fpmislata.practica.domain.entinty;
 
 public class Book {
-    private int id;
+    private Integer id;
     private String title;
     private Author author;
     private String ISBN;
     private String publisher;
     private int year;
 
-    public Book(int id, String title, Author author, String ISBN, String publisher, int year) {
+    public Book(Integer id, String title, Author author, String ISBN, String publisher, int year) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -17,11 +17,11 @@ public class Book {
         this.year = year;
     }
 
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

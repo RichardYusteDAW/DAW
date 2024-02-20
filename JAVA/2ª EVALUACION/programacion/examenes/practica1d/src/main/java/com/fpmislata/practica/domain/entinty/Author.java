@@ -1,19 +1,19 @@
 package com.fpmislata.practica.domain.entinty;
 
 public class Author {
-    int id;
+    Integer id;
     String name;
     String surname;
-    int[] bookIds;
+    Integer[] bookIds;
 
-    public Author(int id, String name, String surname, int[] bookIds) {
+    public Author(Integer id, String name, String surname, Integer[] bookIds) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.bookIds = bookIds;
     }
 
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -37,11 +37,11 @@ public class Author {
         this.surname = surname;
     }
 
-    public int[] getBookIds() {
+    public Integer[] getBookIds() {
         return this.bookIds;
     }
 
-    public void setBookIds(int[] bookIds) {
+    public void setBookIds(Integer[] bookIds) {
         this.bookIds = bookIds;
     }
 
