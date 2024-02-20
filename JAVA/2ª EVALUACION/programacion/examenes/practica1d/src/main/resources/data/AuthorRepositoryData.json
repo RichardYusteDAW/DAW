@@ -1,33 +1,33 @@
 [
     {
-        "id": 1,
+        "id": "7b92de5a-8739-4ebc-92a1-bb1b52f09239",
         "name": "J.R.R.",
         "surname": "Tolkien",
         "bookIds": [
-            1,
-            2,
-            3
+            "338c2189-1376-4110-89b2-ea56d0d9d3e0",
+            "31291f27-8594-4c9a-9bb7-c93d40b77f5f",
+            "3b341ff9-2168-4e03-95d3-5b1c2771552f"
         ]
     },
     {
-        "id": 2,
+        "id": "8b333765-d786-4d00-a505-a143a628d204",
         "name": "Patrick",
         "surname": "Rothfuss",
         "bookIds": [
-            4
+            "85861df1-978e-459a-a8c3-f0de4016b510"
         ]
     },
     {
-        "id": 3,
+        "id": "3a5b16a2-8011-41a3-98a0-6582da75d261",
         "name": "Brandon",
         "surname": "Sanderson",
         "bookIds": [
-            5,
-            6,
-            7,
-            8,
-            9,
-            10
+            "9bf6629d-9fdc-4aa3-aac5-ebe7575cba5f",
+            "e0ebb160-2305-4917-b62c-0cb9cdb6386d",
+            "93a96bad-ddbd-4ac2-a11c-49024c794f15",
+            "7d47fd8e-c2ac-433a-beab-cb6f0e8456f5",
+            "e0926e8b-bbe7-4bc0-bf9b-809c5dc514c4",
+            "7c33563a-b1df-4187-a1dc-96e0dd4f065e"
         ]
     }
 ]

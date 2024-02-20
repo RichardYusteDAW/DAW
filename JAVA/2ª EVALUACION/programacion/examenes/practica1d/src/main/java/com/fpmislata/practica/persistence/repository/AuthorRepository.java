@@ -8,5 +8,5 @@ public interface AuthorRepository {
 
     List<Author> findAll();
 
-    Author findById(int id);
+    Author findById(String id);
 }

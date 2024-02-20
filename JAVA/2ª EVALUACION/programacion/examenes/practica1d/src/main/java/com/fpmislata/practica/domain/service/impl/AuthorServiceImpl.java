@@ -18,7 +18,7 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository.findAll();
     };
 
-    public Author findById(int id) {
+    public Author findById(String id) {
         return authorRepository.findById(id);
     };
 }

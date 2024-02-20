@@ -1,15 +1,17 @@
 package com.fpmislata.practica.domain.entinty;
 
+import java.util.UUID;
+
 public class Book {
-    private Integer id;
+    private String id;
     private String title;
     private Author author;
     private String ISBN;
     private String publisher;
     private int year;
 
-    public Book(Integer id, String title, Author author, String ISBN, String publisher, int year) {
-        this.id = id;
+    public Book(String title, Author author, String ISBN, String publisher, int year) {
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
@@ -17,12 +19,8 @@ public class Book {
         this.year = year;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {

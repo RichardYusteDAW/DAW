@@ -7,15 +7,17 @@ import com.fpmislata.practica.common.BookIoCContainer;
 import com.fpmislata.practica.domain.entinty.Author;
 import com.fpmislata.practica.domain.entinty.Book;
 import com.fpmislata.practica.persistence.repository.BookRepository;
+import com.fpmislata.practica.persistence.zdao.AuthorDao;
 import com.fpmislata.practica.persistence.zdao.BookDao;
 
 public class BookRepositoryImpl implements BookRepository {
 
     BookDao bookDao;
+    AuthorDao authorDao;
 
     public BookRepositoryImpl(BookDao bookDao) {
         this.bookDao = bookDao;
-
+        this.authorDao = BookIoCContainer.getAuthorDao();
     }
 
     public List<Book> findAll() {
@@ -29,7 +31,7 @@ public class BookRepositoryImpl implements BookRepository {
         // Añade el autor a cada libro
         for (Book book : books) {
             for (Author author : authors) {
-                if (Arrays.asList(author.getBookIds()).contains(book.getId())) {
+                if (author.getBookIds().contains(book.getId())) {
                     book.setAuthor(author);
                 }
             }
@@ -39,7 +41,12 @@ public class BookRepositoryImpl implements BookRepository {
         return books;
     };
 
-    public Book findById(int id) {
+    public Book findById(String id) {
         return bookDao.findById(id);
+    };
+
+    public void add(List<Book> books, List<Author> authors) {
+        bookDao.add(books);
+        authorDao.add(authors);
     };
 }

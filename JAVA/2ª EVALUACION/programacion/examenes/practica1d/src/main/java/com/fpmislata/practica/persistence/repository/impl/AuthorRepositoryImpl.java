@@ -19,7 +19,7 @@ public class AuthorRepositoryImpl implements AuthorRepository {
         return authorDao.findAll();
     };
 
-    public Author findById(int id) {
+    public Author findById(String id) {
         return authorDao.findById(id);
     };
 }

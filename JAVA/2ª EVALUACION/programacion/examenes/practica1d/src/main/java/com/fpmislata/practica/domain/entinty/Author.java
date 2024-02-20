@@ -1,24 +1,23 @@
 package com.fpmislata.practica.domain.entinty;
 
-public class Author {
-    Integer id;
-    String name;
-    String surname;
-    Integer[] bookIds;
+import java.util.List;
+import java.util.UUID;
 
-    public Author(Integer id, String name, String surname, Integer[] bookIds) {
-        this.id = id;
+public class Author {
+    private String id;
+    private String name;
+    private String surname;
+    private List<String> bookIds;
+
+    public Author(String name, String surname, List<String> bookIds) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.surname = surname;
         this.bookIds = bookIds;
     }
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -37,11 +36,11 @@ public class Author {
         this.surname = surname;
     }
 
-    public Integer[] getBookIds() {
+    public List<String> getBookIds() {
         return this.bookIds;
     }
 
-    public void setBookIds(Integer[] bookIds) {
+    public void setBookIds(List<String> bookIds) {
         this.bookIds = bookIds;
     }
 
