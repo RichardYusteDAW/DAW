@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Películas</title>
+</head>
+
+<body>
+    <h1>Esta es la página de películas</h1>
+    <p th:each="movie : ${movies}"
+        th:text="|${movie.title} ${movie.year} ${movie.director.name} ${movie.director.surname}|"></p>
+</body>
+
+</html>

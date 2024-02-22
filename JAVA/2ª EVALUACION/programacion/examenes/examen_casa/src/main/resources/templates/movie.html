@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelicula</title>
+</head>
+
+<body>
+    <h1>Esta es la página la película</h1>
+    <p th:text="|Esta es tu pelicula: ${movie.title} ${movie.year} ${movie.director.name} ${movie.director.surname}|">
+    </p>
+</body>
+
+</html>
