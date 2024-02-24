@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Película</title>
+</head>
+
+<body>
+    <h1 th:text="${movie.title}"></h1>
+    <p th:text="|Año: ${movie.year}|"></p>
+    <p th:text="|Director: ${movie.director.name}|"></p>
+    <p>Personajes:</p>
+    <ul>
+        <li th:each="characterMovie : ${movie.characterMovieList}"
+            th:text="|${characterMovie.characterName} (${characterMovie.actor.name})|"></li>
+    </ul>
+</body>
+
+</html>
