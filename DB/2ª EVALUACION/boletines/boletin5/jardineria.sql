@@ -993,7 +993,6 @@ WHERE codigo_oficina NOT IN
     WHERE pr.gama = 'Frutales')
   )
 
-
 -- EJERCICIO 7. Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.
 SELECT nombre_cliente
 FROM cliente

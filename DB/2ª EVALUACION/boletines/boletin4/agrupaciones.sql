@@ -8,7 +8,7 @@ GROUP BY c.dorsal
 SELECT c.nombre, c.edad
 FROM ciclista c
 JOIN llevar ll ON c.dorsal = ll.dorsal
-GROUP BY c.dorsal, ll.netapa HAVING COUNT(ll.codigo) >= 2;
+GROUP BY ll.netapa, ll.dorsal HAVING COUNT(ll.codigo) >= 2;
 
 -- EJERCICIO 3. Obtener el nombre de los equipos que tengan más de 5 ciclistas.
 SELECT nomeq
