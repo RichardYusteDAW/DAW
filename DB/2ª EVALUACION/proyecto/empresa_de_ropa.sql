@@ -357,7 +357,6 @@ from trabajador t, gerente g, comercial c, dependiente d
 where (t.id_trabajador = g.id_gerente) and (g.id_gerente = c.id_gerente) and (g.id_gerente = d.id_gerente);
 
 -- 4. Muestra el nombre de un comercial que le compra a un proveedor productos de la talla "S" y que el apellido del comercial contenga una "a".
-
 select t.nombre
 from trabajador t, comercial c, proveedor p, producto pr, compra co
 where (t.id_trabajador = c.id_comercial) and (c.id_comercial = co.id_comercial) and (p.cif = co.cif) and (pr.cod_producto = co.cod_producto) and (pr.talla = "s") and (t.ap1 like "%a%");
@@ -366,3 +365,53 @@ where (t.id_trabajador = c.id_comercial) and (c.id_comercial = co.id_comercial) 
 select distinct t.ss
 from trabajador t, dependiente d, vende v, producto p, cliente c
 where (t.id_trabajador = d.id_dependiente) and (d.id_dependiente = v.id_dependiente) and (v.id_cliente = c.id_cliente) and (v.cod_producto = p.cod_producto)  and ((p.color = "verde") or (p.color = "azul"));
+
+-- 6. Muestra el numero y el precio total de las facturas agrupadas por numero de factura cuyo precio total es mayor de 300€
+select num_factura, total from factura group by num_factura having total > 300;
+
+-- SUBCONSULTAS:
+-- 1. Muestra los nombres de los clientes y la suma total de sus compras de aquellos clientes que han realizado compras totales superiores a 100.
+SELECT c.nombre, SUM(f.total) AS total_gastado
+FROM cliente c
+JOIN recibe r ON c.id_cliente = r.id_cliente
+JOIN factura f ON r.num_factura = f.num_factura
+WHERE f.total > 100
+GROUP BY c.nombre;
+
+-- 2. Muestra el nombre de los gerentes en minúscula que han contratado a un comercial y a un dependiente.
+SELECT LOWER(nombre)
+FROM trabajador
+WHERE id_trabajador IN 
+    (SELECT id_gerente FROM gerente WHERE id_gerente IN 
+        (SELECT id_gerente FROM comercial) AND id_gerente IN 
+            (SELECT id_gerente FROM dependiente));
+
+-- 3. Muestra  las letras del nombre de los comerciales desde la 3ª hasta la 10ª (ambas inclusive) que le compran a un proveedor productos de la talla "S" y que el apellido del comercial contenga una "a".
+SELECT SUBSTRING(nombre, 3, 8) AS fisrtLeter
+FROM trabajador
+WHERE id_trabajador IN 
+    (SELECT id_comercial FROM comercial WHERE id_comercial IN 
+        (SELECT id_comercial FROM compra WHERE cif IN 
+            (SELECT cif FROM proveedor) AND cod_producto IN 
+                (SELECT cod_producto FROM producto WHERE talla = 's' AND ap1 LIKE '%a%')));
+
+
+-- VISTAS:
+-- 1. Muestra el apellido de los clientes que contengan una a y que han comprado camisetas de talla l.
+DROP VIEW IF EXISTS clientes_camisetas;
+CREATE VIEW clientes_camisetas AS
+SELECT c.ap1
+FROM cliente c, producto p, vende v
+WHERE (c.id_cliente = v.id_cliente) AND (p.cod_producto = v.cod_producto) AND (c.ap1 LIKE "%a%") AND (talla = 'l');
+
+SELECT * FROM clientes_camisetas;
+
+-- 2. Muestra el nombre de los comerciales cuyo apellido contenga una b y que compren a un proveedor productos de la talla "S".
+DROP VIEW IF EXISTS comerciales_proveedores;
+CREATE VIEW comerciales_proveedores AS
+SELECT t.nombre
+INNER JOIN trabajador t, comercial c, proveedor p, producto pr, compra co
+WHERE (t.id_trabajador = c.id_comercial) AND (c.id_comercial = co.id_comercial) AND (p.cif = co.cif) 
+AND (pr.cod_producto = co.cod_producto) AND (pr.talla = "s") AND (t.ap1 LIKE "%b%");
+
+SELECT * FROM comerciales_proveedores;
