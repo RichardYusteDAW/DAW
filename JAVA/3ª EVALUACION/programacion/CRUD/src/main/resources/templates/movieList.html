@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listado películas</title>
+</head>
+<body>
+<ul>
+    <a th:each="movie : ${movieList}" th:href="@{${'/movies/' + movie.id}}">
+        <li th:text="|${movie.title} (${movie.year})|">Texto por defecto</li>
+    </a>
+</ul>
+</body>
+</html>

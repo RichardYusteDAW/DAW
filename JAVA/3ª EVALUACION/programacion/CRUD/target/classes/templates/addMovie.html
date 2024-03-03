@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+</head>
+
+<body>
+    <form action="/movies/add" method="POST">
+        <label for="">Título de la película:</label>
+        <input type="text" name="title"><br>
+
+        <label for="">Año de la película:</label>
+        <input type="text" name="year">
+        <br><br>
+
+        <label for="">Selecciona un actor:</label>
+        <select name="director" required>
+            <option th:each="director : ${directorList}" th:value="${director.id}" th:text="${director.name}"></option>
+
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>
