@@ -40,4 +40,17 @@ public class MovieDaoImpl implements MovieDao {
     public void add(MovieEntity movieEntity) {
         movieEntityList.add(movieEntity);
     }
+
+    public void delete(Integer id) {
+        movieEntityList.remove(findById(id));
+    }
+
+    public void update(MovieEntity movieEntity) {
+        for (int i = 0; i < movieEntityList.size(); i++) {
+            if (movieEntityList.get(i).getId() == movieEntity.getId()) {
+                movieEntityList.set(i, movieEntity);
+            }
+        }
+    }
+
 }

@@ -12,4 +12,8 @@ public interface MovieRepository {
     Movie findById(Integer id);
 
     void add(MovieEntity movieEntity);
+
+    void delete(Integer id);
+
+    void update(MovieEntity movieEntity);
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+
+<body>
+    <h1>¿Qué quieres actualizar de la película?</h1>
+    <form th:action="@{'/movies/update/' + ${movie.id}}" th:method="put">
+        <!-- <input type="hidden" name="_method" value="put" /> -->
+        <label for="">Título de la película:</label>
+        <input type="text" name="title" th:placeholder="${movie.title}"><br>
+
+        <label for="">Año de la película:</label>
+        <input type="text" name="year" th:placeholder="${movie.year}">
+        <br><br>
+
+        <label for="">Selecciona un director:</label>
+        <select name="director" required>
+            <option th:each="director : ${directorList}" th:value="${director.id}" th:text="${director.name}"></option>
+        </select><br><br>
+
+        <button type="submit">UPDATE</button>
+    </form>
+</body>
+
+</html>

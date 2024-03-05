@@ -11,4 +11,8 @@ public interface MovieService {
     Movie findById(Integer id);
 
     void add(String title, Integer year, Integer directorId);
+
+    void delete(Integer id);
+
+    void update(Integer id, String title, Integer year, Integer directorId);
 }

@@ -81,4 +81,12 @@ public class MovieRepositoryImpl implements MovieRepository {
     public void add(MovieEntity movieEntity) {
         movieDao.add(movieEntity);
     }
+
+    public void delete(Integer id) {
+        movieDao.delete(id);
+    }
+
+    public void update(MovieEntity movieEntity) {
+        movieDao.update(movieEntity);
+    }
 }
