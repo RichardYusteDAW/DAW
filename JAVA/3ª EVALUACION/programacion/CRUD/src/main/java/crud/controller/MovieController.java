@@ -2,11 +2,7 @@ package crud.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import crud.common.container.DirectorIoC;
 import crud.common.container.MovieIoC;
@@ -52,6 +48,11 @@ public class MovieController {
             @RequestParam("director") Integer directorId) {
         movieService.add(title, year, directorId);
 
+        return "redirect:/movies";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") Integer id) {
         return "redirect:/movies";
     }
 

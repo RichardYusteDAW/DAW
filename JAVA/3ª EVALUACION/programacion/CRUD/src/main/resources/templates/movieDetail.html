@@ -18,6 +18,12 @@
         <li th:each="characterMovie : ${movie.characterMovieList}"
             th:text="|${characterMovie.name} (${characterMovie.actor.name})|"></li>
     </ul>
+
+    <form th:action="@{'/movies/' + ${movie.id}}" th:method="delete">
+        <!-- <input type="hidden" name="_method" value="delete" /> -->
+        <button type="submit">DELETE</button>
+    </form>
+
 </body>
 
 </html>
