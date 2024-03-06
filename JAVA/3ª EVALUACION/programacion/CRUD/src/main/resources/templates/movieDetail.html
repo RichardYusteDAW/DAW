@@ -24,7 +24,7 @@
         <button type="submit">DELETE</button>
     </form>
 
-    <a th:href="@{'/movies/update/' + ${movie.id}}">
+    <a th:href="@{'/movies/' + ${movie.id} + '/update'}">
         <button>UPDATE</button>
     </a>
 

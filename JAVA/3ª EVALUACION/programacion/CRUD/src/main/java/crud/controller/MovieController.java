@@ -8,11 +8,6 @@ import crud.common.container.DirectorIoC;
 import crud.common.container.MovieIoC;
 import crud.domain.service.DirectorService;
 import crud.domain.service.MovieService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RequestMapping("/movies")
 @Controller
@@ -66,7 +61,7 @@ public class MovieController {
         return "redirect:/movies";
     }
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/{id}/update")
     public String update(Model model, @PathVariable("id") Integer id) {
 
         model.addAttribute("movie", movieService.findById(id));
@@ -75,7 +70,7 @@ public class MovieController {
         return "updateMovie";
     }
 
-    @PutMapping("path/{id}")
+    @PutMapping("/{id}")
     public String update(
             @PathVariable("id") Integer id,
             @RequestParam String title,
