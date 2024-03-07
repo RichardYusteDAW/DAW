@@ -1019,3 +1019,12 @@ FROM cliente c
 JOIN pedido p ON c.codigo_cliente = p.codigo_cliente
 WHERE YEAR(fecha_pedido) = 2008
 ORDER BY nombre_cliente;
+
+USE ciclismo;
+SHOW DATABASEs;
+use mysql;
+show tables;
+
+SELECT * from user;
+SELECT * from password_history
+;
