@@ -1,3 +1,9 @@
+# gitignore explanation:
+# /dir:  Ignora un directorio o archivo llamado dir que se encuentra exactamente en la raíz del repositorio.
+# dir:   Ignora archivos o directorios con el nombre dir en cualquier lugar dentro del repositorio. 
+# dir/:  Ignora un directorio llamado dir y todo su contenido (archivos y subdirectorios). Este patrón es recursivo y afecta a cualquier directorio llamado dir en cualquier lugar del repositorio.
+# dir/*: Ignora todos los archivos dentro del directorio dir en el nivel especificado, pero no ignora los subdirectorios de manera recursiva.
+
 *.git/
 
 /ED/Proyectos/
