@@ -1,0 +1,36 @@
+# Generar archivo txt con todas las extensiones de VSC:
+# code --list-extensions > extensions.txt
+
+# Intalar con Powershell todas las extensiones de VSC sin tener en cuenta los #comentarios:
+# Get-Content extensions.txt | Where-Object { $_ -notmatch '^#' } | ForEach-Object { code --install-extension $_ }
+
+#Extensiones VSC:
+christian-kohler.path-intellisense
+cweijan.dbclient-jdbc
+cweijan.vscode-mysql-client2
+ecmel.vscode-html-css
+equinusocio.vsc-material-theme-icons
+fabiospampinato.vscode-monokai-night
+formulahendry.auto-close-tag
+github.copilot
+github.copilot-chat
+mhutchie.git-graph
+ms-vscode.live-server
+redhat.fabric8-analytics
+redhat.java
+redhat.vscode-xml
+ritwickdey.liveserver
+sohibe.java-generate-setters-getters
+tomoki1207.pdf
+usernamehw.errorlens
+visualstudioexptteam.intellicode-api-usage-examples
+visualstudioexptteam.vscodeintellicode
+vmware.vscode-boot-dev-pack
+vmware.vscode-spring-boot
+vscjava.vscode-java-debug
+vscjava.vscode-java-dependency
+vscjava.vscode-java-pack
+vscjava.vscode-java-test
+vscjava.vscode-maven
+vscjava.vscode-spring-boot-dashboard
+vscjava.vscode-spring-initializr
