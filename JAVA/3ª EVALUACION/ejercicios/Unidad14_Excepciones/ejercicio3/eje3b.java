@@ -1,12 +1,13 @@
 /*
-Modifica la aplicación anterior para que se muestre la frase “No puedes pasar” si la edad introducida es menor de 18 años o mayor que 65. 
-Para eso, lanza una excepción de tipo RuntimeException en el método que comprueba la edad si se cumple alguna de esas condiciones.
+Modifica la aplicación anterior para que el mensaje de la excepción sea “Tienes que ser mayor de edad para pasar” o 
+“Tienes que tener menos de 65 años para pasar” según el tipo de error. 
+Utiliza el método correspondiente de la clase Exception para mostrar ese mensaje de error.
 */
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class eje3a {
+public class eje3b {
     public static void main(String[] args) {
 
         try (Scanner in = new Scanner(System.in)) {
@@ -20,14 +21,16 @@ public class eje3a {
         } catch (InputMismatchException ime) {
             System.out.println("La edad tiene que ser un entero");
         } catch (RuntimeException re) {
-            System.out.println("No puedes pasar");
+            System.out.println(re.getMessage());
         }
 
     }
 
     public static boolean checkAge(int age) {
-        if (age < 18 || age > 65) {
-            throw new RuntimeException();
+        if (age < 18) {
+            throw new RuntimeException("Tienes que ser mayor de edad para pasar");
+        } else if (age > 65) {
+            throw new RuntimeException("Tienes que tener menos de 65 años para pasar");
         }
         return true;
     }
