@@ -1,4 +1,5 @@
-/*Modifica la aplicación anterior para que se muestre la frase “No puedes pasar” si la edad introducida es menor de 18 años o mayor que 65. 
+/*
+Modifica la aplicación anterior para que se muestre la frase “No puedes pasar” si la edad introducida es menor de 18 años o mayor que 65. 
 Para eso, lanza una excepción de tipo RuntimeException en el método que comprueba la edad si se cumple alguna de esas condiciones.
  */
 
