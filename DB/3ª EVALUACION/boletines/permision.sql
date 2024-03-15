@@ -9,7 +9,6 @@ FLUSH PRIVILEGES;
 
 # EJERCICIO 3. Cambia la contraseña del usuario 'admin' a 'newpassword'.
 ALTER USER IF EXISTS 'admin'@'localhost' IDENTIFIED BY 'newpassword';
-SET PASSWORD FOR 'admin'@'localhost' = PASSWORD('newpassword');
 FLUSH PRIVILEGES;
 
 # EJERCICIO 4. Otorga el privilegio de modificación de tablas al usuario 'admin' sobre la tabla 'producto'.
@@ -35,17 +34,31 @@ FLUSH PRIVILEGES;
 
 # EJERCICIO 9. Elimina al usuario 'analista' el privilegio de actualización sobre la columna 'fecha_entrega' de la tabla 'pedido.
 REVOKE UPDATE (fecha_entrega) ON jardineria.pedido FROM 'analista'@'localhost';
+FLUSH PRIVILEGES;
 
 # EJERCICIO 10. Crea un usuario 'cliente1' con contraseña 'clientpass' y permisos solo para acceder y modificar sus propios pagos.
 CREATE USER 'cliente1'@'localhost' IDENTIFIED BY 'clientpass';
 GRANT SELECT, INSERT, UPDATE ON jardineria.pago TO 'cliente1'@'localhost';
+FLUSH PRIVILEGES;
 
 # EJERCICIO 11. Bloquea la cuenta del usuario 'cliente1'.
+ALTER USER 'cliente1'@'localhost' ACCOUNT LOCK;
+FLUSH PRIVILEGES;
 
 # EJERCICIO 12. Desbloquea la cuenta del usuario 'cliente1'.
+ALTER USER 'cliente1'@'localhost' ACCOUNT UNLOCK;
+FLUSH PRIVILEGES;
 
 # EJERCICIO 13. Elimina al usuario 'cliente1' todos los privilegios sobre la tabla 'pago'.
+REVOKE ALL PRIVILEGES ON jardineria.pago FROM 'cliente1'@'localhost';
+FLUSH PRIVILEGES;
 
 # EJERCICIO 14. Crear un usuario 'vendedor' con contraseña 'salespass' y permisos para acceder y administrar todas las tablas excepto 'detalle_pedido'.
+CREATE USER 'vendedor'@'localhost' IDENTIFIED BY 'salespass';
+GRANT ALL PRIVILEGES ON jardineria.* TO 'vendedor'@'localhost';
+REVOKE ALL PRIVILEGES ON jardineria.detalle_pedido FROM 'vendedor'@'localhost';
+FLUSH PRIVILEGES;
 
 # EJERCICIO 15. Conceder al usuario 'vendedor' permisos para SELECT, INSERT y UPDATE sobre la tabla 'pedido'.
+GRANT SELECT, INSERT, UPDATE ON jardineria.pedido TO 'vendedor'@'localhost';
+FLUSH PRIVILEGES;
