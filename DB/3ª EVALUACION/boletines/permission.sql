@@ -12,7 +12,7 @@ ALTER USER IF EXISTS 'admin'@'localhost' IDENTIFIED BY 'newpassword';
 FLUSH PRIVILEGES;
 
 # EJERCICIO 4. Otorga el privilegio de modificación de tablas al usuario 'admin' sobre la tabla 'producto'.
-GRANT ALTER ON jardineria.producto TO 'admin'@'localhost';
+GRANT UPDATE ON jardineria.producto TO 'admin'@'localhost';
 FLUSH PRIVILEGES;
 
 # EJERCICIO 5. Elimina el privilegio de borrado sobre la tabla 'cliente' al usuario 'admin'.
