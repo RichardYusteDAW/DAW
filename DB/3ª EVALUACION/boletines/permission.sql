@@ -38,7 +38,7 @@ FLUSH PRIVILEGES;
 
 # EJERCICIO 10. Crea un usuario 'cliente1' con contraseña 'clientpass' y permisos solo para acceder y modificar sus propios pagos.
 CREATE USER 'cliente1'@'localhost' IDENTIFIED BY 'clientpass';
-GRANT SELECT, INSERT, UPDATE ON jardineria.pago TO 'cliente1'@'localhost';
+GRANT SELECT, INSERT, UPDATE ON jardineria.pago TO 'cliente1'@'localhost' WHERE codigo_cliente=1;
 FLUSH PRIVILEGES;
 
 # EJERCICIO 11. Bloquea la cuenta del usuario 'cliente1'.
